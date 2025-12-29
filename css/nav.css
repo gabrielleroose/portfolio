@@ -1,0 +1,141 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    TYPOGRAPHY 
+    For larger projects, consider using a type scale:
+    https://baseline.is/tools/type-scale-generator/
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+:root {
+    --text-size-xs: 0.64rem;
+    --text-size-sm: 0.8rem;
+    --text-size-md: 1rem;
+    --text-size-lg: 1.25rem;
+    --text-size-xl: 1.56rem;
+    --text-size-2xl: 1.95rem;
+    --text-size-3xl: 2.44rem;
+    --text-size-4xl: 3.05rem;
+    --text-size-5xl: 3.81rem;
+}
+   
+
+nav{
+    position: relative;
+    z-index: 1000;
+    font-family: "Spline Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.menu {
+    /* border: 3px dashed fuchsia; */
+    border-top: 2px solid lightgray;
+    margin-bottom: 2rem;
+}
+
+.branding {
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+}
+
+.menu-button {
+    color: #E7ECEF;
+    transform: scale(1.25);
+    padding-top: 1rem;
+}
+
+.menu-item {
+    color: #6096ba;
+    padding: 1rem .5rem 1rem 1rem;
+    text-decoration: none;
+    display: none;
+    font-size: var(--text-size-md);
+    transition: color .75s ease-in-out,
+    transform 0.25s ease-in-out;
+}
+
+.menu-item:hover {
+    color: #E7ECEF;
+    transform: translateX(5px);
+}
+
+
+
+.menu-box{
+    /* border: 3px solid yellow; */
+    border-radius: 1rem;
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 1rem;
+    width: 140px;
+
+
+    margin-top: 1rem;
+
+    /* CSS Gradient from: https://cssgradient.io/  */
+    background: #5e5e5e;
+    background: linear-gradient(90deg, rgba(94, 94, 94, 1) 0%, rgba(64, 64, 64, 1) 0%, rgba(1, 3, 25, 1) 83%);
+    
+}
+
+.show {
+    /* optional: hides for use without a transition */
+    display: block;
+    /* optional: hides for use with a transition */
+    /* visibility: visible;
+      opacity: 1; */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (width >=768px) {
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        margin-bottom: 3rem;
+      }
+
+    .menu {
+        /* border: 3px solid fuchsia; */
+        border: none;
+        display: block;
+    }
+
+    .menu-box {
+        /* border: 3px solid yellow; */
+      border: .25px solid grey;
+      position: static;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .menu-item{
+        display: block;
+        padding: 1.5rem;
+        justify-content: space-around;
+
+
+        transition: color .75s ease-in-out,
+        transform 0.25s ease-in-out;
+        font-size: var(--text-size-md);
+    }
+
+
+    .menu-item:hover {
+        transform: scale(1.2)
+    }
+
+    .menu-button {
+        display: none;
+    }
+}
+
+

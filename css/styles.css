@@ -1,0 +1,272 @@
+/* USE FOR CUSTOM STYLE AND LAYOUT: */
+/* Add or adjust banners for organization */
+/* modern-normalize is taking care of the box-sizing,
+   which is still a standard way to design */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    UTILITIES 
+* * * * * * * * * * * * * * * * * * * * * * * * */
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+img {
+    display: block;
+    max-inline-size: 100%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    TYPOGRAPHY 
+    For larger projects, consider using a type scale:
+    https://baseline.is/tools/type-scale-generator/
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+:root {
+    --text-size-xs: 0.64rem;
+    --text-size-sm: 0.8rem;
+    --text-size-md: 1rem;
+    --text-size-lg: 1.25rem;
+    --text-size-xl: 1.56rem;
+    --text-size-2xl: 1.95rem;
+    --text-size-3xl: 2.44rem;
+    --text-size-4xl: 3.05rem;
+    --text-size-5xl: 3.81rem;
+}
+            
+
+.spline-sans{
+    font-family: "Spline Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    STRUCTURE
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+body{
+    /* background-color: #274c77; */
+    /* background-color: #031926; */
+    background-color: #010319;
+    color: #E7ECEF;
+    /* padding-bottom: 8rem; */
+    font-family: "Spline Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    
+}
+
+header{
+    text-align: center;
+    font-size: var(--text-size-xl);
+    font-style: italic;
+    padding-bottom: 2rem;
+    
+}
+
+.introduction-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.introduction-image{
+    /* border: 3px solid gold; */
+    width: 100%;
+    padding: 0rem 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.introduction-list{
+    /* border: 3px solid red; */
+    width: 100%;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (width >=768px) {
+
+    .introduction-image{
+        /* border: 3px solid gold; */
+        width: 40%;
+        padding: 0rem 5rem;
+        text-align: center;
+    }
+
+    .introduction-flex{
+        display: flex;
+        flex-direction: row;
+    
+    }
+
+    .introduction-list{
+        /* border: 3px solid red; */
+        width: 50%;
+    }
+
+}
+
+
+  
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    COMPONENTS
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* 
+    IMAGES
+*/
+
+img{
+    max-height: 350px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    border: 5px solid #6096ba;
+}
+
+.logo{
+    border: none;
+    max-height: 75px;
+    margin: 0;
+}
+
+
+
+
+/* 
+    LINKS
+*/
+
+/* 
+    BUTTONS
+*/
+
+/* 
+    TABLES
+*/
+
+
+/* 
+    LISTS
+*/
+
+ul li{
+    list-style: none;
+    position: relative;
+    padding: 1rem 1rem 1rem 2.25rem;
+    font-size: var(--text-size-lg);
+    color: #E7ECEF;
+}
+
+
+/* Emojis from https://emojidb.org/community-emojis */
+
+
+ul li:nth-child(1)::before{
+    content: "👩‍💻";
+    position: absolute;
+    left: 0;
+    transform: scale(1.5)
+
+}
+
+ul li:nth-child(2)::before{
+    content: "🎓";
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: scale(1.5)
+
+}
+
+ul li:nth-child(3)::before{
+    content: "🌱";
+    position: absolute;
+    left: 0;
+    transform: scale(1.5)
+
+}
+
+ul li:nth-child(4)::before{
+    content: "👥";
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: scale(1.5)
+
+}
+
+ul li:nth-child(5)::before{
+    content: "💡";
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: scale(1.5)
+
+}
+
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    PAGE SPECIFIC
+* * * * * * * * * * * * * * * * * * * * * * * * */
+.container{
+    text-align: center;
+}
+
+footer{
+    /* padding-top: 10rem; */
+    /* position: fixed;
+    bottom: 0; */
+    /* margin-top: 5rem; */
+    width: 100%;
+    background-color: #E7ECEF;
+}
+
+main{
+    margin-bottom: 5rem;
+}
+
+.header-split{
+    color: #6096ba;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    MEDIA QUERIES 
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (width >=576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (width >=768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (width >=992px) {}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (width >=1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (width >=1400px) {}

@@ -1,0 +1,189 @@
+/* USE FOR CUSTOM STYLE AND LAYOUT: */
+/* Add or adjust banners for organization */
+/* modern-normalize is taking care of the box-sizing,
+   which is still a standard way to design */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    UTILITIES 
+* * * * * * * * * * * * * * * * * * * * * * * * */
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+img {
+    display: block;
+    max-inline-size: 100%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    TYPOGRAPHY 
+    For larger projects, consider using a type scale:
+    https://baseline.is/tools/type-scale-generator/
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+:root {
+    --text-size-xs: 0.64rem;
+    --text-size-sm: 0.8rem;
+    --text-size-md: 1rem;
+    --text-size-lg: 1.25rem;
+    --text-size-xl: 1.56rem;
+    --text-size-2xl: 1.95rem;
+    --text-size-3xl: 2.44rem;
+    --text-size-4xl: 3.05rem;
+    --text-size-5xl: 3.81rem;
+}
+            
+.spline-sans{
+    font-family: "Spline Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    STRUCTURE
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+body{
+    /* background-color: #274c77; */
+    /* background-color: #031926; */
+    background-color: #010319;
+    color: #E7ECEF;
+    font-family: "Spline Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    
+}
+
+header{
+    text-align: center;
+    font-size: var(--text-size-xl);
+    font-style: italic;
+    padding-bottom: 2rem;
+}
+
+
+.card{
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid #3E3E3E;
+}
+  
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.card-title{
+    font-weight: 600;
+    font-size: var(--text-size-lg);
+}
+
+.card-text{
+    font-size: var(--text-size-md);
+}
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (width >=768px) {
+
+}
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    COMPONENTS
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* 
+    IMAGES
+*/
+
+.logo{
+    border: none;
+    max-height: 75px;
+}
+
+
+
+
+/* 
+    LINKS
+*/
+
+a{
+    text-decoration: none;
+}
+
+/* 
+    BUTTONS
+*/
+
+/* 
+    TABLES
+*/
+
+
+/* 
+    LISTS
+*/
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    PAGE SPECIFIC
+* * * * * * * * * * * * * * * * * * * * * * * * */
+.container{
+    text-align: center;
+}
+
+footer{
+    /* padding-top: 10rem; */
+    /* position: fixed;
+    bottom: 0; */
+    /* margin-top: 5rem; */
+    width: 100%;
+    background-color: #E7ECEF;
+}
+
+main{
+    margin-bottom: 5rem;
+}
+
+.header-split{
+    color: #6096ba;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    MEDIA QUERIES 
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (width >=576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (width >=768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (width >=992px) {}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (width >=1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (width >=1400px) {}

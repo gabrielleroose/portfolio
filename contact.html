@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabrielle Roose/Contact</title>
+    <!-- add your own favicon - https://favicon.io/ -->
+    <!-- favicon converter: https://favicon.io/favicon-converter/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/GRfavicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/GRfavicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/GRfavicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/GRfavicon_io/site.webmanifest">
+    <!-- reset default browser stylesheet -->
+    <link rel="stylesheet" href="css/modern-normalize.css">
+    <!-- add google font and other resources here -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+
+    <!-- https://fonts.google.com/icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+
+    <!-- custom styles -->
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/nav.css">
+  
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="branding">
+           <!-- Logomaker: https://www.squarespace.com/ -->
+            <img class="logo" src="images/Gabrielle-Roose-logo.png" alt="logo" />
+            <p class="menu-button">
+              <span class="material-symbols-outlined">menu</span>
+            </p>
+          </div>
+
+
+        <div class="menu">
+            <div class="menu-box">
+            <a class="menu-item" href="index.html">About</a>
+            <a class="menu-item" href="education.html">Education</a>
+            <a class="menu-item" href="projects.html">Projects</a>
+            <a class="menu-item" href="certifications.html">Certifications</a>
+            <a class="menu-item" href="contact.html">Contact</a>
+            </div>
+          </div>
+    </nav>
+
+    <main>
+
+      <header>
+        <h1>Let's get <span class="header-split">in touch!</span></h1>
+
+      </header>
+
+      <!-- Form base taken from I211 groose-recipe-app 2025 -->
+
+      <section class="form">
+        <h2>Contact Me</h2>
+
+      <form action="https://formspree.io/f/xeoyddao" method="post">
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" minlength=2 maxlength=50 required>
+            <div class="invalid-feedback">Name must be between 1 and 50 characters</div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="email@gmail.com" minlength="2" maxlength="50" required></input>
+            <div class="invalid-feedback">Text must be less than 50 characters</div>
+        </div>
+     
+        <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control" name="message" id="message" placeholder="What's this about?" required></textarea>
+        </div>
+        
+      
+         <div class="mt-4">
+             <button class="btn btn-primary" type="submit">Send</button>
+             <button class="btn btn-secondary" type="reset">Clear</button>
+         </div>
+     </form>
+    </section>
+
+
+    </main>
+
+
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+          <span class="text-muted"> Gabrielle Roose Copyright © 2025, All Rights Reserved</span>
+      </div>
+  </footer>
+
+
+
+     <!-- JavaScript from 1360 Project 3 Fall 2025 -->
+     <script>
+        // once the dropdown is toggled, add the class 'show' to each menu item to reveal it
+        // if clicked again, toggle this effect by removing the 'show' class
+        function toggleDropdown() {
+          document
+            .querySelectorAll(".menu-item")
+            .forEach((item) => item.classList.toggle("show"));
+        }
+        // On the element with the class menu-button, wait for it to be clicked, then toggle the dropdown
+        document
+          .querySelector(".menu-button")
+          .addEventListener("click", toggleDropdown);
+      </script>
+
+
+</body>
+
+</html>
