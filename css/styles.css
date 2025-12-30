@@ -140,6 +140,7 @@ img{
 
 .logo{
     border: none;
+    border-radius: 0;
     max-height: 75px;
     margin: 0;
 }
