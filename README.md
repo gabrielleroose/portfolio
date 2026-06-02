@@ -9,4 +9,5 @@ This repository contains my personal portfolio website.
 - Bootstrap
 
 ## Live Site
-Hosted via Indiana University Luddy School servers.
+https://html.luddy.indiana.edu/~groose/final-project-roose-gabrielle/index.html
+-Hosted via Indiana University Luddy School servers.
