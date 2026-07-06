@@ -169,7 +169,7 @@ ul li{
     list-style: none;
     position: relative;
     padding: 1rem 1rem 1rem 2.25rem;
-    font-size: var(--text-size-lg);
+    font-size: 1.1rem;
     color: #E7ECEF;
 }
 
