@@ -292,6 +292,18 @@ main{
 .header-split{
     color: #6096ba;
 }
+.iu{
+    margin-bottom: 0;
+}
+.luddy-detail{
+    font-size: var(--text-size-xs);
+    font-style: italic;
+    margin-top: 0;
+}
+
+.bold{
+    font-weight: 500;
+}
 
 
 
