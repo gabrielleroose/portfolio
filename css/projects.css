@@ -194,6 +194,9 @@ a{
 .pill-jinja {border-color: #B41717; color: #B41717; }
 .pill-twig {border-color: #bacf29; color: #bacf29; }
 
+.pill-figma { border-color: #A259FF; color: #A259FF; }
+.pill-ux { border-color: #adb5bd; color: #adb5bd; }
+
 .card-pills {
     display: flex;
     flex-wrap: wrap;
@@ -235,6 +238,49 @@ main{
     color: #6096ba;
 }
 
+/* 
+    WORK TOGGLE
+*/
+
+.work-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 2rem;
+}
+
+.work-toggle button {
+    font-size: var(--text-size-lg);
+    font-family: "Spline Sans", sans-serif;
+    font-style: italic;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.work-toggle button.active {
+    color: #E7ECEF;
+    font-weight: 500;
+}
+
+.work-toggle button.inactive {
+    color: #3E3E3E;
+    font-weight: 300;
+}
+
+.work-toggle .slash {
+    font-size: var(--text-size-xl);
+    color: #3E3E3E;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.hidden {
+    display: none;
+}
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
