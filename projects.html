@@ -1,200 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gabrielle Roose/Projects</title>
     <!-- add your own favicon - https://favicon.io/ -->
     <!-- favicon converter: https://favicon.io/favicon-converter/ -->
-    <link rel="apple-touch-icon" sizes="180x180" href="GRfavicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="GRfavicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="GRfavicon_io/favicon-16x16.png">
-    <link rel="manifest" href="GRfavicon_io/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="GRfavicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="GRfavicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="GRfavicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="GRfavicon_io/site.webmanifest" />
     <!-- reset default browser stylesheet -->
-    <link rel="stylesheet" href="css/modern-normalize.css">
+    <link rel="stylesheet" href="css/modern-normalize.css" />
     <!-- add google font and other resources here -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
 
     <!-- https://fonts.google.com/icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
     <!-- custom styles -->
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/nav.css">
-</head>
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+  </head>
 
-<body>
-
+  <body>
     <nav>
-        <div class="branding">
-             <!-- Logomaker: https://www.squarespace.com/ -->
-            <img class="logo" src="images/Gabrielle-Roose-logo.png" alt="logo" />
-            <p class="menu-button">
-              <span class="material-symbols-outlined">menu</span>
-            </p>
-          </div>
+      <div class="branding">
+        <!-- Logomaker: https://www.squarespace.com/ -->
+        <img class="logo" src="images/Gabrielle-Roose-logo.png" alt="logo" />
+        <p class="menu-button">
+          <span class="material-symbols-outlined">menu</span>
+        </p>
+      </div>
 
-
-        <div class="menu">
-            <div class="menu-box">
-            <a class="menu-item" href="index.html">About</a>
-            <a class="menu-item" href="education.html">Education</a>
-            <a class="menu-item" href="projects.html">Projects</a>
-            <a class="menu-item" href="certifications.html">Certifications</a>
-            <a class="menu-item" href="contact.html">Contact</a>
-            </div>
-          </div>
+      <div class="menu">
+        <div class="menu-box">
+          <a class="menu-item" href="index.html">About</a>
+          <a class="menu-item" href="education.html">Education</a>
+          <a class="menu-item" href="projects.html">Projects</a>
+          <a class="menu-item" href="certifications.html">Certifications</a>
+          <a class="menu-item" href="contact.html">Contact</a>
+        </div>
+      </div>
     </nav>
 
     <main>
-        <header>
-            <h1>What I'm <span class="header-split">Working On</span></h1>
+      <header>
+        <h1>What I'm <span class="header-split">Working On</span></h1>
+      </header>
 
-        </header>
+      <div class="work-toggle">
+        <button id="btn-dev" class="active" onclick="switchTab('dev')">
+          Dev work
+        </button>
+        <span class="slash">/</span>
+        <button id="btn-design" class="inactive" onclick="switchTab('design')">
+          Design work
+        </button>
+      </div>
 
-        <section class="container-fluid my-5 px-5">
+      <section class="container-fluid my-5 px-5">
+        <!-- Card from Bootstrap -->
 
-           <!-- Card from Bootstrap -->
-
-           <div class="row justify-content-center">
-
-                <div class="col-12 col-md-6 col-xl-4 mb-5">
-
-                    <a href="https://hobbybloom-production.up.railway.app/index.php" target="_blank" rel="noopener">
-
-                        <div class="card w-100 h-100 shadow-lg">
-                            <img class="card-img-top card-img-hb" src="images/HobbyBloomCover.png" alt="Image of HobbyBloom's Dashboard">
-                            <div class="card-body p-4">
-                            <h5 class="card-title">HobbyBloom</h5>
-                            <p class="card-text">HobbyBloom is an interactive interface that breaks down the entrance-barrier to start a new hobby. This platform offers an intuitive, user-centered designed to help college students discover, track, and share their personal development journey across a wide variety of fulfilling hobbies.</p>
-                            <div class="card-pills">
-                                <span class="pill pill-php">PHP</span>
-                                <span class="pill pill-mysql">MySQL</span>
-                                <span class="pill pill-twig">Twig</span>
-                                <span class="pill pill-html">HTML</span>
-                                <span class="pill pill-css">CSS</span>
-                                <span class="pill pill-javascript">JavaScript</span>
-                            </div>
-                            </div>
-                        </div>
-                    </a>
+        <div id="dev-cards" class="row justify-content-center">
+          <div class="col-12 col-md-6 col-xl-4 mb-5">
+            <a
+              href="https://hobbybloom-production.up.railway.app/index.php"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="card w-100 h-100 shadow-lg">
+                <img
+                  class="card-img-top card-img-hb"
+                  src="images/HobbyBloomCover.png"
+                  alt="Image of HobbyBloom's Dashboard"
+                />
+                <div class="card-body p-4">
+                  <h5 class="card-title">HobbyBloom</h5>
+                  <p class="card-text">
+                    HobbyBloom is an interactive interface that breaks down the
+                    entrance-barrier to start a new hobby. This platform offers
+                    an intuitive, user-centered designed to help college
+                    students discover, track, and share their personal
+                    development journey across a wide variety of fulfilling
+                    hobbies.
+                  </p>
+                  <div class="card-pills">
+                    <span class="pill pill-php">PHP</span>
+                    <span class="pill pill-mysql">MySQL</span>
+                    <span class="pill pill-twig">Twig</span>
+                    <span class="pill pill-html">HTML</span>
+                    <span class="pill pill-css">CSS</span>
+                    <span class="pill pill-javascript">JavaScript</span>
+                  </div>
                 </div>
+              </div>
+            </a>
+          </div>
 
-                <div class="col-12 col-md-6 col-xl-4 mb-5">
-
-                    <a href="http://restaurant-rover.surge.sh/" target="_blank" rel="noopener">
-
-                        <div class="card w-100 h-100 shadow-lg">
-                            <img class="card-img-top" src="images/restaurantrover.png" alt="Image of 'Restaurant Rover' an online global restaurant finder.">
-                            <div class="card-body p-4">
-                            <h5 class="card-title">Restaurant Rover</h5>
-                            <p class="card-text">Developed at Barcelona Code School, Restaurant Rover is a discovery interface designed to help users easily browse restaurants worldwide by cuisine and location.</p>
-                            <div class="card-pills">
-                                <span class="pill pill-react">React</span>
-                                <span class="pill pill-javascript">JavaScript</span>
-                                <span class="pill pill-vite">Vite</span>
-                                <span class="pill pill-html">HTML</span>
-                                <span class="pill pill-css">CSS</span>
-                            </div>
-                            </div>
-                        </div>
-                    </a>
+          <div class="col-12 col-md-6 col-xl-4 mb-5">
+            <a
+              href="http://restaurant-rover.surge.sh/"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="card w-100 h-100 shadow-lg">
+                <img
+                  class="card-img-top"
+                  src="images/restaurantrover.png"
+                  alt="Image of 'Restaurant Rover' an online global restaurant finder."
+                />
+                <div class="card-body p-4">
+                  <h5 class="card-title">Restaurant Rover</h5>
+                  <p class="card-text">
+                    Developed at Barcelona Code School, Restaurant Rover is a
+                    discovery interface designed to help users easily browse
+                    restaurants worldwide by cuisine and location.
+                  </p>
+                  <div class="card-pills">
+                    <span class="pill pill-react">React</span>
+                    <span class="pill pill-javascript">JavaScript</span>
+                    <span class="pill pill-vite">Vite</span>
+                    <span class="pill pill-html">HTML</span>
+                    <span class="pill pill-css">CSS</span>
+                  </div>
                 </div>
+              </div>
+            </a>
+          </div>
 
-                <div class="col-12 col-md-6 col-xl-4 mb-5">
-
-                    <!-- <a href="https://cgi.luddy.indiana.edu/~groose/capstone-individual/home.php" target="_blank" rel="noopener"> -->
-                    <a href="https://roose-vine.up.railway.app" target="_blank" rel="noopener">
-
-                        <div class="card w-100 h-100 shadow-lg" >
-                            <img class="card-img-top" src="images/capstone.jpg" alt="Image of 'Roose & Vine' an online restaurant database.">
-                            <div class="card-body p-4">
-                            <h5 class="card-title">Roose & Vine</h5>
-                            <p class="card-text">Created for INFO-I494, Roose&Vine is a database driven restaurant application designed to organize and display restaurant and menu information in a clear, user-friendly way.</p>
-                            <div class="card-pills">
-                                <span class="pill pill-php">PHP</span>
-                                <span class="pill pill-mysql">MySQL</span>
-                                <span class="pill pill-html">HTML</span>
-                                <span class="pill pill-css">CSS</span>
-                                <span class="pill pill-javascript">JavaScript</span>
-                            </div>
-                            </div>
-                        </div>
-                    </a>
+          <div class="col-12 col-md-6 col-xl-4 mb-5">
+            <!-- <a href="https://cgi.luddy.indiana.edu/~groose/capstone-individual/home.php" target="_blank" rel="noopener"> -->
+            <a
+              href="https://roose-vine.up.railway.app"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="card w-100 h-100 shadow-lg">
+                <img
+                  class="card-img-top"
+                  src="images/capstone.jpg"
+                  alt="Image of 'Roose & Vine' an online restaurant database."
+                />
+                <div class="card-body p-4">
+                  <h5 class="card-title">Roose & Vine</h5>
+                  <p class="card-text">
+                    Created for INFO-I494, Roose&Vine is a database driven
+                    restaurant application designed to organize and display
+                    restaurant and menu information in a clear, user-friendly
+                    way.
+                  </p>
+                  <div class="card-pills">
+                    <span class="pill pill-php">PHP</span>
+                    <span class="pill pill-mysql">MySQL</span>
+                    <span class="pill pill-html">HTML</span>
+                    <span class="pill pill-css">CSS</span>
+                    <span class="pill pill-javascript">JavaScript</span>
+                  </div>
                 </div>
+              </div>
+            </a>
+          </div>
 
-                <div class="col-12 col-md-6 col-xl-4 mb-5">
-
-                    <a href="https://cgi.luddy.indiana.edu/~groose/i211fa25/groose-recipe-app/" target="_blank" rel="noopener">
-
-                        <div class="card w-100 h-100 shadow-lg" >
-                            <div class="card-image-wrapper">
-                            <img class="card-img-top" src="images/211.jpg" alt="Image of 'Make This Now!' a personal recipe website. ">
-                            <div class="card-overlay">
-                                <span class="material-symbols-outlined">construction</span>
-                                <span>Project under construction</span>
-                            </div>
-                            <div class="card-body p-4">
-                            <h5 class="card-title">Make This Now!</h5>
-                            <p class="card-text">Developed within INFO-I211, "Make This Now!" is a personal recipe interface that allows users to browse, save, and rate recipes in an organized way featuring a database.</p>
-                            <div class="card-pills">
-                                <span class="pill pill-python">Python</span>
-                                <span class="pill pill-flask">Flask</span>
-                                <span class="pill pill-sql">SQL</span>
-                                <span class="pill pill-jinja">Jinja</span>
-                                <span class="pill pill-html">HTML</span>
-                                <span class="pill pill-css">CSS</span>
-                            </div>
-                            </div>
-                        </div>
+          <div class="col-12 col-md-6 col-xl-4 mb-5">
+            <a
+              href="https://cgi.luddy.indiana.edu/~groose/i211fa25/groose-recipe-app/"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="card w-100 h-100 shadow-lg">
+                <div class="card-image-wrapper">
+                  <img
+                    class="card-img-top"
+                    src="images/211.jpg"
+                    alt="Image of 'Make This Now!' a personal recipe website. "
+                  />
+                  <div class="card-overlay">
+                    <span class="material-symbols-outlined">construction</span>
+                    <span>Project under construction</span>
+                  </div>
+                  <div class="card-body p-4">
+                    <h5 class="card-title">Make This Now!</h5>
+                    <p class="card-text">
+                      Developed within INFO-I211, "Make This Now!" is a personal
+                      recipe interface that allows users to browse, save, and
+                      rate recipes in an organized way featuring a database.
+                    </p>
+                    <div class="card-pills">
+                      <span class="pill pill-python">Python</span>
+                      <span class="pill pill-flask">Flask</span>
+                      <span class="pill pill-sql">SQL</span>
+                      <span class="pill pill-jinja">Jinja</span>
+                      <span class="pill pill-html">HTML</span>
+                      <span class="pill pill-css">CSS</span>
                     </div>
-                    </a>
+                  </div>
                 </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div id="design-cards" class="row justify-content-center hidden">
+          <div class="col-12 col-md-6 col-xl-4 mb-5">
+            <a
+              href="https://www.figma.com/proto/JKvaRaqd4FURn1zfWpb11D/I300-Wireframe-Prototype?node-id=274-4583&t=d35CytWspDn74UWU-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=274%3A4583&show-proto-sidebar=1" target="_blank" rel="noopener"
+            >
+              <div class="card w-100 h-100 shadow-lg">
+                <img
+                  class="card-img-top"
+                  src="images/PathForward.png"
+                  alt="PathForward UX prototype"
+                />
+                <div class="card-body p-4">
+                  <h5 class="card-title">PathForward</h5>
+                  <p class="card-text">
+                    A solo UX design project from INFO-I300 — a mobile app
+                    concept to help students navigate academic planning. Went
+                    through a full round of user testing with 4 participants,
+                    iterating from version 3.0 to 4.0 based on real findings.
+                  </p>
+                  <div class="card-pills">
+                    <span class="pill pill-figma">Figma</span>
+                    <span class="pill pill-ux">UX Research</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-4 mb-5">
+
+            <a href="https://zion.luddy.indiana.edu/info-i300-fa24/sustainability-crimson-thumb#project" target="_blank"
+            rel="noopener">
 
 
+            <div class="card w-100 h-100 shadow-lg">
+              <img
+                class="card-img-top"
+                src="images/CrimsonThumbZion.png"
+                alt="Crimson Thumb UX prototype"
+              />
+              <div class="card-body p-4">
+                <h5 class="card-title">Crimson Thumb</h5>
+                <p class="card-text">
+                  A team UX design project from INFO-I300 — an AI-assisted
+                  recycling incentive system spanning a kiosk interface and
+                  companion mobile app. Built with a team of four, incorporating
+                  user research and iterative testing.
+                </p>
+                <div class="card-pills">
+                  <span class="pill pill-figma">Figma</span>
+                  <span class="pill pill-ux">UX Research</span>
+                </div>
+              </div>
             </div>
-
-        </section>
-
-
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer mt-auto py-3">
-        <div class="container">
-            <span class="text-muted"> Gabrielle Roose Copyright © 2025 - All Rights Reserved</span>
-        </div>
+      <div class="container">
+        <span class="text-muted">
+          Gabrielle Roose Copyright © 2025 - All Rights Reserved</span
+        >
+      </div>
     </footer>
-
-
- 
 
     <!-- JavaScript from 1360 Project 3 Fall 2025 -->
     <script>
-        // once the dropdown is toggled, add the class 'show' to each menu item to reveal it
-        // if clicked again, toggle this effect by removing the 'show' class
-        function toggleDropdown() {
-          document
-            .querySelectorAll(".menu-item")
-            .forEach((item) => item.classList.toggle("show"));
-        }
-        // On the element with the class menu-button, wait for it to be clicked, then toggle the dropdown
+      // once the dropdown is toggled, add the class 'show' to each menu item to reveal it
+      // if clicked again, toggle this effect by removing the 'show' class
+      function toggleDropdown() {
         document
-          .querySelector(".menu-button")
-          .addEventListener("click", toggleDropdown);
-      </script>
+          .querySelectorAll(".menu-item")
+          .forEach((item) => item.classList.toggle("show"));
+      }
+      // On the element with the class menu-button, wait for it to be clicked, then toggle the dropdown
+      document
+        .querySelector(".menu-button")
+        .addEventListener("click", toggleDropdown);
 
-  
-
-
-</body>
-
+      function switchTab(tab) {
+        const devCards = document.getElementById("dev-cards");
+        const designCards = document.getElementById("design-cards");
+        const btnDev = document.getElementById("btn-dev");
+        const btnDesign = document.getElementById("btn-design");
+        if (tab === "dev") {
+          devCards.classList.remove("hidden");
+          designCards.classList.add("hidden");
+          btnDev.className = "active";
+          btnDesign.className = "inactive";
+        } else {
+          devCards.classList.add("hidden");
+          designCards.classList.remove("hidden");
+          btnDev.className = "inactive";
+          btnDesign.className = "active";
+        }
+      }
+    </script>
+  </body>
 </html>
