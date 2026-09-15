@@ -193,6 +193,7 @@ a{
 .pill-sql {border-color: #F29111; color: #F29111; }
 .pill-jinja {border-color: #B41717; color: #B41717; }
 .pill-twig {border-color: #bacf29; color: #bacf29; }
+.pill-postgresql {border-color: #336791; color: #336791; }
 
 .pill-figma { border-color: #A259FF; color: #A259FF; }
 .pill-ux { border-color: #adb5bd; color: #adb5bd; }
