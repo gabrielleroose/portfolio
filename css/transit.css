@@ -1,0 +1,808 @@
+/* TRANSIT HOME PAGE
+   One route line runs down the page. Each section is a station on it.
+   The three case studies branch off the line in their own colors:
+   green = HobbyBloom, red = Crimson Thumb (and the site's accent), blue = PathForward.
+   Fonts: Archivo (headings, loaded wide and heavy) + Spline Sans (body). */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    TOKENS
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+:root {
+    --platform: #F6F8FC;     /* page background */
+    --paper: #FFFFFF;
+    --ink: #0E1B33;
+    --muted: #47536E;
+    --track: #D5DCEA;        /* unfilled part of the route line */
+
+    --green: #08794B;        /* HobbyBloom */
+    --crimson: #E4002B;      /* bright crimson: site accent and Crimson Thumb's route */
+    --taxi: #FFC72C;         /* NYC cab yellow: the end of the line */
+    --blue: #1F57F5;         /* PathForward */
+
+    --font-display: "Archivo", "Arial Black", sans-serif;
+    --font-body: "Spline Sans", system-ui, sans-serif;
+
+    --step--1: 0.875rem;
+    --step-0: 1.0625rem;
+    --step-1: 1.35rem;
+    --step-2: clamp(1.9rem, 3.2vw, 2.6rem);
+    --step-3: clamp(2.7rem, 7vw, 5.6rem);
+
+    --rail: 60px;            /* space left of content for the route line */
+    --rail-x: 20px;          /* center of the route line */
+    --rail-w: 10px;
+    --marker: 28px;
+    --marker-top: 76px;      /* marker offset from the top of each stop: lines up with the heading */
+}
+
+@media (width >= 700px) {
+    :root {
+        --rail: 104px;
+        --rail-x: 36px;
+        --marker: 32px;
+    }
+}
+
+@media (width >= 1000px) {
+    :root {
+        --rail: 150px;
+        --rail-x: 48px;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    BASE
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: clip;        /* the band and road run past the edges; never scroll sideways */
+}
+
+body {
+    margin: 0;
+    background: var(--platform);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-stretch: 112%;
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    max-width: 60ch;
+}
+
+.skip {
+    position: absolute;
+    left: -999px;
+    top: 0.5rem;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.6rem 1rem;
+    z-index: 10;
+}
+
+.skip:focus {
+    left: 0.5rem;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    TOP BAR
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding: 1.25rem 1.25rem 0;
+}
+
+.wordmark {
+    font-family: var(--font-display);
+    font-stretch: 112%;
+    font-weight: 800;
+    font-size: var(--step-1);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+
+.topbar__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+}
+
+.topbar__nav a {
+    text-decoration: none;
+    font-weight: 500;
+    padding-block: 0.25rem;
+    background: linear-gradient(var(--crimson), var(--crimson)) left bottom / 0 5px no-repeat;
+    transition: background-size 0.25s ease;
+}
+
+.topbar__nav a:hover,
+.topbar__nav a:focus-visible {
+    background-size: 100% 5px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    THE ROUTE (line + stations)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.route {
+    position: relative;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding: 0 1.25rem 0 calc(var(--rail) + 1.25rem);
+    --progress: 0;
+}
+
+.rail {
+    position: absolute;
+    top: 0;
+    bottom: var(--rail-end, 0px);
+    left: calc(var(--rail-x) + 1.25rem - var(--rail-w) / 2);
+    width: var(--rail-w);
+    background: var(--track);
+    border-radius: var(--rail-w);
+}
+
+.rail__fill {
+    height: calc(var(--progress) * 100%);
+    background: var(--ink);
+    border-radius: var(--rail-w);
+}
+
+.rail__train {
+    position: absolute;
+    left: 50%;
+    top: calc(var(--progress) * 100%);
+    width: 22px;
+    height: 22px;
+    margin: -11px 0 0 -11px;
+    background: var(--crimson);
+    border: 4px solid var(--ink);
+    border-radius: 50%;
+}
+
+.route.is-arriving .rail__fill,
+.route.is-arriving .rail__train {
+    transition: height 1s cubic-bezier(0.2, 0.8, 0.2, 1), top 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stop {
+    position: relative;
+    padding-block: 4.5rem;
+}
+
+.stop--hero {
+    --marker-top: 62px;
+    padding-top: 3.5rem;
+}
+
+@media (width >= 700px) {
+    .stop--hero {
+        --marker-top: 84px;
+    }
+}
+
+/* the station marker sits on the route line */
+.stop::before {
+    content: "";
+    position: absolute;
+    top: var(--marker-top);
+    left: calc(var(--rail-x) - var(--rail) - var(--marker) / 2);
+    width: var(--marker);
+    height: var(--marker);
+    background: var(--paper);
+    border: 6px solid var(--ink);
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.stop.is-reached::before {
+    background: var(--ink);
+}
+
+.stop__title {
+    font-size: var(--step-2);
+    margin-bottom: 0.75rem;
+}
+
+.stop__intro {
+    color: var(--muted);
+    margin-bottom: 3.25rem;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    HERO
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.hero {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.hero__title {
+    font-size: var(--step-3);
+    font-stretch: 125%;
+    margin-bottom: 1.5rem;
+    max-width: 11ch;
+}
+
+.hero__lede {
+    font-size: var(--step-1);
+    line-height: 1.5;
+    margin-bottom: 1.75rem;
+}
+
+.hero__facts {
+    display: grid;
+    gap: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 2.25rem;
+}
+
+.hero__photo {
+    width: min(100%, 340px);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 3px solid var(--ink);
+    box-shadow: 12px 12px 0 var(--crimson);
+}
+
+@media (width >= 1000px) {
+    .hero {
+        grid-template-columns: 1.5fr 0.8fr;
+        align-items: start;
+        gap: 4rem;
+    }
+}
+
+.button {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.85rem 1.5rem;
+    border: 3px solid var(--ink);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    background: var(--paper);
+    color: var(--ink);
+}
+
+.button--plain {
+    background: transparent;
+    color: var(--ink);
+}
+
+.button--plain:hover,
+.button--plain:focus-visible {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    CASE STUDIES (routes that branch off the line)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.routes {
+    display: grid;
+    gap: 5.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.route-card {
+    --route: var(--ink);
+    position: relative;
+    display: grid;
+    gap: 1.75rem;
+}
+
+.route-card--green { --route: var(--green); }
+.route-card--crimson { --route: var(--crimson); }
+.route-card--blue { --route: var(--blue); }
+
+/* the branch: leaves the main line, curves right, enters the route sign */
+.route-card::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: calc(var(--rail-x) - var(--rail) - 4px);
+    width: calc(var(--rail) - var(--rail-x) + 4px);
+    height: 66px;
+    border-left: 8px solid var(--route);
+    border-bottom: 8px solid var(--route);
+    border-bottom-left-radius: 30px;
+}
+
+.route-card__sign {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-self: start;
+    min-height: 44px;
+    padding: 0.35rem 1.25rem 0.35rem 0.35rem;
+    background: var(--route);
+    color: var(--paper);
+    font-size: var(--step-1);
+    border-radius: 999px;
+}
+
+.route-card__bullet {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    background: var(--paper);
+    color: var(--route);
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+.route-card__meta {
+    color: var(--muted);
+    font-size: var(--step--1);
+    margin-bottom: 0.6rem;
+}
+
+.route-card__summary {
+    font-size: var(--step-1);
+    line-height: 1.45;
+    margin-bottom: 1.25rem;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+}
+
+.chips li {
+    font-size: var(--step--1);
+    font-weight: 500;
+    padding: 0.15rem 0.7rem;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+}
+
+.route-card__link {
+    font-weight: 700;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    text-decoration-color: var(--route);
+}
+
+/* stretched link: the whole card is clickable */
+.route-card__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.route-card__media {
+    border: 3px solid var(--ink);
+    box-shadow: 10px 10px 0 var(--route);
+    aspect-ratio: 16 / 10;
+    object-fit: contain;     /* these are full screen boards: cropping cuts off their text */
+    background: var(--paper);
+    width: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.route-card:hover .route-card__media,
+.route-card:focus-within .route-card__media {
+    transform: translate(-4px, -4px);
+    box-shadow: 14px 14px 0 var(--route);
+}
+
+@media (width >= 1000px) {
+    .route-card {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3.5rem;
+        align-items: start;
+    }
+
+    .route-card__sign {
+        grid-column: 1 / -1;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    ALSO BUILT
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.built {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.built__item {
+    display: grid;
+    gap: 0.4rem 2rem;
+    padding-block: 1.4rem;
+    border-bottom: 3px solid var(--track);
+}
+
+.built__item:first-child {
+    border-top: 3px solid var(--track);
+}
+
+.built__name {
+    font-size: var(--step-1);
+}
+
+.built__name a {
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    text-decoration-color: var(--crimson);
+}
+
+.built__name a:hover {
+    background: var(--crimson);
+    color: var(--paper);
+}
+
+.built__desc {
+    color: var(--muted);
+}
+
+.built .chips {
+    margin: 0.25rem 0 0;
+}
+
+@media (width >= 1000px) {
+    .built__item {
+        grid-template-columns: 16rem 1fr 15rem;
+        align-items: center;
+    }
+
+    .built .chips {
+        margin: 0;
+        justify-content: flex-end;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    BACKGROUND (timetable)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.timetable {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+}
+
+.timetable__row {
+    display: grid;
+    gap: 0.15rem 2rem;
+    padding: 1.1rem 1.4rem;
+}
+
+.timetable__row + .timetable__row {
+    border-top: 3px solid var(--track);
+}
+
+.timetable__when {
+    font-family: var(--font-display);
+    font-stretch: 112%;
+    font-weight: 700;
+}
+
+.timetable__where {
+    font-weight: 600;
+}
+
+.timetable__what {
+    color: var(--muted);
+}
+
+@media (width >= 1000px) {
+    .timetable__row {
+        grid-template-columns: 11rem 16rem 1fr;
+        align-items: baseline;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    CERTIFICATIONS (a quiet stop: closed until someone wants the detail)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.stop--quiet {
+    padding-block: 2rem 3rem;
+    --marker-top: 34px;
+}
+
+.certs__summary {
+    display: inline-block;
+    color: var(--muted);
+    cursor: pointer;
+    list-style: none;
+    text-decoration: underline;
+    text-decoration-color: var(--crimson);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+}
+
+.certs__summary::-webkit-details-marker {
+    display: none;
+}
+
+.certs__summary:hover {
+    color: var(--ink);
+}
+
+.certs__summary::after {
+    content: " +";
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.certs[open] .certs__summary::after {
+    content: " \2212";
+}
+
+.certs .timetable {
+    margin-top: 1.5rem;
+}
+
+.certs .timetable__row {
+    padding-block: 0.7rem;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    END OF THE LINE (contact): New York at night, a cab drives in
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.stop--end {
+    --marker-top: -22px;     /* terminal sits on the top edge of the dark band */
+    margin-top: 3rem;
+    padding-top: 0;
+    padding-bottom: 5rem;
+}
+
+/* the dark band runs edge to edge, behind the content */
+.stop--end::after {
+    content: "";
+    position: absolute;
+    inset: 0 -100vw;
+    background: var(--ink);
+    z-index: -1;
+}
+
+/* the last station is a terminal: a square, in cab yellow */
+.stop--end::before,
+.stop--end.is-reached::before {
+    border-radius: 0;
+    background: var(--taxi);
+    width: calc(var(--marker) + 12px);
+    height: calc(var(--marker) + 12px);
+    left: calc(var(--rail-x) - var(--rail) - (var(--marker) + 12px) / 2);
+    border: 4px solid var(--ink);
+}
+
+.city {
+    padding-top: 3.5rem;
+}
+
+.city :focus-visible {
+    outline-color: var(--taxi);
+}
+
+.city__layout {
+    display: grid;
+    gap: 2.5rem;
+}
+
+@media (width >= 1000px) {
+    .city__layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+    }
+}
+
+.city__title {
+    color: var(--taxi);
+    font-size: var(--step-3);
+    font-stretch: 125%;
+    margin-bottom: 1.25rem;
+}
+
+.city__text {
+    color: var(--paper);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    display: grid;
+    gap: 0.35rem;
+    color: var(--paper);
+}
+
+.contact-form label {
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 0.9rem;
+    padding: 0.7rem 0.85rem;
+    background: var(--paper);
+    color: var(--ink);
+    border: 3px solid var(--paper);
+    border-radius: 0;
+    font: inherit;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .button {
+    justify-self: start;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+
+.contact-form .button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.contact-form__status {
+    min-height: 1.65em;
+    margin-top: 0.5rem;
+    color: var(--taxi);
+    font-weight: 600;
+}
+
+.city .button {
+    background: var(--taxi);
+    border-color: var(--taxi);
+    color: var(--ink);
+}
+
+.city .button:hover,
+.city .button:focus-visible {
+    background: var(--paper);
+    border-color: var(--paper);
+}
+
+.city .button--plain {
+    background: transparent;
+    border-color: var(--paper);
+    color: var(--paper);
+}
+
+.city .button--plain:hover,
+.city .button--plain:focus-visible {
+    background: var(--paper);
+    color: var(--ink);
+}
+
+/* the road: edge to edge, with a dashed center line */
+.road {
+    position: relative;
+    height: 7.5rem;
+}
+
+.road::before,
+.road::after {
+    content: "";
+    position: absolute;
+    inset-inline: -100vw;
+}
+
+.road::before {
+    top: 0;
+    bottom: 0;
+    background: #1A2B4D;
+}
+
+.road::after {
+    top: 62%;
+    height: 5px;
+    background: repeating-linear-gradient(90deg, var(--taxi) 0 40px, transparent 40px 84px);
+}
+
+.taxi {
+    position: absolute;
+    left: 0;
+    bottom: 0.6rem;
+    width: clamp(120px, 19vw, 210px);
+    transform: translateX(var(--taxi-x, -300px));
+    z-index: 1;
+}
+
+.taxi svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.taxi__wheel {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: rotate(var(--wheel, 0deg));
+}
+
+.footer {
+    max-width: 1240px;
+    margin-inline: auto;
+    padding: 1.75rem 1.25rem 2.5rem calc(var(--rail) + 1.25rem);
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    REDUCED MOTION
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
