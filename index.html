@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/transit.css" />
+    <link rel="stylesheet" href="css/sketch.css" />
   </head>
 
   <body>
@@ -25,313 +25,254 @@
     <header class="topbar">
       <a class="wordmark" href="#top">Gabrielle Roose</a>
       <nav class="topbar__nav" aria-label="Main">
+        <a href="#about">About</a>
         <a href="#work">Case studies</a>
-        <a href="#built">Also built</a>
-        <a href="#background">Background</a>
         <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <main class="route" id="top">
-      <div class="rail" aria-hidden="true">
-        <div class="rail__fill"></div>
-        <div class="rail__train"></div>
-      </div>
+    <main class="journey" id="top">
+      <!-- the route through the left margin, drawn by js/sketch.js -->
+      <svg class="trail" aria-hidden="true"></svg>
 
-      <!-- STATION: Bloomington (start) -->
-      <section class="stop stop--hero hero">
-        <div>
+      <!-- COLORADO -->
+      <section class="place place--hero" data-stop="Colorado" data-stop-offset="150">
+        <img class="sketch sketch--mountains" src="images/sketches/mountains.svg" alt="" aria-hidden="true" />
+
+        <div class="hero__text">
           <h1 class="hero__title">Product designer who codes.</h1>
           <p class="hero__lede">
             I'm an Informatics senior at Indiana University, graduating in
             December. I design interfaces, then build them.
           </p>
-          <div class="hero__facts">
-            <p>
-              I co-founded Thrive Solutions Club, which connects students with
-              small businesses and nonprofits for research-driven consulting.
-            </p>
-            <p>
-              I studied in Barcelona and finished a web and mobile development
-              certificate there.
-            </p>
-          </div>
-          <a class="button" href="#work">See the case studies</a>
         </div>
-        <img
-          class="hero__photo"
-          src="images/Gabrielle-Roose-Headshot-900.jpg"
-          alt="Headshot of Gabrielle Roose"
-        />
+
+        <div class="hero__photo">
+          <img
+            src="images/Gabrielle-Roose-Headshot-900.jpg"
+            alt="Headshot of Gabrielle Roose"
+          />
+        </div>
       </section>
 
-      <!-- STATION: case studies -->
-      <section class="stop" id="work" aria-labelledby="work-title">
-        <h2 class="stop__title" id="work-title">Case studies</h2>
-        <p class="stop__intro">
-          Three projects. Each one shows the problem, my role, and what changed
-          along the way.
-        </p>
+      <!-- ABOUT -->
+      <section class="place place--about" id="about" data-stop="About">
+        <h2 class="place__title">A little about me</h2>
+        <div class="about__text">
+          <p>
+            I grew up in Colorado and studied Informatics at Indiana
+            University, with a specialization in business and minors in
+            human-centered computing, web design, and marketing.
+          </p>
+          <p>
+            In Spring 2025 I studied abroad in Barcelona and finished a web and
+            mobile development certificate there. I like turning research into
+            interfaces people can use, then building them myself.
+          </p>
+          <p>After I graduate in December, I'm moving to New York.</p>
+        </div>
+      </section>
 
-        <ul class="routes">
-          <li class="route-card route-card--green">
-            <h3 class="route-card__sign">
-              <span class="route-card__bullet" aria-hidden="true">H</span>
-              HobbyBloom
-            </h3>
-            <div>
-              <p class="route-card__meta">
-                Year-long capstone (INFO-I494 and I495) with a team of 4. I led front-end and product direction.
-              </p>
-              <p class="route-card__summary">
-                A platform that makes starting a new hobby less intimidating for
-                college students: discover, track, and share your progress.
-              </p>
-              <ul class="chips" aria-label="Tools">
-                <li>PHP</li>
-                <li>MySQL</li>
-                <li>JavaScript</li>
-              </ul>
-              <a class="route-card__link" href="hobbybloom.html">Read the case study</a>
-            </div>
-            <img
-              class="route-card__media"
-              src="images/HobbyBloomCover.png"
-              alt="HobbyBloom dashboard showing a user's hobbies and progress"
-            />
+      <!-- CASE STUDIES: one chapter per project -->
+      <section class="chapter chapter--green" id="work" data-stop="HobbyBloom" data-intro>
+        <div class="place__bg place__bg--in" aria-hidden="true"></div>
+        <div class="chapter__copy">
+          <h2 class="chapter__name">HobbyBloom</h2>
+          <p class="chapter__line">Starting a new hobby shouldn't feel intimidating.</p>
+          <p class="chapter__meta">Capstone project, team of 4. Tested by 10+ classmates and friends.</p>
+          <a class="button" href="hobbybloom.html">Read the case study</a>
+        </div>
+        <div class="chapter__media">
+          <img
+            src="images/HobbyBloomCover.png"
+            alt="HobbyBloom dashboard showing a user's hobbies and progress"
+          />
+        </div>
+      </section>
+
+      <section class="chapter chapter--red chapter--flip" data-stop="Crimson Thumb">
+        <div class="place__bg place__bg--bcn" aria-hidden="true"></div>
+        <img class="sketch sketch--gate" src="images/sketches/gate.svg" alt="" aria-hidden="true" />
+        <div class="chapter__copy">
+          <h2 class="chapter__name">Crimson Thumb</h2>
+          <p class="chapter__line">Most students don't recycle. We made it pay.</p>
+          <p class="chapter__meta">INFO-I300 project, team of 4.</p>
+          <a class="button" href="crimson-thumb.html">Read the case study</a>
+        </div>
+        <div class="chapter__media">
+          <img
+            src="images/CrimsonThumbZion.png"
+            alt="Crimson Thumb mobile app screens for the recycling rewards system"
+          />
+        </div>
+      </section>
+
+      <section class="chapter chapter--blue" data-stop="PathForward" data-pan>
+        <div class="place__bg place__bg--in" aria-hidden="true"></div>
+        <div class="chapter__copy">
+          <h2 class="chapter__name">PathForward</h2>
+          <p class="chapter__line">Getting around a busy city shouldn't take five apps.</p>
+          <p class="chapter__meta">INFO-I300 solo project. User testing changed the map, navigation bar, and login.</p>
+          <a class="button" href="pathforward.html">Read the case study</a>
+        </div>
+        <div class="chapter__media">
+          <img
+            src="images/PathForward.png"
+            alt="PathForward app screens: login, map, route suggestions, and transit updates"
+          />
+        </div>
+      </section>
+
+      <!-- MORE PROJECTS -->
+      <section class="place place--more" id="more" data-stop="More projects">
+        <div class="place__bg place__bg--bcn" aria-hidden="true"></div>
+        <img class="sketch sketch--sagrada" src="images/sketches/sagrada.svg" alt="" aria-hidden="true" />
+        <h2 class="place__title">More projects</h2>
+        <ul class="cards">
+          <li class="card">
+            <h3 class="card__title">Roose &amp; Vine</h3>
+            <p class="card__summary">A database-driven app that organizes restaurant and menu information.</p>
+            <ul class="chips" aria-label="Tools"><li>PHP</li><li>MySQL</li></ul>
+            <a class="card__link" href="roose-vine.html">Read more</a>
           </li>
-
-          <li class="route-card route-card--crimson">
-            <h3 class="route-card__sign">
-              <span class="route-card__bullet" aria-hidden="true">C</span>
-              Crimson Thumb
-            </h3>
-            <div>
-              <p class="route-card__meta">INFO-I300 project with a team of 4.</p>
-              <p class="route-card__summary">
-                A smart recycling bin and companion app that pays IU students
-                back for recycling.
-              </p>
-              <ul class="chips" aria-label="Tools">
-                <li>Figma</li>
-                <li>UX research</li>
-              </ul>
-              <a class="route-card__link" href="crimson-thumb.html">Read the case study</a>
-            </div>
-            <img
-              class="route-card__media"
-              src="images/CrimsonThumbZion.png"
-              alt="Crimson Thumb mobile app screens for the recycling rewards system"
-            />
+          <li class="card">
+            <h3 class="card__title">Make This Now!</h3>
+            <p class="card__summary">A personal recipe app to browse, save, and rate recipes.</p>
+            <ul class="chips" aria-label="Tools"><li>Python</li><li>Flask</li></ul>
+            <a class="card__link" href="make-this-now.html">Read more</a>
           </li>
-
-          <li class="route-card route-card--blue">
-            <h3 class="route-card__sign">
-              <span class="route-card__bullet" aria-hidden="true">P</span>
-              PathForward
-            </h3>
-            <div>
-              <p class="route-card__meta">INFO-I300 solo project.</p>
-              <p class="route-card__summary">
-                A mobile app for getting around busy cities by scooter, bike,
-                ride-share, and transit. User testing changed the map, the
-                navigation bar, and the login screen.
-              </p>
-              <ul class="chips" aria-label="Tools">
-                <li>Figma</li>
-                <li>UX research</li>
-              </ul>
-              <a class="route-card__link" href="pathforward.html">Read the case study</a>
-            </div>
-            <img
-              class="route-card__media"
-              src="images/PathForward.png"
-              alt="PathForward app screens: login, map, route suggestions, and transit updates"
-            />
+          <li class="card">
+            <h3 class="card__title">Restaurant Rover</h3>
+            <p class="card__summary">Browse restaurants worldwide by cuisine and location. Built at Barcelona Code School.</p>
+            <ul class="chips" aria-label="Tools"><li>React</li><li>Vite</li></ul>
+            <a class="card__link" href="restaurant-rover.html">Read more</a>
           </li>
         </ul>
       </section>
 
-      <!-- STATION: also built -->
-      <section class="stop" id="built" aria-labelledby="built-title">
-        <h2 class="stop__title" id="built-title">Also built</h2>
-        <p class="stop__intro">Smaller projects, each with its own short page.</p>
+      <!-- CERTIFICATIONS -->
+      <section class="place place--certs" id="certifications" data-stop="Certifications">
+        <div class="place__bg place__bg--in" aria-hidden="true"></div>
+
+        <header class="place__head">
+          <div>
+            <h2 class="place__title">Certifications</h2>
+            <p class="place__text">Extra training beyond my degree.</p>
+          </div>
+        </header>
 
         <ul class="built">
           <li class="built__item">
-            <h3 class="built__name"><a href="restaurant-rover.html">Restaurant Rover</a></h3>
-            <p class="built__desc">Browse restaurants worldwide by cuisine and location. Built at Barcelona Code School.</p>
-            <ul class="chips" aria-label="Tools"><li>React</li><li>Vite</li></ul>
+            <h3 class="built__name">Web &amp; Mobile Development</h3>
+            <p class="built__desc">Certificate from Barcelona Code School.</p>
           </li>
-          <li class="built__item">
-            <h3 class="built__name"><a href="roose-vine.html">Roose &amp; Vine</a></h3>
-            <p class="built__desc">A database-driven app that organizes restaurant and menu information. Built in INFO-I494, the first semester of my capstone.</p>
-            <ul class="chips" aria-label="Tools"><li>PHP</li><li>MySQL</li></ul>
+        </ul>
+
+        <h3 class="place__sub">Short courses</h3>
+        <ul class="courses">
+          <li class="course course--adobe">
+            <h4 class="course__name">Product Pitches Using Generative AI</h4>
+            <p class="course__meta">Adobe · Mar 2024</p>
           </li>
-          <li class="built__item">
-            <h3 class="built__name"><a href="make-this-now.html">Make This Now!</a></h3>
-            <p class="built__desc">A personal recipe app to browse, save, and rate recipes.</p>
-            <ul class="chips" aria-label="Tools"><li>Python</li><li>Flask</li></ul>
+          <li class="course course--adobe">
+            <h4 class="course__name">Create Stunning Presentations</h4>
+            <p class="course__meta">Adobe · Jan 2024</p>
+          </li>
+          <li class="course course--adobe">
+            <h4 class="course__name">Generative AI for Creativity and Innovation</h4>
+            <p class="course__meta">Adobe · Dec 2023</p>
+          </li>
+          <li class="course course--linkedin">
+            <h4 class="course__name">Introduction to Career Skills in Software Development</h4>
+            <p class="course__meta">LinkedIn · Dec 2023</p>
+          </li>
+          <li class="course course--adobe">
+            <h4 class="course__name">Sports Marketing and Sports Media</h4>
+            <p class="course__meta">Adobe · Dec 2023</p>
+          </li>
+          <li class="course course--microsoft">
+            <h4 class="course__name">Career Essentials in Generative AI by Microsoft and LinkedIn</h4>
+            <p class="course__meta">Microsoft · Nov 2023</p>
+          </li>
+          <li class="course course--linkedin">
+            <h4 class="course__name">Ethics in the Age of Generative AI</h4>
+            <p class="course__meta">LinkedIn · Nov 2023</p>
+          </li>
+          <li class="course course--linkedin">
+            <h4 class="course__name">Generative AI: The Evolution of Thoughtful Online Search</h4>
+            <p class="course__meta">LinkedIn · Nov 2023</p>
+          </li>
+          <li class="course course--linkedin">
+            <h4 class="course__name">Introduction to Artificial Intelligence</h4>
+            <p class="course__meta">LinkedIn · Nov 2023</p>
+          </li>
+          <li class="course course--linkedin">
+            <h4 class="course__name">Microsoft 365 Copilot First Look</h4>
+            <p class="course__meta">LinkedIn · Nov 2023</p>
+          </li>
+          <li class="course course--linkedin">
+            <h4 class="course__name">Streamlining Your Work with Microsoft Bing Chat</h4>
+            <p class="course__meta">LinkedIn · Nov 2023</p>
+          </li>
+          <li class="course course--linkedin">
+            <h4 class="course__name">What Is Generative AI?</h4>
+            <p class="course__meta">LinkedIn · Nov 2023</p>
           </li>
         </ul>
       </section>
 
-      <!-- STATION: background -->
-      <section class="stop" id="background" aria-labelledby="background-title">
-        <h2 class="stop__title" id="background-title">Background</h2>
-        <p class="stop__intro">Where I studied and trained.</p>
+      <!-- NEW YORK -->
+      <section class="place place--ny" id="contact" data-stop="New York" data-stop-offset="0">
+        <div class="place__bg place__bg--ny" aria-hidden="true"></div>
 
-        <ul class="timetable">
-          <li class="timetable__row">
-            <span class="timetable__when">December 2026</span>
-            <span class="timetable__where">Indiana University</span>
-            <span class="timetable__what">
-              BS in Informatics, business specialization. Minors in Human-Centered
-              Computing, Web Design and Development, and Marketing.
-            </span>
-          </li>
-          <li class="timetable__row">
-            <span class="timetable__when">Spring 2025</span>
-            <span class="timetable__where">Barcelona, Spain</span>
-            <span class="timetable__what">Study abroad.</span>
-          </li>
-          <li class="timetable__row">
-            <span class="timetable__when">2025</span>
-            <span class="timetable__where">Barcelona Code School</span>
-            <span class="timetable__what">Web and mobile development certificate.</span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- STATION: certifications (a quiet stop: one line until someone opens it) -->
-      <section class="stop stop--quiet" id="certifications" aria-labelledby="certifications-title">
-        <h2 class="stop__title" id="certifications-title">Certifications</h2>
-        <details class="certs">
-          <summary class="certs__summary">12 certifications from Adobe, LinkedIn, and Microsoft</summary>
-          <ul class="timetable">
-            <li class="timetable__row">
-              <span class="timetable__when">Mar 2024</span>
-              <span class="timetable__where">Adobe</span>
-              <span class="timetable__what">Product Pitches Using Generative AI</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Jan 2024</span>
-              <span class="timetable__where">Adobe</span>
-              <span class="timetable__what">Create Stunning Presentations</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Dec 2023</span>
-              <span class="timetable__where">Adobe</span>
-              <span class="timetable__what">Generative AI for Creativity and Innovation</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Dec 2023</span>
-              <span class="timetable__where">LinkedIn</span>
-              <span class="timetable__what">Introduction to Career Skills in Software Development</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Dec 2023</span>
-              <span class="timetable__where">Adobe</span>
-              <span class="timetable__what">Sports Marketing and Sports Media</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Nov 2023</span>
-              <span class="timetable__where">Microsoft</span>
-              <span class="timetable__what">Career Essentials in Generative AI by Microsoft and LinkedIn</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Nov 2023</span>
-              <span class="timetable__where">LinkedIn</span>
-              <span class="timetable__what">Ethics in the Age of Generative AI</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Nov 2023</span>
-              <span class="timetable__where">LinkedIn</span>
-              <span class="timetable__what">Generative AI: The Evolution of Thoughtful Online Search</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Nov 2023</span>
-              <span class="timetable__where">LinkedIn</span>
-              <span class="timetable__what">Introduction to Artificial Intelligence</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Nov 2023</span>
-              <span class="timetable__where">LinkedIn</span>
-              <span class="timetable__what">Microsoft 365 Copilot First Look</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Nov 2023</span>
-              <span class="timetable__where">LinkedIn</span>
-              <span class="timetable__what">Streamlining Your Work with Microsoft Bing Chat</span>
-            </li>
-            <li class="timetable__row">
-              <span class="timetable__when">Nov 2023</span>
-              <span class="timetable__where">LinkedIn</span>
-              <span class="timetable__what">What Is Generative AI?</span>
-            </li>
-          </ul>
-        </details>
-      </section>
-
-      <!-- STATION: end of the line -->
-      <section class="stop stop--end" id="contact" aria-labelledby="contact-title">
         <div class="road" aria-hidden="true">
           <div class="taxi">
             <svg viewBox="0 0 220 96" role="presentation" focusable="false">
-              <!-- body -->
               <path d="M10 66 V52 q0-8 9-10 l26-6 q8-16 24-20 h44 q16 2 26 18 l34 8 q12 3 12 14 v10 z" fill="#FFC72C" stroke="#0E1B33" stroke-width="4" stroke-linejoin="round"/>
-              <!-- windows -->
               <path d="M62 40 q6-12 18-14 h26 v14 z" fill="#CFE3F7" stroke="#0E1B33" stroke-width="3" stroke-linejoin="round"/>
               <path d="M112 26 h8 q12 3 20 14 h-28 z" fill="#CFE3F7" stroke="#0E1B33" stroke-width="3" stroke-linejoin="round"/>
-              <!-- roof light -->
               <rect x="86" y="10" width="28" height="9" rx="2" fill="#FFFFFF" stroke="#0E1B33" stroke-width="3"/>
-              <!-- checker stripe -->
               <rect x="14" y="54" width="192" height="6" fill="#0E1B33"/>
-              <g fill="#FFC72C">
-                <rect x="20" y="54" width="6" height="3"/><rect x="32" y="54" width="6" height="3"/><rect x="44" y="54" width="6" height="3"/><rect x="56" y="54" width="6" height="3"/><rect x="68" y="54" width="6" height="3"/><rect x="80" y="54" width="6" height="3"/><rect x="92" y="54" width="6" height="3"/><rect x="104" y="54" width="6" height="3"/><rect x="116" y="54" width="6" height="3"/><rect x="128" y="54" width="6" height="3"/><rect x="140" y="54" width="6" height="3"/><rect x="152" y="54" width="6" height="3"/><rect x="164" y="54" width="6" height="3"/><rect x="176" y="54" width="6" height="3"/><rect x="188" y="54" width="6" height="3"/>
-                <rect x="26" y="57" width="6" height="3"/><rect x="38" y="57" width="6" height="3"/><rect x="50" y="57" width="6" height="3"/><rect x="62" y="57" width="6" height="3"/><rect x="74" y="57" width="6" height="3"/><rect x="86" y="57" width="6" height="3"/><rect x="98" y="57" width="6" height="3"/><rect x="110" y="57" width="6" height="3"/><rect x="122" y="57" width="6" height="3"/><rect x="134" y="57" width="6" height="3"/><rect x="146" y="57" width="6" height="3"/><rect x="158" y="57" width="6" height="3"/><rect x="170" y="57" width="6" height="3"/><rect x="182" y="57" width="6" height="3"/><rect x="194" y="57" width="6" height="3"/>
-              </g>
-              <!-- headlight -->
               <path d="M204 56 h8 v6 h-8 z" fill="#FFFFFF" stroke="#0E1B33" stroke-width="2"/>
-              <!-- wheels -->
               <g class="taxi__wheel"><circle cx="54" cy="76" r="16" fill="#0E1B33"/><circle cx="54" cy="76" r="7" fill="#D5DCEA"/><path d="M47 76 h14 M54 69 v14" stroke="#0E1B33" stroke-width="3"/></g>
               <g class="taxi__wheel"><circle cx="166" cy="76" r="16" fill="#0E1B33"/><circle cx="166" cy="76" r="7" fill="#D5DCEA"/><path d="M159 76 h14 M166 69 v14" stroke="#0E1B33" stroke-width="3"/></g>
             </svg>
           </div>
         </div>
+
         <div class="city">
-          <h2 class="city__title" id="contact-title">I'm moving to New&nbsp;York.</h2>
-          <div class="city__layout">
-            <div>
-              <p class="city__text">
-                I'm looking for entry-level product design and design engineering
-                roles in the city. If you're hiring, or you want to compare notes on
-                design, I'd like to hear from you.
-              </p>
+          <div class="city__text">
+            <h2 class="city__title">I'm moving to New&nbsp;York.</h2>
+            <p class="city__lede">
+              I'm looking for entry-level product design and design engineering
+              roles in the city. If you're hiring, or you want to compare notes
+              on design, I'd like to hear from you.
+            </p>
+            <div class="city__actions">
               <a class="button button--plain" href="GabrielleRooseResume26.pdf">Download my resume</a>
             </div>
-
-            <form class="contact-form" action="https://formspree.io/f/xeoyddao" method="post">
-              <label for="name">Your name</label>
-              <input type="text" id="name" name="name" autocomplete="name" minlength="2" maxlength="50" required />
-
-              <label for="email">Your email</label>
-              <input type="email" id="email" name="email" autocomplete="email" maxlength="100" required />
-
-              <label for="message">Your message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-
-              <button class="button" type="submit">Send message</button>
-              <p class="contact-form__status" role="status"></p>
-            </form>
           </div>
+
+          <form class="contact-form" action="https://formspree.io/f/xeoyddao" method="post">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" autocomplete="name" minlength="2" maxlength="50" required />
+
+            <label for="email">Your email</label>
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="100" required />
+
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button class="button" type="submit">Send message</button>
+            <p class="contact-form__status" role="status"></p>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="footer">Gabrielle Roose © 2026</footer>
 
-    <script src="js/transit.js"></script>
+    <script src="js/sketch.js"></script>
   </body>
 </html>
