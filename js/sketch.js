@@ -34,6 +34,44 @@
   });
 })();
 
+// Certifications: picking an issuer in the orbit filters the short courses.
+(() => {
+  const orbit = document.querySelector(".orbit");
+  const courses = document.querySelector(".courses");
+  if (!orbit || !courses) return;
+  const buttons = [...orbit.querySelectorAll("[data-issuer]")];
+  const cards = [...courses.querySelectorAll(".course")];
+  const status = document.querySelector(".courses__status");
+  const names = { adobe: "Adobe", linkedin: "LinkedIn", microsoft: "Microsoft" };
+
+  function show(issuer) {
+    let count = 0;
+    cards.forEach((card) => {
+      card.hidden = issuer !== "all" && card.dataset.issuer !== issuer;
+      if (!card.hidden) count++;
+    });
+    buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.issuer === issuer)));
+    orbit.classList.toggle("is-filtered", issuer !== "all");
+    status.textContent =
+      issuer === "all"
+        ? `Showing all ${count} courses. Pick a logo to filter.`
+        : `Showing ${count} ${names[issuer]} course${count === 1 ? "" : "s"}.`;
+
+    // replay the entrance for the cards that are showing
+    courses.classList.remove("is-filtering");
+    void courses.offsetWidth;
+    courses.classList.add("is-filtering");
+  }
+
+  buttons.forEach((b) =>
+    b.addEventListener("click", () => {
+      // picking the active issuer again goes back to all
+      const issuer = b.getAttribute("aria-pressed") === "true" ? "all" : b.dataset.issuer;
+      show(issuer);
+    })
+  );
+})();
+
 (() => {
   const journey = document.querySelector(".journey");
   const svg = journey && journey.querySelector(".trail");

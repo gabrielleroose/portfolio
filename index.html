@@ -43,8 +43,7 @@
         <div class="hero__text">
           <h1 class="hero__title">Product designer who codes.</h1>
           <p class="hero__lede">
-            I'm an Informatics senior at Indiana University, graduating in
-            December. I design interfaces, then build them.
+            I design interfaces, then build them.
           </p>
         </div>
 
@@ -70,7 +69,30 @@
             mobile development certificate there. I like turning research into
             interfaces people can use, then building them myself.
           </p>
-          <p>After I graduate in December, I'm moving to New York.</p>
+          <!-- <p>After I graduate in December, I'm moving to New York.</p> -->
+        </div>
+
+        <!-- education: a short stretch of route, Barcelona to Bloomington -->
+        <div class="schooling">
+          <h3 class="place__sub">Education</h3>
+          <ol class="timeline">
+            <li class="timeline__stop">
+              <p class="timeline__when">Spring 2025</p>
+              <h4 class="timeline__where">Barcelona Code School</h4>
+              <p class="timeline__place">Study abroad in Barcelona, Spain</p>
+              <p class="timeline__what">Web &amp; Mobile Development certificate from a 360-hour, full-stack immersive program.</p>
+            </li>
+            <li class="timeline__stop timeline__stop--end">
+              <p class="timeline__when">May 2026</p>
+              <h4 class="timeline__where">Indiana University</h4>
+              <p class="timeline__place">Luddy School of Informatics, Computing, and Engineering</p>
+              <ul class="timeline__facts">
+                <li><strong>B.S. in Informatics</strong>, business specialization</li>
+                <li><strong>Minors:</strong> Human-Centered Computing, Web Design and Development, Marketing</li>
+                <li><strong>Dean's List:</strong> Fall 2022, Fall 2025</li>
+              </ul>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -160,62 +182,84 @@
             <h2 class="place__title">Certifications</h2>
             <p class="place__text">Extra training beyond my degree.</p>
           </div>
+
+          <!-- the issuers orbit a dashed track; picking one filters the short courses below -->
+          <div class="orbit" role="group" aria-label="Filter short courses by issuer">
+            <button class="orbit__all" type="button" data-issuer="all" aria-pressed="true">
+              <strong>12</strong> short courses
+            </button>
+            <ul class="orbit__ring">
+              <li class="orbit__item" style="--a: 0deg">
+                <button class="orbit__logo" type="button" data-issuer="adobe" aria-pressed="false" aria-label="Show Adobe courses (4)">
+                  <img src="images/adobe.jpg" alt="" width="100" height="100" />
+                  <span class="orbit__count" aria-hidden="true">4</span>
+                </button>
+              </li>
+              <li class="orbit__item" style="--a: 120deg">
+                <button class="orbit__logo" type="button" data-issuer="linkedin" aria-pressed="false" aria-label="Show LinkedIn courses (7)">
+                  <img src="images/linkedin_logo.jpg" alt="" width="100" height="100" />
+                  <span class="orbit__count" aria-hidden="true">7</span>
+                </button>
+              </li>
+              <li class="orbit__item" style="--a: 240deg">
+                <button class="orbit__logo" type="button" data-issuer="microsoft" aria-pressed="false" aria-label="Show Microsoft courses (1)">
+                  <img src="images/microsoft_logo.jpg" alt="" width="100" height="100" />
+                  <span class="orbit__count" aria-hidden="true">1</span>
+                </button>
+              </li>
+            </ul>
+          </div>
         </header>
 
-        <ul class="built">
-          <li class="built__item">
-            <h3 class="built__name">Web &amp; Mobile Development</h3>
-            <p class="built__desc">Certificate from Barcelona Code School.</p>
-          </li>
-        </ul>
 
         <h3 class="place__sub">Short courses</h3>
+        <p class="courses__status" role="status">Showing all 12 courses. Pick a logo to filter.</p>
         <ul class="courses">
-          <li class="course course--adobe">
+          <li class="course course--adobe" data-issuer="adobe">
             <h4 class="course__name">Product Pitches Using Generative AI</h4>
             <p class="course__meta">Adobe · Mar 2024</p>
           </li>
-          <li class="course course--adobe">
+          <li class="course course--adobe" data-issuer="adobe">
             <h4 class="course__name">Create Stunning Presentations</h4>
             <p class="course__meta">Adobe · Jan 2024</p>
           </li>
-          <li class="course course--adobe">
+          <li class="course course--adobe" data-issuer="adobe">
             <h4 class="course__name">Generative AI for Creativity and Innovation</h4>
             <p class="course__meta">Adobe · Dec 2023</p>
           </li>
-          <li class="course course--linkedin">
+          <li class="course course--linkedin" data-issuer="linkedin">
             <h4 class="course__name">Introduction to Career Skills in Software Development</h4>
             <p class="course__meta">LinkedIn · Dec 2023</p>
           </li>
-          <li class="course course--adobe">
+          <li class="course course--adobe" data-issuer="adobe">
             <h4 class="course__name">Sports Marketing and Sports Media</h4>
             <p class="course__meta">Adobe · Dec 2023</p>
           </li>
-          <li class="course course--microsoft">
+          <li class="course course--microsoft" data-issuer="microsoft">
             <h4 class="course__name">Career Essentials in Generative AI by Microsoft and LinkedIn</h4>
             <p class="course__meta">Microsoft · Nov 2023</p>
           </li>
-          <li class="course course--linkedin">
+          <li class="course course--linkedin" data-issuer="linkedin">
             <h4 class="course__name">Ethics in the Age of Generative AI</h4>
             <p class="course__meta">LinkedIn · Nov 2023</p>
           </li>
-          <li class="course course--linkedin">
+          <li class="course course--linkedin" data-issuer="linkedin">
             <h4 class="course__name">Generative AI: The Evolution of Thoughtful Online Search</h4>
             <p class="course__meta">LinkedIn · Nov 2023</p>
           </li>
-          <li class="course course--linkedin">
+          <li class="course course--linkedin" data-issuer="linkedin">
             <h4 class="course__name">Introduction to Artificial Intelligence</h4>
             <p class="course__meta">LinkedIn · Nov 2023</p>
           </li>
-          <li class="course course--linkedin">
+          <li class="course course--linkedin" data-issuer="linkedin">
             <h4 class="course__name">Microsoft 365 Copilot First Look</h4>
             <p class="course__meta">LinkedIn · Nov 2023</p>
           </li>
-          <li class="course course--linkedin">
+          <li class="course course--linkedin" data-issuer="linkedin">
             <h4 class="course__name">Streamlining Your Work with Microsoft Bing Chat</h4>
             <p class="course__meta">LinkedIn · Nov 2023</p>
           </li>
-          <li class="course course--linkedin">
+          <li class="course course--linkedin" data-issuer="linkedin">
             <h4 class="course__name">What Is Generative AI?</h4>
             <p class="course__meta">LinkedIn · Nov 2023</p>
           </li>
