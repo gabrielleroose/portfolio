@@ -1,0 +1,365 @@
+/* CASE STUDY PAGES
+   Loaded after sketch.css, so they share its tokens, fonts, top bar and buttons.
+   Each page sets its project color on .case (green, red or blue).
+   The sections run down a route line, numbered like stations.
+   Dashed "To add" boxes mark content that still needs to be written. */
+
+.case {
+    --tone: var(--ink);
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 0 1.25rem 4rem;
+}
+
+.case--green { --tone: var(--green); }
+.case--red { --tone: var(--red); }
+.case--blue { --tone: var(--blue); }
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    DRAFT NOTE (remove once every "To add" box is filled in)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.draft-note {
+    margin-top: 6rem;
+    padding: 0.75rem 1rem;
+    background: #FFF6D6;
+    border-left: 5px solid var(--taxi);
+    font-size: var(--step--1);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    HERO
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.case__hero {
+    display: grid;
+    gap: 2.5rem;
+    padding-top: 2rem;
+}
+
+.case__back {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.case__back:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--tone);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+}
+
+.case__eyebrow {
+    color: var(--tone);
+    font-family: var(--font-display);
+    font-size: var(--step--1);
+    font-weight: 700;
+    font-stretch: 112%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.case__title {
+    margin-top: 0.5rem;
+    font-size: var(--step-3);
+    font-stretch: 125%;
+}
+
+.case__lede {
+    max-width: 36rem;
+    margin-top: 1rem;
+    font-size: var(--step-1);
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.case__summary {
+    max-width: 40rem;
+    margin-top: 1rem;
+    color: var(--muted);
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+    gap: 1rem 2rem;
+    margin: 2rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 3px solid var(--tone);
+}
+
+.facts dt {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.facts dd {
+    margin: 0.2rem 0 0;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+/* a missing fact, waiting to be filled in */
+.facts__todo {
+    display: inline-block;
+    padding: 0.05rem 0.55rem;
+    color: var(--tone);
+    border: 2px dashed var(--tone);
+    border-radius: 999px;
+    font-size: var(--step--1);
+    font-weight: 600;
+}
+
+.case__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.case__cover {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    box-shadow: 12px 12px 0 var(--tone);
+}
+
+.case__cover img {
+    width: 100%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    AT A GLANCE (problem, solution, outcome: the part recruiters skim)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.glance {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 4.5rem;
+}
+
+.glance__card {
+    padding: 1.25rem 1.25rem 1.5rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--tone);
+}
+
+.glance__card h2 {
+    font-size: var(--step-1);
+    font-stretch: 118%;
+}
+
+.glance__card p {
+    margin-top: 0.6rem;
+    line-height: 1.55;
+}
+
+@media (width >= 800px) {
+    .glance {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    THE STEPS (numbered stations down a route line)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.steps {
+    position: relative;
+    margin-top: 3rem;
+    padding-left: 3.5rem;
+    counter-reset: step;
+}
+
+.steps::before {
+    content: "";
+    position: absolute;
+    top: 3.5rem;
+    bottom: 3.5rem;
+    left: calc(1.15rem - 1.5px);
+    width: 3px;
+    background: var(--line);
+}
+
+.step {
+    position: relative;
+    padding-block: 2.5rem;
+    counter-increment: step;
+}
+
+.step::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    top: 2.35rem;
+    left: -3.5rem;
+    display: grid;
+    place-items: center;
+    width: 2.3rem;
+    height: 2.3rem;
+    background: var(--paper);
+    border: 3px solid var(--tone);
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.step h2 {
+    font-size: var(--step-2);
+    font-stretch: 125%;
+}
+
+.step > p {
+    max-width: 44rem;
+    margin-top: 0.9rem;
+    line-height: 1.65;
+}
+
+.step__list {
+    display: grid;
+    gap: 0.6rem;
+    max-width: 44rem;
+    margin-top: 1rem;
+}
+
+.step__list li {
+    position: relative;
+    padding-left: 1.4rem;
+    line-height: 1.55;
+}
+
+.step__list li::before {
+    content: "";
+    position: absolute;
+    top: 0.55em;
+    left: 0;
+    width: 0.55rem;
+    height: 0.55rem;
+    background: var(--tone);
+    border-radius: 50%;
+}
+
+.step__figure {
+    max-width: 52rem;
+    margin: 1.5rem 0 0;
+}
+
+.step__figure img {
+    width: 100%;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    box-shadow: 10px 10px 0 var(--tone);
+}
+
+.step__figure figcaption {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    "TO ADD" BOXES (placeholders for content still to be written)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.todo {
+    max-width: 44rem;
+    margin-top: 1.25rem;
+    padding: 1.1rem 1.25rem 1.25rem;
+    background: var(--paper);
+    background: color-mix(in srgb, var(--tone) 5%, var(--paper));
+    border: 2px dashed var(--tone);
+    border-radius: 0.75rem;
+}
+
+.todo__label {
+    display: inline-block;
+    padding: 0.1rem 0.55rem;
+    background: var(--tone);
+    color: var(--paper);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.todo__title {
+    margin-top: 0.6rem;
+    font-weight: 700;
+}
+
+.todo ul {
+    margin-top: 0.4rem;
+    padding-left: 1.2rem;
+    list-style: disc;
+    color: var(--muted);
+}
+
+.todo li + li {
+    margin-top: 0.25rem;
+}
+
+.todo__media {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+.todo__media strong {
+    color: var(--ink);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    NEXT CASE STUDY
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.next {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 3px solid var(--line);
+}
+
+.next__label {
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+.next__link {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    font-weight: 800;
+    font-stretch: 125%;
+    text-decoration: none;
+}
+
+.next__link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 8px;
+}
+
+.next__link--green { text-decoration-color: var(--green); }
+.next__link--red { text-decoration-color: var(--red); }
+.next__link--blue { text-decoration-color: var(--blue); }
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    WIDER SCREENS
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+@media (width >= 1000px) {
+    .case__hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+        align-items: center;
+        gap: 4rem;
+    }
+}
