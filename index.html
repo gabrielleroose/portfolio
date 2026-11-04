@@ -105,11 +105,15 @@
           <p class="chapter__meta">Capstone project, team of 4. Tested by 10+ classmates and friends.</p>
           <a class="button" href="hobbybloom.html">Read the case study</a>
         </div>
-        <div class="chapter__media">
-          <img
-            src="images/HobbyBloomCover.png"
-            alt="HobbyBloom dashboard showing a user's hobbies and progress"
-          />
+        <!-- the screenshot sits on a laptop drawn in CSS -->
+        <div class="laptop">
+          <div class="chapter__media">
+            <img
+              src="images/HobbyBloomCover.png"
+              alt="HobbyBloom dashboard showing a user's hobbies and progress"
+            />
+          </div>
+          <div class="laptop__base" aria-hidden="true"></div>
         </div>
       </section>
 
@@ -122,15 +126,19 @@
           <p class="chapter__meta">INFO-I300 project, team of 4.</p>
           <a class="button" href="crimson-thumb.html">Read the case study</a>
         </div>
-        <div class="chapter__media">
-          <img
-            src="images/CrimsonThumbZion.png"
-            alt="Crimson Thumb mobile app screens for the recycling rewards system"
-          />
+        <!-- the screenshot sits on a laptop drawn in CSS -->
+        <div class="laptop">
+          <div class="chapter__media">
+            <img
+              src="images/CrimsonThumbZion.png"
+              alt="Crimson Thumb mobile app screens for the recycling rewards system"
+            />
+          </div>
+          <div class="laptop__base" aria-hidden="true"></div>
         </div>
       </section>
 
-      <section class="chapter chapter--blue" data-stop="PathForward" data-pan>
+      <section class="chapter chapter--blue" data-stop="PathForward">
         <div class="place__bg place__bg--in" aria-hidden="true"></div>
         <div class="chapter__copy">
           <h2 class="chapter__name">PathForward</h2>
@@ -138,11 +146,20 @@
           <p class="chapter__meta">INFO-I300 solo project. User testing changed the map, navigation bar, and login.</p>
           <a class="button" href="pathforward.html">Read the case study</a>
         </div>
-        <div class="chapter__media">
-          <img
-            src="images/PathForward.png"
-            alt="PathForward app screens: login, map, route suggestions, and transit updates"
-          />
+        <!-- PathForward is a phone app, so it gets phones: the map in front, the welcome screen behind -->
+        <div class="phones">
+          <div class="phone phone--back">
+            <img
+              src="images/PathForward-login.png"
+              alt="PathForward welcome screen with the tagline Sustainable Movement and Login and Create Account buttons"
+            />
+          </div>
+          <div class="phone phone--front">
+            <img
+              src="images/PathForward-map.png"
+              alt="PathForward map of lower Manhattan with bike, scooter and ride-share pins and a filter for each"
+            />
+          </div>
         </div>
       </section>
 
