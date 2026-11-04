@@ -27,7 +27,7 @@
       <a class="wordmark" href="index.html">Gabrielle Roose</a>
       <nav class="topbar__nav" aria-label="Main">
         <a href="index.html#about">About</a>
-        <a href="index.html#work">Case studies</a>
+        <a href="case-studies.html" aria-current="true">Case studies</a>
         <a href="index.html#certifications">Certifications</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -39,7 +39,7 @@
 
       <div class="case__hero">
         <div>
-          <a class="case__back" href="index.html#work">&larr; All case studies</a>
+          <a class="case__back" href="case-studies.html">&larr; All case studies</a>
           <p class="case__eyebrow">Case study 03 · UX design, solo project</p>
           <h1 class="case__title">PathForward</h1>
           <p class="case__lede">Getting around a busy city shouldn't take five apps.</p>
@@ -49,14 +49,21 @@
           <div><dt>Team</dt><dd>Solo</dd></div>
           <div><dt>Timeline</dt><dd class="facts__todo">Add timeline</dd></div>
           <div><dt>Course</dt><dd>INFO-I300</dd></div>
-          <div><dt>Tools</dt><dd>Figma, UX research</dd></div>
+          <div><dt>Tools</dt><dd><ul class="chips" aria-label="Tools"><li data-tool="figma">Figma</li><li data-tool="ux"> UX research</li></ul></dd></div>
           </dl>
           <div class="case__links">
           <a class="button" href="https://www.figma.com/proto/JKvaRaqd4FURn1zfWpb11D/I300-Wireframe-Prototype?node-id=274-4583&amp;t=d35CytWspDn74UWU-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=274%3A4583&amp;show-proto-sidebar=1" target="_blank" rel="noopener">View the prototype</a>
           </div>
         </div>
-        <div class="case__cover">
-          <img src="images/PathForward.png" alt="PathForward app screens: login, map, route suggestions and transit updates" />
+        <div class="case__device">
+          <div class="phones">
+            <div class="phone phone--back">
+              <img src="images/PathForward-login.png" alt="PathForward welcome screen with the tagline Sustainable Movement and Login and Create Account buttons" />
+            </div>
+            <div class="phone phone--front">
+              <img src="images/PathForward-map.png" alt="PathForward map of lower Manhattan with bike, scooter and ride-share pins and a filter for each" />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -178,9 +185,16 @@
         </section>
       </div>
 
-      <nav class="next" aria-label="Next case study">
-        <span class="next__label">Next case study</span>
-        <a class="next__link next__link--green" href="hobbybloom.html">HobbyBloom &rarr;</a>
+      <nav class="pager" aria-label="More case studies">
+        <a class="pager__link pager__link--prev tone--red" href="crimson-thumb.html">
+          <span class="pager__label">&larr; Previous</span>
+          <span class="pager__name">Crimson Thumb</span>
+        </a>
+        <a class="pager__all" href="case-studies.html">All case studies</a>
+        <a class="pager__link pager__link--next tone--plum" href="roose-vine.html">
+          <span class="pager__label">Next &rarr;</span>
+          <span class="pager__name">Roose &amp; Vine</span>
+        </a>
       </nav>
     </main>
 

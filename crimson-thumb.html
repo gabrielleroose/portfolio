@@ -27,7 +27,7 @@
       <a class="wordmark" href="index.html">Gabrielle Roose</a>
       <nav class="topbar__nav" aria-label="Main">
         <a href="index.html#about">About</a>
-        <a href="index.html#work">Case studies</a>
+        <a href="case-studies.html" aria-current="true">Case studies</a>
         <a href="index.html#certifications">Certifications</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -39,24 +39,29 @@
 
       <div class="case__hero">
         <div>
-          <a class="case__back" href="index.html#work">&larr; All case studies</a>
+          <a class="case__back" href="case-studies.html">&larr; All case studies</a>
           <p class="case__eyebrow">Case study 02 · UX design, team project</p>
           <h1 class="case__title">Crimson Thumb</h1>
           <p class="case__lede">Most students don't recycle. We made it pay.</p>
           <p class="case__summary">Crimson Thumb is an AI-assisted recycling incentive system for Indiana University, spanning a smart bin with a kiosk interface and a companion mobile app.</p>
           <dl class="facts">
-          <div><dt>Role</dt><dd class="facts__todo">Add role</dd></div>
+          <div><dt>Role</dt><dd>Team lead: UX design and prototyping</dd></div>
           <div><dt>Team</dt><dd>4 students (Group 9)</dd></div>
-          <div><dt>Timeline</dt><dd>Fall 2024</dd></div>
-          <div><dt>Course</dt><dd>INFO-I300</dd></div>
-          <div><dt>Tools</dt><dd>Figma, UX research</dd></div>
+          <div><dt>Timeline</dt><dd>September – December 2024</dd></div>
+          <div><dt>Course</dt><dd>INFO-I300: Human-Computer Interaction Design</dd></div>
+          <div><dt>Tools</dt><dd><ul class="chips" aria-label="Tools"><li data-tool="figma">Figma</li><li data-tool="ux"> UX research</li></ul></dd></div>
           </dl>
           <div class="case__links">
           <a class="button" href="https://zion.luddy.indiana.edu/info-i300-fa24/sustainability-crimson-thumb#project" target="_blank" rel="noopener">View the project page</a>
           </div>
         </div>
-        <div class="case__cover">
-          <img src="images/CrimsonThumbZion.png" alt="Crimson Thumb project page with mobile app screens for the recycling rewards system" />
+        <div class="case__device">
+          <div class="laptop">
+            <div class="chapter__media">
+              <img src="images/CrimsonThumbZion.png" alt="Crimson Thumb project page with mobile app screens for the recycling rewards system" />
+            </div>
+            <div class="laptop__base" aria-hidden="true"></div>
+          </div>
         </div>
       </div>
 
@@ -94,14 +99,18 @@
         </section>
         <section class="step">
           <h2>My role and the team</h2>
-          <p>Crimson Thumb was a team project for INFO-I300 in Fall 2024, designed by a group of four.</p>
+          <p>Crimson Thumb was a team project for INFO-I300 in Fall 2024. I led our team of four on
+          UX design and prototyping, turning user research and iterative testing into one
+          experience across two screens. I built a consistent design system in Figma that carries
+          across both the kiosk interface and the companion mobile app.</p>
           <!-- TODO: What you personally did -->
           <aside class="todo">
             <span class="todo__label">To add</span>
             <p class="todo__title">What you personally did</p>
             <ul>
-              <li>Which parts you owned: research, the kiosk, the app, testing, the presentation</li>
+              <li>How you led the team: dividing the work, running critiques, keeping the two screens consistent</li>
               <li>A decision you drove, and why</li>
+              <li>What the design system covered (type, color, components) and how it kept the kiosk and app aligned</li>
             </ul>
           </aside>
         </section>
@@ -141,7 +150,12 @@
         <section class="step">
           <h2>The design</h2>
           <figure class="step__figure">
-            <img src="images/CrimsonThumbZion.png" alt="Crimson Thumb project page with the mobile app screens" />
+            <div class="laptop">
+              <div class="chapter__media">
+                <img src="images/CrimsonThumbZion.png" alt="Crimson Thumb project page with the mobile app screens" />
+              </div>
+              <div class="laptop__base" aria-hidden="true"></div>
+            </div>
             <figcaption>The Crimson Thumb project page, with the app screens: lock screen, home page, IU Mobile and Crimson Card.</figcaption>
           </figure>
           <!-- TODO: Walk through the key screens -->
@@ -196,9 +210,16 @@
         </section>
       </div>
 
-      <nav class="next" aria-label="Next case study">
-        <span class="next__label">Next case study</span>
-        <a class="next__link next__link--blue" href="pathforward.html">PathForward &rarr;</a>
+      <nav class="pager" aria-label="More case studies">
+        <a class="pager__link pager__link--prev tone--green" href="hobbybloom.html">
+          <span class="pager__label">&larr; Previous</span>
+          <span class="pager__name">HobbyBloom</span>
+        </a>
+        <a class="pager__all" href="case-studies.html">All case studies</a>
+        <a class="pager__link pager__link--next tone--blue" href="pathforward.html">
+          <span class="pager__label">Next &rarr;</span>
+          <span class="pager__name">PathForward</span>
+        </a>
       </nav>
     </main>
 

@@ -11,9 +11,13 @@
     padding: 0 1.25rem 4rem;
 }
 
-.case--green { --tone: var(--green); }
-.case--red { --tone: var(--red); }
-.case--blue { --tone: var(--blue); }
+/* one color per project; each passes contrast on the light background */
+.case--green, .tone--green { --tone: var(--green); }
+.case--red, .tone--red { --tone: var(--red); }
+.case--blue, .tone--blue { --tone: var(--blue); }
+.case--plum, .tone--plum { --tone: #8A2B5C; }      /* Roose & Vine: the wine */
+.case--orange, .tone--orange { --tone: #B4460B; }  /* Make This Now!: a warm kitchen orange */
+.case--teal, .tone--teal { --tone: #0F766E; }      /* Restaurant Rover */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
     DRAFT NOTE (remove once every "To add" box is filled in)
@@ -104,6 +108,10 @@
     line-height: 1.45;
 }
 
+.facts dd .chips {
+    margin: 0.35rem 0 0;
+}
+
 /* a missing fact, waiting to be filled in */
 .facts__todo {
     display: inline-block;
@@ -120,6 +128,19 @@
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-top: 2rem;
+}
+
+/* the hero image sits on a laptop (or phones for PathForward) */
+.case__device {
+    padding-block: 1rem;
+}
+
+/* PathForward's phones are taller than a laptop; on wide screens, start them lower
+   so they clear the big project title */
+@media (width >= 1000px) {
+    .case__device .phones {
+        margin-top: 6rem;
+    }
 }
 
 .case__cover {
@@ -249,7 +270,9 @@
     margin: 1.5rem 0 0;
 }
 
-.step__figure img {
+/* a plain image (like PathForward's board of screens) gets a frame;
+   images on a laptop are framed by the laptop instead */
+.step__figure > img {
     width: 100%;
     background: var(--paper);
     border: 3px solid var(--ink);
@@ -315,42 +338,81 @@
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
-    NEXT CASE STUDY
+    PAGER (previous case study, all case studies, next case study)
 * * * * * * * * * * * * * * * * * * * * * * * * */
 
-.next {
-    display: flex;
-    flex-wrap: wrap;
+.pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 2rem;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem 2rem;
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 3px solid var(--line);
 }
 
-.next__label {
-    color: var(--muted);
-    font-size: var(--step--1);
-}
-
-.next__link {
-    font-family: var(--font-display);
-    font-size: var(--step-2);
-    font-weight: 800;
-    font-stretch: 125%;
+.pager__link {
+    display: grid;
+    gap: 0.2rem;
     text-decoration: none;
 }
 
-.next__link:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 5px;
-    text-underline-offset: 8px;
+.pager__link--next {
+    text-align: right;
 }
 
-.next__link--green { text-decoration-color: var(--green); }
-.next__link--red { text-decoration-color: var(--red); }
-.next__link--blue { text-decoration-color: var(--blue); }
+.pager__label {
+    color: var(--muted);
+    font-size: var(--step--1);
+    font-weight: 600;
+}
+
+.pager__name {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 3.6vw, 1.35rem);   /* smaller on phones so long names fit */
+    font-weight: 800;
+    font-stretch: 118%;
+    line-height: 1.15;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 6px;
+    transition: text-decoration-color 0.2s ease;
+}
+
+.pager__link:hover .pager__name,
+.pager__link:focus-visible .pager__name {
+    text-decoration-color: var(--tone);
+}
+
+/* "All case studies" sits under the two links on phones, between them on wider screens */
+.pager__all {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid var(--ink);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pager__all:hover,
+.pager__all:focus-visible {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+@media (width >= 800px) {
+    .pager {
+        grid-template-columns: 1fr auto 1fr;
+    }
+
+    .pager__all {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
     WIDER SCREENS

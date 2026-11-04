@@ -27,7 +27,7 @@
       <a class="wordmark" href="index.html">Gabrielle Roose</a>
       <nav class="topbar__nav" aria-label="Main">
         <a href="index.html#about">About</a>
-        <a href="index.html#work">Case studies</a>
+        <a href="case-studies.html" aria-current="true">Case studies</a>
         <a href="index.html#certifications">Certifications</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -39,7 +39,7 @@
 
       <div class="case__hero">
         <div>
-          <a class="case__back" href="index.html#work">&larr; All case studies</a>
+          <a class="case__back" href="case-studies.html">&larr; All case studies</a>
           <p class="case__eyebrow">Case study 01 · Capstone</p>
           <h1 class="case__title">HobbyBloom</h1>
           <p class="case__lede">Starting a new hobby shouldn't feel intimidating.</p>
@@ -49,14 +49,19 @@
           <div><dt>Team</dt><dd>4 students</dd></div>
           <div><dt>Timeline</dt><dd>Fall 2025 – Spring 2026</dd></div>
           <div><dt>Course</dt><dd>INFO-I494 & INFO-I495 capstone</dd></div>
-          <div><dt>Tools</dt><dd>PHP, MySQL, Twig, JavaScript, HTML, CSS, Google Calendar API</dd></div>
+          <div><dt>Tools</dt><dd><ul class="chips" aria-label="Tools"><li data-tool="php">PHP</li><li data-tool="mysql"> MySQL</li><li data-tool="twig"> Twig</li><li data-tool="javascript"> JavaScript</li><li data-tool="html"> HTML</li><li data-tool="css"> CSS</li><li data-tool="google"> Google Calendar API</li></ul></dd></div>
           </dl>
           <div class="case__links">
           <a class="button" href="https://hobbybloom-production.up.railway.app/index.php" target="_blank" rel="noopener">Visit the live site</a>
           </div>
         </div>
-        <div class="case__cover">
-          <img src="images/HobbyBloomCover.png" alt="HobbyBloom dashboard showing a daily streak, upcoming schedule, recommended modules and circles" />
+        <div class="case__device">
+          <div class="laptop">
+            <div class="chapter__media">
+              <img src="images/HobbyBloomCover.png" alt="HobbyBloom dashboard showing a daily streak, upcoming schedule, recommended modules and circles" />
+            </div>
+            <div class="laptop__base" aria-hidden="true"></div>
+          </div>
         </div>
       </div>
 
@@ -149,7 +154,12 @@
             <li>Personalized recommendations</li>
           </ul>
           <figure class="step__figure">
-            <img src="images/HobbyBloomCover.png" alt="HobbyBloom dashboard" />
+            <div class="laptop">
+              <div class="chapter__media">
+                <img src="images/HobbyBloomCover.png" alt="HobbyBloom dashboard" />
+              </div>
+              <div class="laptop__base" aria-hidden="true"></div>
+            </div>
             <figcaption>The HobbyBloom dashboard: streak, schedule, recommended modules and circles.</figcaption>
           </figure>
           <!-- TODO: Walk through the key screens -->
@@ -220,9 +230,16 @@
         </section>
       </div>
 
-      <nav class="next" aria-label="Next case study">
-        <span class="next__label">Next case study</span>
-        <a class="next__link next__link--red" href="crimson-thumb.html">Crimson Thumb &rarr;</a>
+      <nav class="pager" aria-label="More case studies">
+        <a class="pager__link pager__link--prev tone--teal" href="restaurant-rover.html">
+          <span class="pager__label">&larr; Previous</span>
+          <span class="pager__name">Restaurant Rover</span>
+        </a>
+        <a class="pager__all" href="case-studies.html">All case studies</a>
+        <a class="pager__link pager__link--next tone--red" href="crimson-thumb.html">
+          <span class="pager__label">Next &rarr;</span>
+          <span class="pager__name">Crimson Thumb</span>
+        </a>
       </nav>
     </main>
 

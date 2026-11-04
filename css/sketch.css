@@ -202,14 +202,23 @@ a {
 }
 
 .topbar__nav a {
+    --nav-line: var(--red);
     padding-block: 0.25rem;
     text-decoration: none;
-    background: linear-gradient(var(--red), var(--red)) left bottom / 0 4px no-repeat;
+    background: linear-gradient(var(--nav-line), var(--nav-line)) left bottom / 0 4px no-repeat;
     transition: background-size 0.25s ease;
 }
 
+/* hovering another link previews it with a lighter red line */
 .topbar__nav a:hover,
 .topbar__nav a:focus-visible {
+    --nav-line: rgba(228, 0, 43, 0.35);
+    background-size: 100% 4px;
+}
+
+/* the section you're in keeps a solid red line, even while hovered */
+.topbar__nav a[aria-current] {
+    --nav-line: var(--red);
     background-size: 100% 4px;
 }
 
@@ -551,6 +560,49 @@ a {
     font-size: var(--step--1);
     font-weight: 600;
 }
+
+/* each tool keeps its own brand color: a dot, the border and a soft tint behind
+   the label, with the label itself in navy so every color stays readable */
+.chips li[data-tool] {
+    border-color: var(--tool);
+    background: var(--paper);
+    background: color-mix(in srgb, var(--tool) 14%, var(--paper));
+}
+
+.chips li[data-tool]::before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.4em;
+    background: var(--tool);
+    border-radius: 50%;
+    vertical-align: 0.05em;
+}
+
+[data-tool="php"] { --tool: #8892BF; }
+[data-tool="mysql"] { --tool: #00758F; }
+[data-tool="html"] { --tool: #E34F26; }
+[data-tool="css"] { --tool: #264DE4; }
+[data-tool="javascript"] { --tool: #F7DF1E; }
+[data-tool="react"] { --tool: #61DAFB; }
+[data-tool="vite"] { --tool: #BD34FE; }
+[data-tool="python"] { --tool: #FFD43B; }   /* the yellow half of the Python logo, so it stands apart from PostgreSQL's blue */
+
+/* Python's dot is split like its logo: blue snake top left, yellow snake bottom right */
+.chips li[data-tool="python"]::before {
+    background: linear-gradient(135deg, #3776AB 50%, #FFD43B 50%);
+}
+[data-tool="flask"] { --tool: #2D6A4F; }
+[data-tool="sql"] { --tool: #F29111; }
+[data-tool="jinja"] { --tool: #B41717; }
+[data-tool="twig"] { --tool: #BACF29; }
+[data-tool="postgresql"] { --tool: #336791; }
+[data-tool="figma"] { --tool: #A259FF; }
+[data-tool="ux"] { --tool: #8C959F; }
+[data-tool="google"] { --tool: #4285F4; }
+[data-tool="railway"] { --tool: #853BCE; }
+[data-tool="api"] { --tool: #0F9D8A; }
 
 @media (width >= 700px) {
     .cards {
