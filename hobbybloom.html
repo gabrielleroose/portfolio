@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Spline+Sans:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&display=swap"
       rel="stylesheet"
     />
 
@@ -34,18 +34,15 @@
     </header>
 
     <main class="case case--green">
-      <!-- DRAFT: delete this note once every "To add" box below is filled in -->
-      <p class="draft-note">Draft case study. Sections marked "To add" still need content.</p>
-
       <div class="case__hero">
         <div>
           <a class="case__back" href="case-studies.html">&larr; All case studies</a>
           <p class="case__eyebrow">Case study 01 · Capstone</p>
-          <h1 class="case__title">HobbyBloom</h1>
+          <h1 class="case__title case__title--hobbybloom">Hobby<span>Bloom</span></h1>
           <p class="case__lede">Starting a new hobby shouldn't feel intimidating.</p>
-          <p class="case__summary">HobbyBloom is a web platform that lowers the barrier to starting a new hobby. It helps college students discover, track and share their progress across a wide variety of hobbies.</p>
+          <p class="case__summary">HobbyBloom is a web platform that lowers the barrier to starting a new hobby. It helps people aged 18 to 25 find a hobby, learn the basics, and meet people who share it.</p>
           <dl class="facts">
-          <div><dt>Role</dt><dd>Front-end and product direction; owned the Dashboard and Activity features</dd></div>
+          <div><dt>Role</dt><dd>Design lead; led the Dashboard and Circles features</dd></div>
           <div><dt>Team</dt><dd>4 students</dd></div>
           <div><dt>Timeline</dt><dd>Fall 2025 – Spring 2026</dd></div>
           <div><dt>Course</dt><dd>INFO-I494 & INFO-I495 capstone</dd></div>
@@ -68,165 +65,292 @@
       <!-- AT A GLANCE: the part recruiters read first -->
       <div class="glance" aria-label="At a glance">
         <div class="glance__card">
-          <h2>Problem</h2>
-          <p>For college students, the hardest part of a new hobby is getting started.</p>
+          <h2><a href="#problem">Problem</a></h2>
+          <p>Young adults want to try new hobbies, but don't know where to start and have no one nearby to learn with.</p>
         </div>
         <div class="glance__card">
-          <h2>Solution</h2>
-          <p>A platform that guides students into a hobby, tracks their streaks and shares progress with friends.</p>
+          <h2><a href="#built">Solution</a></h2>
+          <p>A platform that guides people into a hobby, tracks their progress and connects them with Circles of people who share their hobby.</p>
         </div>
         <div class="glance__card">
-          <h2>Outcome</h2>
-          <p class="facts__todo">Add the result in one sentence</p>
+          <h2><a href="#outcome">Outcome</a></h2>
+          <p>All eight features shipped, tested in two rounds and presented at the 2026 Informatics Capstone.</p>
         </div>
       </div>
 
       <div class="steps" id="story">
-        <section class="step">
+        <section class="step" id="problem">
           <h2>The problem</h2>
-          <p>HobbyBloom started from a simple problem: starting a new hobby can feel intimidating,
-          and for college students the barrier to entry is often the hardest part. The goal was a
-          platform that helps students discover a hobby, track their progress and share it with friends.</p>
-          <!-- TODO: The problem in your words -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">The problem in your words</p>
-            <ul>
-              <li>Who exactly were you designing for?</li>
-              <li>What made starting a hobby hard for them?</li>
-              <li>How did you know? (research, surveys, your own experience)</li>
-            </ul>
-          </aside>
+          <p class="step__lede">Starting a hobby is hard when you don't know where to begin, or anyone who does it.</p>
+          <p>After high school, it's hard to step outside the bubble you grew up in, and trying
+          something new comes with a fear of being bad at it. We designed for people aged 18 to 25
+          who want to start a hobby but:</p>
+          <ul class="step__list">
+            <li><strong>don't know where to begin,</strong></li>
+            <li><strong>don't have anyone around them who does it,</strong> and</li>
+            <li><strong>can't picture where the hobby could take them.</strong></li>
+          </ul>
+          <p>YouTube can teach you to knit, but it can't introduce you to someone who knits.
+          HobbyBloom pairs guided learning with Circles: groups of people who share your hobby.</p>
         </section>
         <section class="step">
           <h2>My role and the team</h2>
-          <p>HobbyBloom was a two-semester capstone (INFO-I494 and INFO-I495) built by a team of
-          four. We split the product into features and each took ownership of several. I led
-          front-end and product direction, and I owned the Dashboard and Activity features.</p>
-          <!-- TODO: What you personally did -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">What you personally did</p>
-            <ul>
-              <li>Two or three decisions you made, and why</li>
-              <li>How the team worked together (sprints, stand-ups, reviews)</li>
-              <li>A disagreement or trade-off and how you resolved it</li>
-            </ul>
-          </aside>
+          <p class="step__lede">I led design for the whole product and spearheaded two features: the Dashboard and Circles.</p>
+          <ul class="team" aria-label="The team">
+            <li><strong>Gabrielle Roose (me)</strong><span>Design lead · Dashboard and Circles</span></li>
+            <li><strong>Jack Bruce</strong><span>Database architect · Activity feed and messaging</span></li>
+            <li><strong>Chris Martin</strong><span>Lead PHP developer · onboarding and recommendations</span></li>
+            <li><strong>Drew Bauman</strong><span>Modules, calendar and My Content</span></li>
+          </ul>
+          <ul class="step__list">
+            <li><strong>The Dashboard:</strong> gamified with streaks and badges, so opening the app
+            feels exciting and gives you a reason to come back.</li>
+            <li><strong>Circles:</strong> groups built around a hobby, where members chat, share
+            progress and plan events.</li>
+            <li><strong>Design across the product:</strong> I set the visual identity (sage, navy
+            and sky blue; Playfair Display and DM Sans) and ran user testing. When research said
+            something belonged on a teammate's page, I'd bring it to them or build it myself.</li>
+          </ul>
+          <p>We worked in 14 two-week sprints. Our hardest moment came hours before a live demo,
+          when a merge moved our main CSS file and the site's styling seemed to vanish. We fixed it
+          in time and made a rule: everything is finished before demo day.</p>
         </section>
         <section class="step">
           <h2>Research</h2>
-          <!-- TODO: Research -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Research</p>
-            <ul>
-              <li>What methods did you use? (interviews, surveys, competitive analysis, observation)</li>
-              <li>How many people, and who were they?</li>
-              <li>Your top 2 or 3 insights, each in one sentence</li>
-              <li>One real quote from a participant that captures the problem</li>
+          <p class="step__lede">A survey of 22 people and five interviews showed the interest is there, but the starting point isn't.</p>
+          <dl class="stats">
+            <div><dt>people surveyed, nearly all college students</dt><dd>22</dd></div>
+            <div><dt>wished they had more time for hobbies</dt><dd>13</dd></div>
+            <div><dt>named a new hobby they want to learn</dt><dd>18</dd></div>
+            <div><dt>already learn their hobbies online</dt><dd>17</dd></div>
+          </dl>
+
+          <div class="charts">
+            <figure class="chart">
+              <figcaption>
+                <p class="chart__title">Hours a week on hobbies now</p>
+                <p class="chart__note">Number of people, out of 22</p>
+              </figcaption>
+              <table class="bars" style="--max: 11">
+                <caption class="sr-only">Hours a week people spend on hobbies now</caption>
+                <tbody>
+                  <tr><th scope="row">0–1 hours</th><td><div class="bars__row" title="0–1 hours: 3 people"><span class="bars__bar" style="--v: 3"></span><span class="bars__value">3</span></div></td></tr>
+                  <tr><th scope="row">2–5 hours</th><td><div class="bars__row" title="2–5 hours: 11 people"><span class="bars__bar" style="--v: 11"></span><span class="bars__value">11</span></div></td></tr>
+                  <tr><th scope="row">6–10 hours</th><td><div class="bars__row" title="6–10 hours: 6 people"><span class="bars__bar" style="--v: 6"></span><span class="bars__value">6</span></div></td></tr>
+                  <tr><th scope="row">10+ hours</th><td><div class="bars__row" title="10+ hours: 2 people"><span class="bars__bar" style="--v: 2"></span><span class="bars__value">2</span></div></td></tr>
+                </tbody>
+              </table>
+            </figure>
+            <figure class="chart">
+              <figcaption>
+                <p class="chart__title">Hours a week they wish they had</p>
+                <p class="chart__note">Number of people, out of 22</p>
+              </figcaption>
+              <table class="bars" style="--max: 11">
+                <caption class="sr-only">Hours a week people wish they spent on hobbies</caption>
+                <tbody>
+                  <tr><th scope="row">0–1 hours</th><td><div class="bars__row" title="0–1 hours: 0 people"><span class="bars__bar" style="--v: 0"></span><span class="bars__value">0</span></div></td></tr>
+                  <tr><th scope="row">2–5 hours</th><td><div class="bars__row" title="2–5 hours: 6 people"><span class="bars__bar" style="--v: 6"></span><span class="bars__value">6</span></div></td></tr>
+                  <tr><th scope="row">6–10 hours</th><td><div class="bars__row" title="6–10 hours: 11 people"><span class="bars__bar" style="--v: 11"></span><span class="bars__value">11</span></div></td></tr>
+                  <tr><th scope="row">10+ hours</th><td><div class="bars__row" title="10+ hours: 5 people"><span class="bars__bar" style="--v: 5"></span><span class="bars__value">5</span></div></td></tr>
+                </tbody>
+              </table>
+            </figure>
+          </div>
+
+          <ul class="step__list">
+            <li><strong>People want more time for hobbies:</strong> most spend 2–5 hours a week but
+            want 6–10. Crocheting, sewing and cooking topped the list of hobbies to learn.</li>
+            <li><strong>Learning is online but scattered</strong> across Instagram, TikTok, YouTube
+            and Pinterest, with too many creators to choose from.</li>
+            <li><strong>Seeing others cuts both ways:</strong> it builds belonging, but comparing
+            yourself to people with more time makes you feel behind. So HobbyBloom celebrates your own
+            streaks and badges instead of ranking you.</li>
+          </ul>
+          <div class="quotes">
+            <blockquote>
+              <p>“Seeing other people participate in my hobby makes me feel a part of a group.”</p>
+              <cite>Survey respondent</cite>
+            </blockquote>
+            <blockquote>
+              <p>“Some people have more time than I do, and it makes me feel like I am not moving fast enough.”</p>
+              <cite>Survey respondent</cite>
+            </blockquote>
+          </div>
+
+          <h3>Personas</h3>
+          <figure class="step__figure">
+            <ul class="gallery gallery--personas">
+              <li><a href="images/hobbybloom/persona-derrick.jpg" target="_blank" rel="noopener"><img src="images/hobbybloom/persona-derrick.jpg" loading="lazy" width="1400" height="413" alt="Persona: Derrick Shay, 20, a college student taking guitar lessons who can't find well-ordered, free content to practice with between classes." /></a></li>
+              <li><a href="images/hobbybloom/persona-isaiah.jpg" target="_blank" rel="noopener"><img src="images/hobbybloom/persona-isaiah.jpg" loading="lazy" width="1400" height="419" alt="Persona: Isaiah Carpenter, 22, works full time in a small town and wants to get better at fishing, but has few sources of advice beyond his friends." /></a></li>
+              <li><a href="images/hobbybloom/persona-adoline.jpg" target="_blank" rel="noopener"><img src="images/hobbybloom/persona-adoline.jpg" loading="lazy" width="1400" height="420" alt="Persona: Adoline Webb, 23, an experienced botanist and part-time student who wants to share her knowledge but has few chances to connect with others in her hobby." /></a></li>
+              <li><a href="images/hobbybloom/persona-leonard.jpg" target="_blank" rel="noopener"><img src="images/hobbybloom/persona-leonard.jpg" loading="lazy" width="1400" height="420" alt="Persona: Leonard O'Hare, 37, a father looking for new hobbies for his 11-year-old son, who doesn't know where to start." /></a></li>
             </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> an affinity map, a persona, survey results or a competitor comparison</p>
-          </aside>
+            <figcaption>Four personas, from a college guitarist to a parent helping his son find a hobby. Select one to enlarge it.</figcaption>
+          </figure>
         </section>
         <section class="step">
           <h2>Ideas and iterations</h2>
-          <!-- TODO: How the design evolved -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">How the design evolved</p>
-            <ul>
-              <li>Early sketches or wireframes, and what changed from them</li>
-              <li>Two or three key decisions, the alternatives you considered and why you chose what you did</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> sketches, low-fidelity wireframes, before-and-after screens</p>
-          </aside>
-        </section>
-        <section class="step">
-          <h2>What we built</h2>
-          <ul class="step__list">
-            <li>Guided onboarding that helps students pick their interests</li>
-            <li>A personal dashboard (my feature) with a daily streak, an upcoming schedule and recommended modules</li>
-            <li>Learning modules with quick knowledge checks</li>
-            <li>Streaks and a calendar that syncs with Google Calendar</li>
-            <li>Circles: small groups for sharing progress with friends</li>
-            <li>An activity feed (my feature) and achievements</li>
-            <li>Personalized recommendations</li>
-          </ul>
-          <figure class="step__figure">
-            <div class="laptop">
-              <div class="chapter__media">
-                <img src="images/HobbyBloomCover.png" alt="HobbyBloom dashboard" />
+          <p class="step__lede">Wireframes mapped the journey from sign-up to Circles; three decisions shaped the final look.</p>
+          <figure class="step__figure carousel" data-carousel aria-roledescription="carousel" aria-label="Fall 2025 wireframes">
+            <div class="carousel__track" tabindex="0" aria-label="Wireframes. Use the left and right arrow keys to move between screens.">
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 8: Basic information" data-title="Basic information" data-caption="A few quick questions so suggestions fit you.">
+                <img src="images/hobbybloom/wireframe-01-basic-info.png" loading="lazy" width="492" height="1060" alt="Wireframe: Basic information, a short onboarding questionnaire." />
               </div>
-              <div class="laptop__base" aria-hidden="true"></div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 8: Pick your hobbies" data-title="Pick your hobbies" data-caption="Choose from a grid of hobbies to shape what you see.">
+                <img src="images/hobbybloom/wireframe-02-pick-hobbies.png" loading="lazy" width="492" height="1060" alt="Wireframe: Profile curation, choosing hobbies from a grid of options." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 8: Getting started" data-title="Getting started" data-caption="Modules and Circles suggested from your interests.">
+                <img src="images/hobbybloom/wireframe-03-getting-started.png" loading="lazy" width="360" height="778" alt="Wireframe: Getting started, modules and Circles suggested from your interests." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 8: Dashboard" data-title="Dashboard" data-caption="Your streak, progress, Circles and recommendations in one place.">
+                <img src="images/hobbybloom/wireframe-04-dashboard.png" loading="lazy" width="548" height="1186" alt="Wireframe: My dashboard with a streak and progress bar, a module to jump back into, your Circles and recommendations." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 8: A module" data-title="A module" data-caption="Step-by-step lessons with videos and quick questions.">
+                <img src="images/hobbybloom/wireframe-05-module.png" loading="lazy" width="492" height="1060" alt="Wireframe: A module step with a lesson video, next steps, the creator and questions." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="6 of 8: Circles" data-title="Circles" data-caption="Your groups, suggested Circles and a feed of posts.">
+                <img src="images/hobbybloom/wireframe-06-circles.png" loading="lazy" width="360" height="778" alt="Wireframe: Your Circles, suggested Circles and a feed of posts." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="7 of 8: Chat" data-title="Chat" data-caption="Talk with your Circles and other members.">
+                <img src="images/hobbybloom/wireframe-07-chat.png" loading="lazy" width="494" height="1064" alt="Wireframe: Chat, with Circles across the top and recent conversations." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="8 of 8: My activity" data-title="My activity" data-caption="Module progress, active days and completed modules.">
+                <img src="images/hobbybloom/wireframe-08-activity.png" loading="lazy" width="440" height="950" alt="Wireframe: My activity, with module progress, days active and completed modules." />
+              </div>
             </div>
-            <figcaption>The HobbyBloom dashboard: streak, schedule, recommended modules and circles.</figcaption>
+            <div class="carousel__controls">
+              <button class="carousel__button" type="button" data-prev aria-label="Previous screen">&larr;</button>
+              <div class="carousel__dots" role="group" aria-label="Choose a screen"></div>
+              <button class="carousel__button" type="button" data-next aria-label="Next screen">&rarr;</button>
+            </div>
+            <figcaption class="carousel__status" aria-live="polite">
+              <strong>1 of 8 · Basic information:</strong> A few quick questions so suggestions fit you.
+            </figcaption>
+            <p class="carousel__credit">Our fall 2025 Figma wireframes. I designed five of the eight.</p>
           </figure>
-          <!-- TODO: Walk through the key screens -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Walk through the key screens</p>
-            <ul>
-              <li>For two or three screens: what the user does there and the design choice behind it</li>
+
+          <div class="split">
+            <figure class="compare-figure">
+              <div class="compare" data-compare style="--pos: 50%">
+                <img class="compare__img" src="images/hobbybloom/dashboard-mobile.png" loading="lazy" width="780" height="1688" alt="The final HobbyBloom Dashboard on a phone, with a six-day streak and upcoming schedule." />
+                <img class="compare__img compare__img--before" src="images/hobbybloom/wireframe-04-dashboard.png" loading="lazy" width="548" height="1186" alt="The Dashboard wireframe, with a streak, progress bar, Circles and recommendations." />
+                <span class="compare__label compare__label--before" aria-hidden="true">Wireframe</span>
+                <span class="compare__label compare__label--after" aria-hidden="true">Final</span>
+                <span class="compare__handle" aria-hidden="true"></span>
+                <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Drag to compare the Dashboard wireframe with the final design" />
+              </div>
+              <figcaption>Drag to compare the Dashboard wireframe with the final design.</figcaption>
+            </figure>
+            <ul class="step__list">
+              <li><strong>A calm, consistent identity:</strong> the sage, navy and sky blue palette held
+              from the first wireframe to launch, so the site felt like one product.</li>
+              <li><strong>Glassmorphism:</strong> translucent, blurred cards over the sage page, light
+              enough for a hobby app. We tested its readability and raised the contrast after feedback.</li>
+              <li><strong>Circles as a grid, not a list:</strong> the first list felt flat and empty; a
+              grid shows more at once and makes each Circle feel like a place to visit.</li>
+              <li><strong>Your week, up front:</strong> the final Dashboard kept the wireframe's streak
+              at the top and added your upcoming schedule, pulled from the calendar.</li>
             </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> annotated screenshots or a short screen recording</p>
-          </aside>
+          </div>
+          <!-- TODO: add the version 3, 4 and 5 screenshots here once version 5 is finished -->
+        </section>
+        <section class="step" id="built">
+          <h2>What we built</h2>
+          <p class="step__lede">A web app where you pick hobbies, learn through modules, keep a streak and join Circles.</p>
+          <div class="duo">
+            <figure class="step__figure">
+              <div class="laptop">
+                <div class="chapter__media">
+                  <img src="images/HobbyBloomCover.png" loading="lazy" alt="The HobbyBloom dashboard with a daily streak, upcoming schedule, recommended modules and Circles." />
+                </div>
+                <div class="laptop__base" aria-hidden="true"></div>
+              </div>
+              <figcaption><strong>The Dashboard</strong> greets you by name with your streak, upcoming events, the module you're in the middle of and your Circles.</figcaption>
+            </figure>
+            <figure class="step__figure">
+              <div class="laptop">
+                <div class="chapter__media">
+                  <img src="images/hobbybloom/circles.png" loading="lazy" alt="The Circles hub: a search panel, your Circles for gardening, cooking, painting and hiking, and recent highlights from members." />
+                </div>
+                <div class="laptop__base" aria-hidden="true"></div>
+              </div>
+              <figcaption><strong>Circles</strong> shows the groups you've joined, each with its own emoji and color, next to what members have been sharing.</figcaption>
+            </figure>
+          </div>
+          <figure class="step__figure step__figure--narrow">
+            <div class="video">
+              <iframe src="https://www.youtube-nocookie.com/embed/_9bscILfW5Y" title="HobbyBloom demo walkthrough video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption>Our capstone demo walkthrough: onboarding, the Dashboard, modules and Circles.</figcaption>
+          </figure>
         </section>
         <section class="step">
           <h2>Building it</h2>
-          <p>HobbyBloom is a live web app built with PHP, MySQL and Twig, with JavaScript for
-          interactions, and it's deployed on Railway. The team worked in sprints, tracking each
-          feature as an epic.</p>
-          <!-- TODO: A technical challenge -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">A technical challenge</p>
-            <ul>
-              <li>One hard problem you solved in the code, and how</li>
-              <li>Where building it changed the design, or the design changed how you built it</li>
-            </ul>
-          </aside>
+          <p class="step__lede">Three challenges showed me how tightly design and code are linked.</p>
+          <ul class="step__list">
+            <li><strong>A design choice broke the back end.</strong> We added emojis to hobby names
+            <span style="white-space: nowrap">(“🪴 Gardening”)</span>, and the database could no longer match them to modules. Chris wrote a
+            regular expression to strip the emoji before each query.</li>
+            <li><strong>Styling a third-party calendar.</strong> FullCalendar brings its own
+            stylesheet, so matching our palette meant fighting CSS specificity. It's close, not perfect.</li>
+            <li><strong>Keeping it alive after graduation.</strong> I moved HobbyBloom from Luddy's
+            school server to Railway myself: rebuilt the database, fixed security issues and added a
+            read-only demo account so anyone can try it.</li>
+          </ul>
+          <p class="step__meta">Built with PHP, MySQL, Twig and JavaScript, plus Google sign-in, FullCalendar and the Google Calendar API.</p>
         </section>
         <section class="step">
           <h2>Testing</h2>
-          <p>We tested HobbyBloom with more than 10 classmates and friends.</p>
-          <!-- TODO: What testing showed -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">What testing showed</p>
-            <ul>
-              <li>What you asked testers to do</li>
-              <li>What confused them or broke</li>
-              <li>What you changed as a result</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> before-and-after screens for each change</p>
-          </aside>
+          <p class="step__lede">Two rounds with about 10 testers each turned confusion into concrete fixes.</p>
+          <p>Testers made their own accounts (16 people outside the team signed up), then either
+          followed set tasks with a feedback form or explored freely while thinking aloud.</p>
+          <table class="findings">
+            <caption class="sr-only">What testing showed, and what we changed</caption>
+            <thead>
+              <tr><th scope="col">What testing showed</th><th scope="col">What we changed</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">New users with no Circles saw an empty page.</th><td>Added a “Suggested for you” grid.</td></tr>
+              <tr><th scope="row">Selected hobbies were hard to spot during onboarding.</th><td>Made the selected state much more distinct.</td></tr>
+              <tr><th scope="row">Returning users scrolled to find their modules.</th><td>Added Completed and Favorited tabs.</td></tr>
+              <tr><th scope="row">The streak didn't stand out on the Dashboard.</th><td>Tightened the hierarchy so it reads first.</td></tr>
+              <tr><th scope="row">Some text was low contrast on glass cards.</th><td>Raised contrast across every page.</td></tr>
+            </tbody>
+          </table>
+          <p>A follow-up check confirmed it: people moved more confidently, and Circles no longer felt
+          like a dead end.</p>
         </section>
-        <section class="step">
+        <section class="step" id="outcome">
           <h2>Outcome</h2>
-          <!-- TODO: Outcome -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Outcome</p>
-            <ul>
-              <li>What happened in the end? Final presentation, grade, demo or launch</li>
-              <li>Any numbers: tasks completed, time saved, users, test results</li>
-              <li>Feedback from users, classmates, instructors or stakeholders</li>
+          <p class="step__lede">All eight features shipped, and HobbyBloom was one of 56 projects at the 2026 Informatics Capstone.</p>
+          <figure class="step__figure">
+            <ul class="gallery gallery--photos">
+              <li><img src="images/hobbybloom/capstone-fair-demo.jpg" loading="lazy" width="1600" height="898" alt="Gabrielle demoing HobbyBloom on a laptop at the capstone fair, in front of the Team 18 poster." /></li>
+              <li><img src="images/hobbybloom/capstone-fair-reaction.jpg" loading="lazy" width="1600" height="898" alt="Gabrielle and Kate Muehlhaus laughing while looking at HobbyBloom on a laptop." /></li>
             </ul>
-          </aside>
+            <figcaption>Presenting HobbyBloom at the capstone fair. Photos: Luddy School of Informatics, Computing, and Engineering.</figcaption>
+          </figure>
+          <p>At the fair, Kate Muehlhaus, an Informatics lecturer at Luddy, told me how proud she was
+          to see four years of courses come together in one project, and that she could see the effort
+          we'd put in. That meant a lot: she teaches several of the courses HobbyBloom was built on,
+          including INFO I308, where we learned databases with MySQL and PHP.</p>
+          <p>HobbyBloom is still live. What's left: pre-filled module editing, a module search bar
+          and a Google Calendar sync that works every time.</p>
         </section>
         <section class="step">
           <h2>Reflection</h2>
-          <!-- TODO: Reflection -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Reflection</p>
-            <ul>
-              <li>The biggest thing you learned (about users, design or yourself)</li>
-              <li>What you'd do differently with more time</li>
-              <li>What you'd build or test next</li>
-            </ul>
-          </aside>
+          <p class="step__lede">The product came together when the team did.</p>
+          <ul class="step__list">
+            <li><strong>Communicate more than you think you need to.</strong> Once we added a weekly
+            meeting and a shared to-do list, our pace roughly doubled.</li>
+            <li><strong>Finish before demo day.</strong> The missing-CSS scare made the day before
+            the real deadline.</li>
+            <li><strong>Build things that connect.</strong> HobbyBloom came alive when the hobby you
+            pick on day one fed your Dashboard, Circles and achievements.</li>
+          </ul>
+          <p><strong>Next:</strong> Circles that connect you with people nearby, learning paths that
+          adapt to your quiz results, and a version 5 redesign I'm working on now.</p>
         </section>
       </div>
 
@@ -244,5 +368,7 @@
     </main>
 
     <footer class="footer">Gabrielle Roose © 2026</footer>
+
+    <script src="js/case-study.js" defer></script>
   </body>
 </html>

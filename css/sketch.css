@@ -4,7 +4,7 @@
    - pencil sketches: Colorado mountains, an Indiana gateway, a small Sagrada Familia
    - a faint line-art background for each place (terrain, rolling land, coastline, street grid)
    - one bold moment at the end: a taxi arriving in New York
-   Fonts: Archivo (headings, wide and heavy) + Spline Sans (body). */
+   Fonts: Archivo (headings, wide and heavy) + DM Sans (body). */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
     TOKENS
@@ -24,7 +24,7 @@
     --asphalt: #1A2B4D;
 
     --font-display: "Archivo", "Arial Black", sans-serif;
-    --font-body: "Spline Sans", system-ui, sans-serif;
+    --font-body: "DM Sans", system-ui, sans-serif;
 
     --step--1: 0.875rem;
     --step-0: 1.0625rem;

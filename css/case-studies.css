@@ -1,14 +1,14 @@
-/* WORK PAGE
+/* CASE STUDIES PAGE
    Every case study on one page, as cards. Loaded after sketch.css (tokens, top bar,
    laptop and phone frames, chips) and case-study.css (project colors). */
 
-.work {
+.case-studies {
     max-width: 1180px;
     margin-inline: auto;
     padding: 7.5rem 1.25rem 5rem;
 }
 
-.work__eyebrow {
+.case-studies__eyebrow {
     color: var(--red);
     font-family: var(--font-display);
     font-size: var(--step--1);
@@ -18,13 +18,13 @@
     text-transform: uppercase;
 }
 
-.work__title {
+.case-studies__title {
     margin-top: 0.4rem;
     font-size: var(--step-3);
     font-stretch: 125%;
 }
 
-.work__intro {
+.case-studies__intro {
     max-width: 40rem;
     margin-top: 1rem;
     color: var(--muted);
@@ -32,15 +32,15 @@
     line-height: 1.5;
 }
 
-.work__group + .work__group {
+.case-studies__group + .case-studies__group {
     margin-top: 1rem;
 }
 
-.work__group .place__sub {
+.case-studies__group .place__sub {
     margin-top: 3.5rem;
 }
 
-.work-grid {
+.study-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
     gap: 1.75rem;
@@ -51,7 +51,7 @@
 * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /* each card gets its project color from a tone--* class (see case-study.css) */
-.work-card {
+.study-card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -61,14 +61,14 @@
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.work-card:hover,
-.work-card:focus-within {
+.study-card:hover,
+.study-card:focus-within {
     transform: translateY(-4px);
     box-shadow: 0 18px 36px rgba(14, 27, 51, 0.12);
 }
 
 /* the device sits on a soft wash of the project's color */
-.work-card__media {
+.study-card__media {
     overflow: hidden;
     padding: 2rem 1.5rem 1.75rem;
     background: var(--platform);
@@ -76,26 +76,26 @@
 }
 
 /* smaller devices than on the homepage */
-.work-card .laptop {
+.study-card .laptop {
     --b: 8px;
 }
 
-.work-card .phones {
+.study-card .phones {
     padding-block: 0.5rem 0.75rem;
 }
 
-.work-card .phone {
+.study-card .phone {
     --pad: 6px;
     width: 38%;
     min-width: 0;
     border-radius: 22px;
 }
 
-.work-card .phone img {
+.study-card .phone img {
     border-radius: 17px;
 }
 
-.work-card__body {
+.study-card__body {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -103,7 +103,7 @@
     padding: 1.25rem 1.25rem 1.5rem;
 }
 
-.work-card__kicker {
+.study-card__kicker {
     color: var(--tone);
     font-size: 0.78rem;
     font-weight: 700;
@@ -111,25 +111,25 @@
     text-transform: uppercase;
 }
 
-.work-card__name {
+.study-card__name {
     font-size: var(--step-1);
     font-stretch: 118%;
 }
 
-.work-card__line {
+.study-card__line {
     line-height: 1.5;
 }
 
-.work-card__meta {
+.study-card__meta {
     color: var(--muted);
     font-size: var(--step--1);
 }
 
-.work-card .chips {
+.study-card .chips {
     margin-top: 0.25rem;
 }
 
-.work-card__link {
+.study-card__link {
     align-self: start;
     margin-top: auto;
     padding-top: 0.75rem;
@@ -141,15 +141,15 @@
 }
 
 /* the whole card is the link */
-.work-card__link::after {
+.study-card__link::after {
     content: "";
     position: absolute;
     inset: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .work-card:hover,
-    .work-card:focus-within {
+    .study-card:hover,
+    .study-card:focus-within {
         transform: none;
     }
 }

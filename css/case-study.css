@@ -8,11 +8,17 @@
     --tone: var(--ink);
     max-width: 1100px;
     margin-inline: auto;
-    padding: 0 1.25rem 4rem;
+    padding: 6rem 1.25rem 4rem;   /* the top padding clears the fixed top bar */
 }
 
 /* one color per project; each passes contrast on the light background */
 .case--green, .tone--green { --tone: var(--green); }
+
+/* an optional second color per project, for rhythm. Without one, it matches the first.
+   HobbyBloom's is a deep blue from its own sage, navy and sky blue palette
+   (checked against the green for colorblind-safe contrast). */
+.case { --tone-2: var(--tone); }
+.case--green { --tone-2: #2B5DA8; }
 .case--red, .tone--red { --tone: var(--red); }
 .case--blue, .tone--blue { --tone: var(--blue); }
 .case--plum, .tone--plum { --tone: #8A2B5C; }      /* Roose & Vine: the wine */
@@ -24,7 +30,7 @@
 * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .draft-note {
-    margin-top: 6rem;
+    margin-top: 0;
     padding: 0.75rem 1rem;
     background: #FFF6D6;
     border-left: 5px solid var(--taxi);
@@ -69,6 +75,19 @@
     margin-top: 0.5rem;
     font-size: var(--step-3);
     font-stretch: 125%;
+}
+
+/* HobbyBloom's title matches the app's own logo: Georgia, navy "Hobby", green "Bloom" */
+.case__title--hobbybloom {
+    color: #000080;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 400;
+    font-stretch: normal;
+    letter-spacing: -0.01em;
+}
+
+.case__title--hobbybloom span {
+    color: #156914;
 }
 
 .case__lede {
@@ -285,6 +304,314 @@
     font-size: var(--step--1);
 }
 
+/* hidden on screen, still read aloud by screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.step h3 {
+    margin-top: 2rem;
+    font-size: var(--step-1);
+    font-stretch: 112%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    TEAM LIST (name, then role)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 0.75rem;
+    max-width: 52rem;
+    margin-top: 1.25rem;
+}
+
+.team li {
+    padding: 0.85rem 1rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--tone);
+    line-height: 1.45;
+}
+
+.team strong {
+    display: block;
+}
+
+.team span {
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    SURVEY RESULTS (stat tiles and simple bar charts)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+    gap: 0.75rem;
+    max-width: 52rem;
+    margin-top: 1.5rem;
+}
+
+.stats div {
+    padding: 1rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--tone);
+}
+
+.stats dt {
+    order: 2;
+    margin-top: 0.3rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+    line-height: 1.4;
+}
+
+.stats dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    font-stretch: 112%;
+    line-height: 1;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: 1rem 2rem;
+    max-width: 52rem;
+    margin-top: 1.75rem;
+}
+
+.chart {
+    margin: 0;
+}
+
+.chart__title {
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.chart__note {
+    margin-top: 0.15rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+.bars {
+    width: 100%;
+    margin-top: 0.75rem;
+    border-collapse: collapse;
+}
+
+.bars th {
+    width: 6.5rem;
+    padding: 0.3rem 0.75rem 0.3rem 0;
+    color: var(--muted);
+    font-size: var(--step--1);
+    font-weight: 500;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.bars td {
+    padding: 0.3rem 0;
+}
+
+/* each bar's length is its value divided by the shared maximum, so both charts read on one scale */
+.bars__row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bars__bar {
+    width: calc(var(--v) / var(--max) * 85%);
+    min-width: 2px;
+    height: 0.9rem;
+    background: var(--tone);
+    border-radius: 0 4px 4px 0;
+}
+
+.bars__value {
+    font-size: var(--step--1);
+    font-weight: 700;
+}
+
+.quotes {
+    display: grid;
+    gap: 1rem;
+    max-width: 44rem;
+    margin-top: 1.75rem;
+}
+
+.quotes blockquote {
+    margin: 0;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 4px solid var(--tone);
+    font-size: var(--step-1);
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.quotes cite {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    IMAGE GROUPS (personas, wireframes, photos, video)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.gallery {
+    display: grid;
+    gap: 1rem;
+    max-width: 52rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+}
+
+.gallery--phones {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+}
+
+@media (width >= 600px) {
+    .gallery--phones {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.gallery--phones img {
+    border-radius: 12px;
+}
+
+.gallery--photos {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.gallery--photos img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: 3px solid var(--ink);
+}
+
+.gallery + figcaption,
+.video + figcaption {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+.video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--ink);
+    border: 3px solid var(--ink);
+    box-shadow: 10px 10px 0 var(--tone);
+}
+
+.video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    FINDINGS (what testing showed, and what changed)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.findings {
+    width: 100%;
+    max-width: 52rem;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+    background: var(--paper);
+    border: 1px solid var(--line);
+}
+
+.findings th,
+.findings td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--line);
+    line-height: 1.5;
+    text-align: left;
+    vertical-align: top;
+}
+
+.findings thead th {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--tone);
+}
+
+.findings tbody th {
+    width: 50%;
+    font-weight: 500;
+}
+
+/* on phones, each finding stacks above its change */
+@media (width < 600px) {
+    .findings thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
+
+    .findings tr,
+    .findings th,
+    .findings td {
+        display: block;
+        width: auto;
+    }
+
+    .findings tbody th {
+        width: auto;
+        padding-bottom: 0.2rem;
+        border-bottom: 0;
+        font-weight: 700;
+    }
+
+    .findings td::before {
+        content: "What we changed: ";
+        color: var(--muted);
+    }
+}
+
 /* * * * * * * * * * * * * * * * * * * * * * * * *
     "TO ADD" BOXES (placeholders for content still to be written)
 * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -423,5 +750,570 @@
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
         align-items: center;
         gap: 4rem;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    SKIMMABLE SECTIONS
+    Each section opens with a one-line takeaway in the project color,
+    so headings plus takeaways tell the whole story.
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.step__lede {
+    max-width: 40rem;
+    margin-top: 0.6rem;
+    color: var(--tone);
+    font-size: var(--step-1);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.step > .step__lede + * {
+    margin-top: 1.25rem;
+}
+
+.step__meta {
+    max-width: 44rem;
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+/* light tints of the project color, so the page isn't all white boxes */
+.stats div,
+.team li {
+    background: color-mix(in srgb, var(--tone) 7%, var(--paper));
+}
+
+.quotes {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    max-width: 52rem;
+}
+
+.quotes blockquote {
+    padding: 1rem 1.25rem;
+    background: color-mix(in srgb, var(--tone) 9%, var(--paper));
+    font-size: var(--step-0, 1rem);
+}
+
+.findings thead th {
+    background: color-mix(in srgb, var(--tone) 9%, var(--paper));
+}
+
+/* smaller visuals */
+.gallery--phones {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+}
+
+@media (width >= 900px) {
+    .gallery--phones {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+.gallery--personas {
+    gap: 0.75rem;
+}
+
+@media (width >= 700px) {
+    .gallery--personas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.gallery a {
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.gallery a:hover,
+.gallery a:focus-visible {
+    transform: translateY(-3px);
+}
+
+/* two screens side by side on wide screens */
+.duo {
+    display: grid;
+    gap: 0 2rem;
+    max-width: 52rem;
+}
+
+.duo .step__figure {
+    margin-top: 1.25rem;
+}
+
+@media (width >= 800px) {
+    .duo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.step__figure--narrow {
+    max-width: 36rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery a {
+        transition: none;
+    }
+
+    .gallery a:hover,
+    .gallery a:focus-visible {
+        transform: none;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    SECOND COLOR
+    Every section uses the main color for its number and takeaway line, and
+    the second color for its bullet points. Paired items (tiles, quotes,
+    charts, team cards) alternate between the two.
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.step__list li::before {
+    background: var(--tone-2);
+}
+
+.glance__card:nth-child(2) {
+    border-top-color: var(--tone-2);
+}
+
+.stats div:nth-child(even),
+.team li:nth-child(even),
+.quotes blockquote:nth-child(even) {
+    --tone: var(--tone-2);
+}
+
+.stats div:nth-child(even) {
+    border-top-color: var(--tone-2);
+}
+
+.team li:nth-child(even) {
+    border-left-color: var(--tone-2);
+}
+
+.quotes blockquote:nth-child(even) {
+    border-left-color: var(--tone-2);
+}
+
+.charts .chart:nth-child(even) .bars__bar {
+    background: var(--tone-2);
+}
+
+.findings thead th:nth-child(2) {
+    background: color-mix(in srgb, var(--tone-2) 9%, var(--paper));
+    border-bottom-color: var(--tone-2);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    AT A GLANCE CARDS AS LINKS
+    The heading's link stretches over the whole card, so the full card
+    jumps to its section.
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.glance__card {
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glance__card h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.glance__card h2 a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.glance__card:has(a):hover,
+.glance__card:has(a:focus-visible) {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(14, 27, 51, 0.1);
+}
+
+.glance__card h2 a:focus-visible {
+    outline: none;
+}
+
+.glance__card:has(a:focus-visible) {
+    outline: 3px solid var(--tone);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glance__card {
+        transition: none;
+    }
+
+    .glance__card:has(a):hover,
+    .glance__card:has(a:focus-visible) {
+        transform: none;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    MOTION (see js/case-study.js)
+    Everything here is progressive: without JavaScript, or with "reduce motion"
+    turned on, elements simply appear in their final state.
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* 1. CAROUSEL: the active screen sits in the middle at full size, its neighbors peek in smaller */
+
+.carousel {
+    max-width: 52rem;
+}
+
+.carousel__track {
+    --slide: clamp(10.5rem, 34vw, 14.5rem);
+    position: relative;
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    padding: 1.5rem calc(50% - var(--slide) / 2) 1.75rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    /* the side screens fade out at the edges instead of being cut off */
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.carousel__track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel__track:focus-visible {
+    outline: 3px solid var(--tone);
+    outline-offset: 4px;
+}
+
+.carousel__slide {
+    flex: 0 0 var(--slide);
+    scroll-snap-align: center;
+}
+
+.carousel__slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--paper);
+    border: 6px solid var(--ink);
+    border-radius: 26px;
+    box-shadow: 0 14px 30px rgba(14, 27, 51, 0.15);
+}
+
+.carousel.is-ready .carousel__slide {
+    opacity: 0.5;
+    transform: scale(0.86);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    cursor: pointer;
+}
+
+.carousel.is-ready .carousel__slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+    cursor: default;
+}
+
+.carousel__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.carousel:not(.is-ready) .carousel__controls {
+    display: none;
+}
+
+.carousel__button {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    color: var(--ink);
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.carousel__button:hover:not(:disabled),
+.carousel__button:focus-visible {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.carousel__button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.carousel__dots {
+    display: flex;
+    gap: 0.4rem;
+}
+
+/* the visible dot is small; the button around it is a comfortable tap target */
+.carousel__dot {
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.carousel__dot::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    background: var(--line);
+    border-radius: 999px;
+    transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.carousel__dot[aria-current]::before {
+    width: 1.4rem;
+    background: var(--tone);
+}
+
+.carousel__dot:focus-visible {
+    outline: 2px solid var(--tone);
+    border-radius: 4px;
+}
+
+/* tighter dots on phones so the row fits beside the arrows */
+@media (width < 480px) {
+    .carousel__controls {
+        gap: 0.6rem;
+    }
+
+    .carousel__dots {
+        gap: 0.1rem;
+    }
+
+    .carousel__dot {
+        width: 1.1rem;
+    }
+
+    .carousel__dot[aria-current]::before {
+        width: 1rem;
+    }
+}
+
+.carousel__status {
+    min-height: 3em;
+    max-width: 30rem;
+    margin: 0.9rem auto 0;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.carousel__status strong {
+    color: var(--tone);
+}
+
+.carousel__credit {
+    margin-top: 0.4rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+    text-align: center;
+}
+
+/* 2. COMPARE SLIDER: the wireframe sits on top, clipped to the slider position */
+
+.split {
+    display: grid;
+    gap: 1.5rem 2.5rem;
+    align-items: center;
+    max-width: 52rem;
+    margin-top: 2.5rem;
+}
+
+@media (width >= 760px) {
+    .split {
+        grid-template-columns: minmax(0, 17rem) 1fr;
+    }
+}
+
+.split .step__list {
+    margin-top: 0;
+}
+
+.compare-figure {
+    justify-self: center;
+    width: min(100%, 17rem);
+    margin: 0;
+}
+
+.compare {
+    position: relative;
+    aspect-ratio: 548 / 1186;
+    overflow: hidden;
+    background: var(--paper);
+    border: 6px solid var(--ink);
+    border-radius: 28px;
+    box-shadow: 10px 10px 0 var(--tone);
+}
+
+.compare__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.compare__img--before {
+    clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+
+.compare__handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--pos);
+    width: 3px;
+    margin-left: -1.5px;
+    background: var(--paper);
+    box-shadow: 0 0 0 1px rgba(14, 27, 51, 0.35);
+    pointer-events: none;
+}
+
+.compare__handle::after {
+    content: "↔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--ink);
+    border: 2px solid var(--paper);
+    border-radius: 50%;
+    color: var(--paper);
+    font-size: 1.1rem;
+    transform: translate(-50%, -50%);
+}
+
+.compare__label {
+    position: absolute;
+    top: 0.6rem;
+    padding: 0.15rem 0.55rem;
+    background: rgba(14, 27, 51, 0.82);
+    border-radius: 999px;
+    color: var(--paper);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.compare__label--before {
+    left: 0.6rem;
+}
+
+.compare__label--after {
+    right: 0.6rem;
+}
+
+/* an invisible slider covers the image, so dragging anywhere works,
+   and it's a real range input for keyboards and screen readers */
+.compare__range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+}
+
+.compare:has(.compare__range:focus-visible) {
+    outline: 3px solid var(--tone);
+    outline-offset: 4px;
+}
+
+.compare.is-nudging .compare__img--before {
+    transition: clip-path 0.45s ease-in-out;
+}
+
+.compare.is-nudging .compare__handle {
+    transition: left 0.45s ease-in-out;
+}
+
+.compare-figure figcaption {
+    margin-top: 0.9rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+    text-align: center;
+}
+
+/* 3. ROUTE PROGRESS: a colored line fills over the grey one, and stations fill as they're reached */
+
+.steps.has-progress::after {
+    content: "";
+    position: absolute;
+    top: 3.5rem;
+    left: calc(1.15rem - 1.5px);
+    width: 3px;
+    height: calc((100% - 7rem) * var(--progress, 0));
+    background: var(--tone);
+}
+
+.step::before {
+    z-index: 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.step.is-reached::before {
+    background: var(--tone);
+    color: var(--paper);
+}
+
+/* 4. GROWING BARS (the count-up numbers are handled in JavaScript) */
+
+.motion .charts .bars__bar {
+    transition: width 1s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.motion .charts:not(.is-in) .bars__bar {
+    width: 0;
+}
+
+.motion .charts .bars__value {
+    transition: opacity 0.4s ease 0.7s;
+}
+
+.motion .charts:not(.is-in) .bars__value {
+    opacity: 0;
+}
+
+/* 5. GENTLE REVEAL */
+
+.motion .reveal {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.motion .reveal:not(.is-in) {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel.is-ready .carousel__slide,
+    .carousel__dot::before,
+    .step::before {
+        transition: none;
     }
 }
