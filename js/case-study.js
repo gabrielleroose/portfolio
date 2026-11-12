@@ -232,6 +232,38 @@
     onceVisible([...document.querySelectorAll(".charts")], (el) => el.classList.add("is-in"), 0.3);
 
     /* * * * * * * * * * * * * * * * * * * * * * * * *
+        BACK TO TOP
+        The button fades in once you've scrolled past the first screen. While it's
+        hidden, it's also skipped by the keyboard and screen readers.
+    * * * * * * * * * * * * * * * * * * * * * * * * */
+
+    const toTop = document.querySelector(".to-top");
+
+    if (toTop) {
+        toTop.classList.add("is-ready");
+        let shown = null;
+
+        const updateToTop = () => {
+            const show = window.scrollY > window.innerHeight * 0.8;
+            if (show === shown) return;
+            shown = show;
+            toTop.classList.toggle("is-visible", show);
+            toTop.toggleAttribute("aria-hidden", !show);
+            toTop.tabIndex = show ? 0 : -1;
+        };
+
+        toTop.addEventListener("click", (event) => {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+            // let go of focus, so the next Tab starts from the top of the page
+            toTop.blur();
+        });
+
+        window.addEventListener("scroll", updateToTop, { passive: true });
+        updateToTop();
+    }
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * *
         5. GENTLE REVEAL
     * * * * * * * * * * * * * * * * * * * * * * * * */
 

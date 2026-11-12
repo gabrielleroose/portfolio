@@ -1299,6 +1299,50 @@
     opacity: 0;
 }
 
+/* BACK TO TOP: a small round button in the bottom-right corner */
+
+.to-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 14;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--tone, var(--ink));
+    border: 2px solid var(--paper);
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(14, 27, 51, 0.2);
+    color: var(--paper);
+    text-decoration: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+}
+
+/* the button is the project's color; on hover it deepens slightly */
+.to-top:hover,
+.to-top:focus-visible {
+    background: color-mix(in srgb, var(--tone, var(--ink)) 78%, #000);
+}
+
+.to-top:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+}
+
+/* hidden until the page has scrolled (only once JavaScript is running) */
+.to-top.is-ready:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .to-top {
+        transition: none;
+    }
+}
+
 /* 5. GENTLE REVEAL */
 
 .motion .reveal {
