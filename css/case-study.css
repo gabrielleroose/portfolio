@@ -6,7 +6,7 @@
 
 .case {
     --tone: var(--ink);
-    max-width: 1100px;
+    max-width: 1100px;   /* the hero and glance cards use the full width; .steps is centered inside */
     margin-inline: auto;
     padding: 6rem 1.25rem 4rem;   /* the top padding clears the fixed top bar */
 }
@@ -211,9 +211,11 @@
     THE STEPS (numbered stations down a route line)
 * * * * * * * * * * * * * * * * * * * * * * * * */
 
+/* the route column is centered on the page: its width is the widest content (52rem) plus the station gutter */
 .steps {
     position: relative;
-    margin-top: 3rem;
+    max-width: calc(52rem + 3.5rem);
+    margin: 3rem auto 0;
     padding-left: 3.5rem;
     counter-reset: step;
 }
