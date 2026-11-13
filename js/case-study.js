@@ -269,7 +269,7 @@
 
     if (!reduceMotion) {
         const revealables = [...document.querySelectorAll(
-            ".step > .step__figure, .stats, .charts, .quotes, .findings, .team, .duo, .split, .glance"
+            ".step > .step__figure, .step > .compare-figure, .stats, .charts, .quotes, .findings, .team, .duo, .split, .rounds, .glance"
         )];
         revealables.forEach((el) => el.classList.add("reveal"));
         onceVisible(revealables, (el) => el.classList.add("is-in"), 0.12);

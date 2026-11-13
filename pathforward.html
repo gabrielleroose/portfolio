@@ -34,9 +34,6 @@
     </header>
 
     <main class="case case--blue">
-      <!-- DRAFT: delete this note once every "To add" box below is filled in -->
-      <p class="draft-note">Draft case study. Sections marked "To add" still need content.</p>
-
       <div class="case__hero">
         <div>
           <a class="case__back" href="case-studies.html">&larr; All case studies</a>
@@ -70,118 +67,268 @@
       <!-- AT A GLANCE: the part recruiters read first -->
       <div class="glance" aria-label="At a glance">
         <div class="glance__card">
-          <h2>Problem</h2>
-          <p>Getting around a busy city means juggling separate apps for each way of traveling.</p>
+          <h2><a href="#problem">Problem</a></h2>
+          <p>City commuters juggle separate apps for transit, bikes and rides, and the greener option is rarely the easy one.</p>
         </div>
         <div class="glance__card">
-          <h2>Solution</h2>
-          <p>One app that compares scooters, bikes, ride-share and transit, and suggests sustainable routes.</p>
+          <h2><a href="#built">Solution</a></h2>
+          <p>One app with a live map of bikes, scooters and rides, suggested routes for every situation, and live transit updates.</p>
         </div>
         <div class="glance__card">
-          <h2>Outcome</h2>
-          <p>Tested with four people and revised from version 3.0 to 4.0.</p>
+          <h2><a href="#outcome">Outcome</a></h2>
+          <p>Four rounds of design and testing, from sketches to Prototype 4.0, with version 5 in progress.</p>
         </div>
       </div>
 
       <div class="steps" id="story">
-        <section class="step">
+        <section class="step" id="problem">
           <h2>The problem</h2>
-          <p>PathForward helps people navigate busy cities by bringing e-scooters, bikes,
-          ride-sharing and transit into one app, with suggested sustainable routes and live
-          transit updates.</p>
-          <!-- TODO: The problem in your words -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">The problem in your words</p>
-            <ul>
-              <li>Who is this for? (commuters, students, visitors)</li>
-              <li>What's frustrating about getting around today?</li>
-              <li>Why sustainability matters to the idea</li>
-            </ul>
-          </aside>
+          <p class="step__lede">People choose speed over sustainability, because the green option is rarely the easy one.</p>
+          <p>For this course I chose the design challenge of urban mobility and sustainability, and
+          framed it as one question:</p>
+          <div class="quotes">
+            <blockquote>
+              <p>“How might we empower environmentally conscious people to explore, compare and combine sustainable transportation options, to reduce their carbon footprint and contribute to a cleaner environment?”</p>
+              <cite>My problem statement</cite>
+            </blockquote>
+          </div>
+          <p>Three academic papers on sustainable mobility pointed the way:</p>
+          <ul class="step__list">
+            <li><strong>Most tools target individuals,</strong> not the way a whole city moves.</li>
+            <li><strong>Goals and rewards change behavior</strong> more than information alone.</li>
+            <li><strong>A smart city connects</strong> its transportation, resources and infrastructure.</li>
+          </ul>
         </section>
         <section class="step">
           <h2>My role</h2>
-          <p>PathForward was a solo project for INFO-I300. I designed it end to end, from the early
-          versions through user testing.</p>
+          <p class="step__lede">A solo project: I ran every step, from research and interviews to prototypes and user testing.</p>
+          <ul class="step__list">
+            <li><strong>Research:</strong> secondary research, an interview protocol I piloted and
+            revised, and five interviews.</li>
+            <li><strong>Synthesis:</strong> an affinity diagram, two personas and four early concepts.</li>
+            <li><strong>Design:</strong> sketches, then Figma wireframes and prototypes through four versions.</li>
+            <li><strong>Evaluation:</strong> a heuristic evaluation, then moderated user tests with a
+            script I refined after a pilot.</li>
+          </ul>
         </section>
         <section class="step">
           <h2>Research</h2>
-          <!-- TODO: Research -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Research</p>
-            <ul>
-              <li>What methods did you use? (interviews, surveys, competitive analysis, observation)</li>
-              <li>How many people, and who were they?</li>
-              <li>Your top 2 or 3 insights, each in one sentence</li>
-              <li>One real quote from a participant that captures the problem</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> an affinity map, a persona, survey results or a competitor comparison</p>
-          </aside>
-        </section>
-        <section class="step">
-          <h2>The design</h2>
-          <p>The prototype covers the whole journey: logging in or creating an account, saving home
-          and work addresses, setting travel preferences, comparing routes, a live map, suggestions,
-          transit updates, and dedicated views for bikes, scooters and ride-share.</p>
+          <p class="step__lede">Five people who get around five different ways all said the same thing: reliability comes first.</p>
+          <dl class="stats">
+            <div><dt>academic papers reviewed</dt><dd>3</dd></div>
+            <div><dt>30-minute interviews, one of them a pilot</dt><dd>5</dd></div>
+            <div><dt>themes in my affinity diagram</dt><dd>4</dd></div>
+            <div><dt>personas built from the patterns</dt><dd>2</dd></div>
+          </dl>
+          <p>I chose interviewees on purpose to cover different ways of getting around, life stages, places and comfort with technology:</p>
+          <table class="people">
+            <caption class="sr-only">Interview participants, described by role and place</caption>
+            <thead>
+              <tr><th scope="col">Who</th><th scope="col">Where</th><th scope="col">Gets around by</th><th scope="col">Biggest frustration</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Sales executive (pilot)</th><td data-label="Where">Suburban Denver</td><td data-label="Gets around by">Car only</td><td data-label="Biggest frustration">Traffic can double the commute, and transit stops are too far apart.</td></tr>
+              <tr><th scope="row">Account manager</th><td data-label="Where">Manhattan, New York</td><td data-label="Gets around by">Subway and taxis</td><td data-label="Biggest frustration">Delays and reroutes, with apps showing the wrong information.</td></tr>
+              <tr><th scope="row">Design intern</th><td data-label="Where">Chicago suburbs</td><td data-label="Gets around by">Train and two buses</td><td data-label="Biggest frustration">Stuck on stopped trains with no updates.</td></tr>
+              <tr><th scope="row">Student and bartender</th><td data-label="Where">Westfield, Indiana</td><td data-label="Gets around by">Car</td><td data-label="Biggest frustration">No public transit at all.</td></tr>
+              <tr><th scope="row">Retiree living on the road</th><td data-label="Where">Traveling by van</td><td data-label="Gets around by">Van and rental cars</td><td data-label="Biggest frustration">Doesn't trust ride-sharing, and apps fail without signal.</td></tr>
+            </tbody>
+          </table>
+          <ul class="step__list">
+            <li><strong>Reliability beats everything:</strong> delays, breakdowns and reroutes push
+            people away from transit.</li>
+            <li><strong>Apps are essential, but they fail when it matters:</strong> during service
+            changes, construction and detours.</li>
+            <li><strong>Sustainability is an afterthought:</strong> people pick the fastest,
+            most convenient option, even when they care about the planet.</li>
+          </ul>
+          <div class="quotes">
+            <blockquote>
+              <p>“Even with the best planning, the subway has its own agenda.”</p>
+              <cite>Account manager, Manhattan</cite>
+            </blockquote>
+            <blockquote>
+              <p>“If it's inconvenient I'm not going to change my plans based on sustainability.”</p>
+              <cite>Student and bartender, Indiana</cite>
+            </blockquote>
+          </div>
+          <p>So the design goal became: make the sustainable option the convenient one.</p>
+
+          <h3>Synthesis</h3>
           <figure class="step__figure">
-            <img src="images/PathForward.png" alt="PathForward app screens" />
-            <figcaption>Screens from the PathForward prototype.</figcaption>
+            <a href="images/pathforward/affinity-diagram.jpg" target="_blank" rel="noopener"><img class="step__shot" src="images/pathforward/affinity-diagram.jpg" loading="lazy" width="1179" height="861" alt="Affinity diagram in Miro, grouping interview notes into four themes: modes of transportation, technology tools used, challenges with sustainability and transportation, and thoughts on improving sustainability." /></a>
+            <figcaption>My affinity diagram in Miro: modes of transportation, the tools people use, challenges, and ideas for improving sustainability. Select it to enlarge.</figcaption>
           </figure>
-          <!-- TODO: How the design evolved -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">How the design evolved</p>
-            <ul>
-              <li>What versions 1.0 to 3.0 looked like, and why they changed</li>
-              <li>Two or three key decisions and the alternatives you considered</li>
+          <figure class="step__figure">
+            <ul class="gallery gallery--personas">
+              <li><a href="images/pathforward/persona-chris.jpg" target="_blank" rel="noopener"><img src="images/pathforward/persona-chris.jpg" loading="lazy" width="1252" height="1400" alt="Persona: Chris Banks, 45, an industry professional in the suburbs who relies on his car because transit options are limited. He values convenience and efficiency; sustainability isn't a priority. He wants quick, reliable routes that avoid traffic and construction." /></a></li>
+              <li><a href="images/pathforward/persona-rachel.jpg" target="_blank" rel="noopener"><img src="images/pathforward/persona-rachel.jpg" loading="lazy" width="1252" height="1400" alt="Persona: Rachel Stevenson, 21, a student and intern in a major city who relies on the subway, trains and buses. She is frustrated by delays and inaccurate transit apps, and wants reliable real-time updates and instant alternative routes." /></a></li>
             </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> wireframes from early versions next to the final screens</p>
-          </aside>
+            <figcaption>Two personas: a suburban driver and a city student who rides transit. Select one to enlarge it.</figcaption>
+          </figure>
         </section>
         <section class="step">
-          <h2>Testing and iteration</h2>
-          <p>I ran a round of user testing with four participants and revised the design from
-          version 3.0 to version 4.0 based on what I found. Testing led to changes in the map, the
-          navigation bar and the login screen.</p>
-          <!-- TODO: What testing showed -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">What testing showed</p>
-            <ul>
-              <li>The tasks you gave participants</li>
-              <li>What went wrong with the map, the navigation bar and the login screen</li>
-              <li>What you changed in each, and why</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> version 3.0 and version 4.0 side by side for each change</p>
-          </aside>
+          <h2>Ideas and iterations</h2>
+          <p class="step__lede">Four concepts merged into one app, and the name changed as the idea sharpened.</p>
+          <ul class="name-path" aria-label="How the project's name changed">
+            <li><span>Community Cargo</span></li>
+            <li><span>Green PathForward</span></li>
+            <li><span>PathForward</span></li>
+          </ul>
+          <p>I started with four concepts, then combined the strongest parts of each:</p>
+          <ul class="team" aria-label="Early concepts">
+            <li><strong>Green CityMap</strong><span>A live map of transit, e-scooters, bikes and rides</span></li>
+            <li><strong>CommuteSchedule</strong><span>Routes planned around traffic and time of day</span></li>
+            <li><strong>CityFlow Live</strong><span>Live transit updates and alerts</span></li>
+            <li><strong>SmartRoute Pro</strong><span>Several sustainable routes to one destination</span></li>
+          </ul>
+          <div class="duo">
+            <figure class="step__figure">
+              <a href="images/pathforward/sketches-1-0.jpg" target="_blank" rel="noopener"><img class="step__shot" src="images/pathforward/sketches-1-0.jpg" loading="lazy" width="1380" height="2048" alt="Sketches 1.0: hand-drawn phone screens for the map, suggested routes and live updates." /></a>
+              <figcaption><strong>Sketches 1.0:</strong> the first pass at each screen.</figcaption>
+            </figure>
+            <figure class="step__figure">
+              <a href="images/pathforward/sketches-1-5.jpg" target="_blank" rel="noopener"><img class="step__shot" src="images/pathforward/sketches-1-5.jpg" loading="lazy" width="1215" height="2048" alt="Sketches 1.5: refined phone screens, with directions that collapse into the map and a map-based progress view." /></a>
+              <figcaption><strong>Sketches 1.5:</strong> directions collapse into the map, with a map-based progress view.</figcaption>
+            </figure>
+          </div>
+          <ol class="rounds">
+            <li><strong>Sketches 1.0 and 1.5</strong> Paper sketches of the map, suggestions and live
+            updates, refined once after review.</li>
+            <li><strong>Wireframes 2.0 and 2.5</strong> Figma wireframes for the four core tasks. A
+            heuristic evaluation found three major issues: no "forgot username", no way to view or edit
+            your profile, and no back button between bikes, scooters and rides.</li>
+            <li><strong>Prototype 3.0</strong> I fixed all three, and added a favorite transit lines
+            menu so frequent riders get updates faster.</li>
+            <li><strong>User testing and Prototype 4.0</strong> Three testers used the prototype;
+            their feedback shaped the final version below.</li>
+          </ol>
+        </section>
+        <section class="step" id="built">
+          <h2>What I built</h2>
+          <p class="step__lede">One app for every way to get around: a live map, suggested routes and transit updates.</p>
+          <figure class="step__figure carousel" data-carousel aria-roledescription="carousel" aria-label="PathForward Prototype 4.0 screens">
+            <div class="carousel__track" tabindex="0" aria-label="Prototype 4.0 screens. Use the left and right arrow keys to move between screens.">
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 7: Welcome" data-title="Welcome" data-caption="Sustainable movement, from the very first screen.">
+                <img src="images/PathForward-login.png" loading="lazy" width="786" height="1704" alt="PathForward welcome screen with the tagline Sustainable Movement and Login and Create Account buttons." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 7: Log in" data-title="Log in" data-caption="One clean line for a forgotten username or password.">
+                <img src="images/pathforward/v4-login.jpg" loading="lazy" width="786" height="1704" alt="Login screen with username and password fields and one Forgot username or password link." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 7: Routes" data-title="Routes" data-caption="Search where you're going, with Home and Work saved.">
+                <img src="images/pathforward/v4-routes.jpg" loading="lazy" width="786" height="1704" alt="Routes screen with a map of New York and a search box with saved Home and Work places." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 7: Map" data-title="Map" data-caption="Every bike, scooter and ride nearby, on a map you can zoom.">
+                <img src="images/PathForward-map.png" loading="lazy" width="786" height="1704" alt="Map of lower Manhattan with bike, scooter and ride-share pins and a filter for each." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 7: Suggestions" data-title="Suggestions" data-caption="Routes for your situation: time to spare, in a hurry, or feeling green.">
+                <img src="images/pathforward/v4-suggestions.jpg" loading="lazy" width="786" height="1704" alt="Suggestions screen: Have time today? Walk. In a hurry? Uber. Feeling green? Bike. Get across town? Subway. Each with a Route button." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="6 of 7: Updates" data-title="Updates" data-caption="Live status for the lines you ride, with your favorites saved.">
+                <img src="images/pathforward/v4-updates.jpg" loading="lazy" width="786" height="1704" alt="Updates screen with a line search, a Favorite Line menu and live updates showing the A/C/E delayed and the B/D on time." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="7 of 7: Ride-share" data-title="Ride-share" data-caption="Real-time locations of rides nearby.">
+                <img src="images/pathforward/v4-ride-share.jpg" loading="lazy" width="786" height="1704" alt="Ride-share screen with a map of New York and a Rides nearby button." />
+              </div>
+            </div>
+            <div class="carousel__controls">
+              <button class="carousel__button" type="button" data-prev aria-label="Previous screen">&larr;</button>
+              <div class="carousel__dots" role="group" aria-label="Choose a screen"></div>
+              <button class="carousel__button" type="button" data-next aria-label="Next screen">&rarr;</button>
+            </div>
+            <figcaption class="carousel__status" aria-live="polite">
+              <strong>1 of 7 · Welcome:</strong> Sustainable movement, from the very first screen.
+            </figcaption>
+            <p class="carousel__credit">Prototype 4.0, designed in Figma.</p>
+          </figure>
         </section>
         <section class="step">
+          <h2>Testing</h2>
+          <p class="step__lede">Three testers found the gaps I'd missed, and each one led to a fix.</p>
+          <p>After a pilot, I rewrote my script so testers explored freely instead of following
+          numbered steps: find a bike for lunch uptown, plan a route to an 11 a.m. meeting, and check
+          a train when running late. They thought aloud as they went.</p>
+          <figure class="step__figure">
+            <ul class="gallery gallery--trio">
+              <li><img src="images/pathforward/user-test-1.jpg" loading="lazy" width="1050" height="1400" alt="A tester holding a phone and tapping through the PathForward prototype." /></li>
+              <li><img src="images/pathforward/user-test-2.jpg" loading="lazy" width="1050" height="1400" alt="A tester using the PathForward map on a phone." /></li>
+              <li><img src="images/pathforward/user-test-3.jpg" loading="lazy" width="1050" height="1400" alt="A tester exploring the PathForward map on a phone." /></li>
+            </ul>
+            <figcaption>User tests on a real phone.</figcaption>
+          </figure>
+          <table class="findings">
+            <caption class="sr-only">What testing showed, and what I changed</caption>
+            <thead>
+              <tr><th scope="col">What testing showed</th><th scope="col">What I changed</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Testers tried to pinch and zoom the map, and it didn't respond.</th><td>Made the map interactive, with zoom in and out.</td></tr>
+              <tr><th scope="row">Nav icons had no labels, and the current screen wasn't clear.</th><td>Added labels, made the icons smaller and highlighted the current screen.</td></tr>
+              <tr><th scope="row">"Rides nearby" looked tappable but did nothing.</th><td>Showed real-time locations and details of nearby rides.</td></tr>
+              <tr><th scope="row">Two "forgot" links on the login felt cluttered.</th><td>Combined them into one line.</td></tr>
+              <tr><th scope="row">Spacing and sizes were inconsistent across screens.</th><td>Made similar elements match in size and spacing.</td></tr>
+            </tbody>
+          </table>
+          <h3>Before and after: drag to compare</h3>
+          <div class="compares">
+            <figure class="compare-figure">
+              <div class="compare__labels" aria-hidden="true"><span>Version 3.0</span><span>Version 4.0</span></div>
+              <div class="compare" data-compare style="--pos: 50%; --ratio: 786 / 1704">
+                <img class="compare__img" src="images/pathforward/v4-suggestions.jpg" loading="lazy" width="786" height="1704" alt="Prototype 4.0 Suggestions screen with labeled navigation icons and the current screen highlighted in blue." />
+                <img class="compare__img compare__img--before" src="images/pathforward/v3-suggestions.jpg" loading="lazy" width="786" height="1704" alt="Prototype 3.0 Suggestions screen with large, unlabeled navigation icons." />
+                <span class="compare__handle" aria-hidden="true"></span>
+                <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Drag to compare the Suggestions screen in Prototype 3.0 and 4.0" />
+              </div>
+              <figcaption><strong>Navigation:</strong> labeled icons, with the current screen highlighted.</figcaption>
+            </figure>
+            <figure class="compare-figure">
+              <div class="compare__labels" aria-hidden="true"><span>Version 3.0</span><span>Version 4.0</span></div>
+              <div class="compare" data-compare style="--pos: 50%; --ratio: 786 / 1704">
+                <img class="compare__img" src="images/pathforward/v4-updates.jpg" loading="lazy" width="786" height="1704" alt="Prototype 4.0 Updates screen with a Favorite Line menu styled like the search box." />
+                <img class="compare__img compare__img--before" src="images/pathforward/v3-updates.jpg" loading="lazy" width="786" height="1704" alt="Prototype 3.0 Updates screen with a small Select Line menu." />
+                <span class="compare__handle" aria-hidden="true"></span>
+                <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Drag to compare the Updates screen in Prototype 3.0 and 4.0" />
+              </div>
+              <figcaption><strong>Updates:</strong> "Select Line" became "Favorite Line," matched to the search box.</figcaption>
+            </figure>
+            <figure class="compare-figure">
+              <div class="compare__labels" aria-hidden="true"><span>Version 3.0</span><span>Version 4.0</span></div>
+              <div class="compare" data-compare style="--pos: 50%; --ratio: 786 / 1704">
+                <img class="compare__img" src="images/pathforward/v4-login.jpg" loading="lazy" width="786" height="1704" alt="Prototype 4.0 login screen with one Forgot username or password link." />
+                <img class="compare__img compare__img--before" src="images/pathforward/v3-login.jpg" loading="lazy" width="786" height="1704" alt="Prototype 3.0 login screen with separate Forgot username and Forgot password links." />
+                <span class="compare__handle" aria-hidden="true"></span>
+                <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Drag to compare the login screen in Prototype 3.0 and 4.0" />
+              </div>
+              <figcaption><strong>Login:</strong> two "forgot" links became one.</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="step" id="outcome">
           <h2>Outcome</h2>
-          <!-- TODO: Outcome -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Outcome</p>
-            <ul>
-              <li>What happened in the end? Final presentation, grade, demo or launch</li>
-              <li>Any numbers: tasks completed, time saved, users, test results</li>
-              <li>Feedback from users, classmates, instructors or stakeholders</li>
-            </ul>
-          </aside>
+          <p class="step__lede">Four rounds of design and testing, from sketches to Prototype 4.0.</p>
+          <ul class="step__list">
+            <li><strong>Every way to get around, in one place:</strong> a live map of bikes, scooters
+            and rides, suggested routes for different situations, and live transit updates.</li>
+            <li><strong>Every round fixed something real:</strong> the heuristic evaluation caught
+            three major issues, and user testing caught five more.</li>
+          </ul>
+          <p class="callout"><strong>Version 5 is in progress.</strong> I'm redesigning PathForward
+          in Figma, building on everything above. This page will show the changes from version 4 to
+          version 5 once it's done.</p>
         </section>
         <section class="step">
           <h2>Reflection</h2>
-          <!-- TODO: Reflection -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Reflection</p>
-            <ul>
-              <li>The biggest thing you learned (about users, design or yourself)</li>
-              <li>What you'd do differently with more time</li>
-              <li>What you'd build or test next</li>
-            </ul>
-          </aside>
+          <p class="step__lede">Users see what designers overlook.</p>
+          <ul class="step__list">
+            <li><strong>Make the green option the easy one.</strong> My interviews showed that people
+            choose convenience first, so sustainability has to be built into the fastest path, not
+            added as a lecture.</li>
+            <li><strong>Different methods catch different problems.</strong> The heuristic evaluation
+            found structural gaps; real users found the things that felt wrong in their hands.</li>
+            <li><strong>Pilot everything.</strong> Piloting my interview guide and test script made
+            both better before they reached real participants.</li>
+          </ul>
+          <p><strong>Next:</strong> version 5, the redesign I'm working on now in Figma.</p>
         </section>
       </div>
 

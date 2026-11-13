@@ -34,18 +34,15 @@
     </header>
 
     <main class="case case--red">
-      <!-- DRAFT: delete this note once every "To add" box below is filled in -->
-      <p class="draft-note">Draft case study. Sections marked "To add" still need content.</p>
-
       <div class="case__hero">
         <div>
           <a class="case__back" href="case-studies.html">&larr; All case studies</a>
           <p class="case__eyebrow">Case study 02 · UX design, team project</p>
           <h1 class="case__title">Crimson Thumb</h1>
           <p class="case__lede">Most students don't recycle. We made it pay.</p>
-          <p class="case__summary">Crimson Thumb is an AI-assisted recycling incentive system for Indiana University, spanning a smart bin with a kiosk interface and a companion mobile app.</p>
+          <p class="case__summary">Crimson Thumb is a smart recycling bin for every Indiana University dorm floor. It uses AI to check each item, then pays students back on their Crimson Card.</p>
           <dl class="facts">
-          <div><dt>Role</dt><dd>Team lead: UX design and prototyping</dd></div>
+          <div><dt>Role</dt><dd>Team lead: direction, meetings and planning</dd></div>
           <div><dt>Team</dt><dd>4 students (Group 9)</dd></div>
           <div><dt>Timeline</dt><dd>September – December 2024</dd></div>
           <div><dt>Course</dt><dd>INFO-I300: Human-Computer Interaction Design</dd></div>
@@ -68,145 +65,268 @@
       <!-- AT A GLANCE: the part recruiters read first -->
       <div class="glance" aria-label="At a glance">
         <div class="glance__card">
-          <h2>Problem</h2>
-          <p>Students living on their own for the first time often lack the motivation to recycle.</p>
+          <h2><a href="#problem">Problem</a></h2>
+          <p>Students living on their own for the first time don't know what's recyclable, and nothing rewards them for trying.</p>
         </div>
         <div class="glance__card">
-          <h2>Solution</h2>
-          <p>A smart bin that counts what students recycle and adds money to their Crimson Card.</p>
+          <h2><a href="#built">Solution</a></h2>
+          <p>A smart bin that checks each item with AI and adds money to the student's Crimson Card.</p>
         </div>
         <div class="glance__card">
-          <h2>Outcome</h2>
-          <p class="facts__todo">Add the result in one sentence</p>
+          <h2><a href="#outcome">Outcome</a></h2>
+          <p>Four rounds of design and testing took Crimson Thumb from sketches to a tested prototype.</p>
         </div>
       </div>
 
       <div class="steps" id="story">
-        <section class="step">
+        <section class="step" id="problem">
           <h2>The problem</h2>
-          <p>Most college students, especially first-year students living on their own for the
-          first time, struggle to find the motivation to recycle, and the result is a huge amount
-          of waste.</p>
-          <!-- TODO: Why this problem -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Why this problem</p>
-            <ul>
-              <li>How did your team pick this problem?</li>
-              <li>Any data on campus recycling or waste you can cite</li>
-            </ul>
-          </aside>
+          <p class="step__lede">Students want to recycle, but they don't know what counts, and nothing rewards them for trying.</p>
+          <p>Most first-year students are living on their own for the first time. IU dorms have a
+          recycling bin on every floor, but students:</p>
+          <ul class="step__list">
+            <li><strong>aren't sure what can be recycled,</strong> so they guess or give up,</li>
+            <li><strong>find sorting a hassle,</strong> so everything ends up in the trash, and</li>
+            <li><strong>see no reason to bother,</strong> because nothing rewards doing it right.</li>
+          </ul>
+          <p>We set out to make recycling take the least possible effort, and to give students a reason to do it.</p>
         </section>
         <section class="step">
           <h2>My role and the team</h2>
-          <p>Crimson Thumb was a team project for INFO-I300 in Fall 2024. I led our team of four on
-          UX design and prototyping, turning user research and iterative testing into one
-          experience across two screens. I built a consistent design system in Figma that carries
-          across both the kiosk interface and the companion mobile app.</p>
-          <!-- TODO: What you personally did -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">What you personally did</p>
-            <ul>
-              <li>How you led the team: dividing the work, running critiques, keeping the two screens consistent</li>
-              <li>A decision you drove, and why</li>
-              <li>What the design system covered (type, color, components) and how it kept the kiosk and app aligned</li>
-            </ul>
-          </aside>
+          <p class="step__lede">I led the team: setting the direction, running our meetings and organizing the work from first idea to final prototype.</p>
+          <ul class="team" aria-label="The team">
+            <li><strong>Gabrielle Roose (me)</strong><span>Team lead · direction, meetings and planning</span></li>
+            <li><strong>Kiersten Reed</strong><span>User interviews and research</span></li>
+            <li><strong>Mathilde van Dyk</strong><span>Research and the smart bin concept</span></li>
+            <li><strong>Janel Solie</strong><span>Local recycling research and the rewards concept</span></li>
+          </ul>
+          <ul class="step__list">
+            <li><strong>Setting the direction:</strong> I named the project and pitched building it into
+            One.IU, so students could use it with the app they already have.</li>
+            <li><strong>Running the team:</strong> we met in person every Friday and on a quick Monday
+            call to assign the week's tasks, with a shared agenda, Miro board and Figma file.</li>
+            <li><strong>Keeping it on track:</strong> I organized what had to happen from research to
+            the final prototype, and moderated our first pilot user test.</li>
+          </ul>
+          <p>We designed the screens together in class, in one shared Figma file.</p>
         </section>
         <section class="step">
           <h2>Research</h2>
-          <p>The project combined user research with iterative testing.</p>
-          <!-- TODO: Research -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Research</p>
-            <ul>
-              <li>What methods did you use? (interviews, surveys, competitive analysis, observation)</li>
-              <li>How many people, and who were they?</li>
-              <li>Your top 2 or 3 insights, each in one sentence</li>
-              <li>One real quote from a participant that captures the problem</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> an affinity map, a persona, survey results or a competitor comparison</p>
-          </aside>
-        </section>
-        <section class="step">
-          <h2>The idea</h2>
-          <p>Our answer was to make recycling pay. We designed a smart recycling bin that counts
-          what kinds of recyclables a student brings and how many, paired with a companion
-          experience in the One.IU app that adds money to the student's Crimson Card after each
-          visit.</p>
-          <!-- TODO: How you got there -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">How you got there</p>
-            <ul>
-              <li>Other ideas you considered, and why rewards won</li>
-              <li>How the kiosk and the app work together in one visit</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> early sketches, a user flow, or a storyboard of one visit</p>
-          </aside>
-        </section>
-        <section class="step">
-          <h2>The design</h2>
+          <p class="step__lede">A survey of 18 students and three interviews showed a knowledge gap, and a clear motivator: money.</p>
+          <dl class="stats">
+            <div><dt>students surveyed, most aged 19 to 22</dt><dd>18</dd></div>
+            <div><dt>said they recycle regularly</dt><dd>7</dd></div>
+            <div><dt>named money or rewards as a motivator</dt><dd>13</dd></div>
+            <div><dt>said they're very confident about what's recyclable</dt><dd>1</dd></div>
+          </dl>
+
+          <div class="charts">
+            <figure class="chart">
+              <figcaption>
+                <p class="chart__title">Do you recycle?</p>
+                <p class="chart__note">Number of students, out of 18</p>
+              </figcaption>
+              <table class="bars" style="--max: 7">
+                <caption class="sr-only">Do you recycle?</caption>
+                <tbody>
+                  <tr><th scope="row">Yes</th><td><div class="bars__row" title="Yes: 7 students"><span class="bars__bar" style="--v: 7"></span><span class="bars__value">7</span></div></td></tr>
+                  <tr><th scope="row">Sometimes</th><td><div class="bars__row" title="Sometimes: 6 students"><span class="bars__bar" style="--v: 6"></span><span class="bars__value">6</span></div></td></tr>
+                  <tr><th scope="row">No</th><td><div class="bars__row" title="No: 5 students"><span class="bars__bar" style="--v: 5"></span><span class="bars__value">5</span></div></td></tr>
+                </tbody>
+              </table>
+            </figure>
+            <figure class="chart">
+              <figcaption>
+                <p class="chart__title">How confident are you about what's recyclable?</p>
+                <p class="chart__note">1 = not at all, 5 = very confident</p>
+              </figcaption>
+              <table class="bars" style="--max: 7">
+                <caption class="sr-only">Confidence identifying recyclable materials, from 1 to 5</caption>
+                <tbody>
+                  <tr><th scope="row">1</th><td><div class="bars__row" title="1: 0 students"><span class="bars__bar" style="--v: 0"></span><span class="bars__value">0</span></div></td></tr>
+                  <tr><th scope="row">2</th><td><div class="bars__row" title="2: 3 students"><span class="bars__bar" style="--v: 3"></span><span class="bars__value">3</span></div></td></tr>
+                  <tr><th scope="row">3</th><td><div class="bars__row" title="3: 7 students"><span class="bars__bar" style="--v: 7"></span><span class="bars__value">7</span></div></td></tr>
+                  <tr><th scope="row">4</th><td><div class="bars__row" title="4: 7 students"><span class="bars__bar" style="--v: 7"></span><span class="bars__value">7</span></div></td></tr>
+                  <tr><th scope="row">5</th><td><div class="bars__row" title="5: 1 student"><span class="bars__bar" style="--v: 1"></span><span class="bars__value">1</span></div></td></tr>
+                </tbody>
+              </table>
+            </figure>
+          </div>
+
+          <ul class="step__list">
+            <li><strong>Students guess:</strong> most rated their confidence a 3 or 4 out of 5, and
+            interviewees assumed "paper and plastic" were fine and recycled about 5% of their waste.</li>
+            <li><strong>Access gets in the way:</strong> several students' apartments had no
+            recycling at all, and several asked for more bins.</li>
+            <li><strong>Money motivates:</strong> 13 of 18 named cash, gift cards, coupons or points
+            as what would get them to recycle more.</li>
+          </ul>
+          <div class="quotes">
+            <blockquote>
+              <p>“Oftentimes I don't know what can and can't be recycled, so I just throw it in the trash.”</p>
+              <cite>Interviewee, IU student</cite>
+            </blockquote>
+            <blockquote>
+              <p>“If I knew which items can be recycled I would recycle them. But I don't. And I'm kind of lazy.”</p>
+              <cite>Survey respondent</cite>
+            </blockquote>
+          </div>
+
+          <h3>Personas</h3>
           <figure class="step__figure">
-            <div class="laptop">
-              <div class="chapter__media">
-                <img src="images/CrimsonThumbZion.png" alt="Crimson Thumb project page with the mobile app screens" />
-              </div>
-              <div class="laptop__base" aria-hidden="true"></div>
-            </div>
-            <figcaption>The Crimson Thumb project page, with the app screens: lock screen, home page, IU Mobile and Crimson Card.</figcaption>
+            <ul class="gallery gallery--personas">
+              <li><a href="images/crimson-thumb/persona-beth.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/persona-beth.jpg" loading="lazy" width="1028" height="1102" alt="Persona: Beth Harris, 19, a marketing major in Forest dorm. She grew up recycling and composting, and struggles because people on her floor put trash in the recycling bin. Quote: Back home we have compost and recycling bins everywhere, but not in Bloomington." /></a></li>
+              <li><a href="images/crimson-thumb/persona-josie.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/persona-josie.jpg" loading="lazy" width="1098" height="1198" alt="Persona: Josie Smith, 18, a psychology major in Union Street apartments. She has access to recycling but doesn't care, and believes everything ends up in a landfill anyway. Quote: Unfortunately, I just throw stuff away." /></a></li>
+            </ul>
+            <figcaption>Two personas: a student who wants to recycle but is held back, and one who has stopped trying. Select one to enlarge it.</figcaption>
           </figure>
-          <!-- TODO: Walk through the key screens -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Walk through the key screens</p>
-            <ul>
-              <li>The kiosk flow at the bin, step by step</li>
-              <li>The app screens, and the choice behind each one</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> the kiosk screens and app screens on their own, at full size</p>
-          </aside>
         </section>
         <section class="step">
-          <h2>Testing and iteration</h2>
-          <!-- TODO: What testing showed -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">What testing showed</p>
-            <ul>
-              <li>How you tested, and with how many people</li>
-              <li>What you learned and what you changed</li>
+          <h2>Ideas and iterations</h2>
+          <p class="step__lede">Four rounds took us from a recycling map to an AI smart bin that pays you back.</p>
+          <figure class="step__figure">
+            <ul class="gallery gallery--trio">
+              <li><a href="images/crimson-thumb/sketch-crimson-thumb-app.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/sketch-crimson-thumb-app.jpg" loading="lazy" width="1236" height="1400" alt="Hand-drawn sketch of the first Crimson Thumb app idea: a game that sorts trash from recycling and an interactive map leading to local recycling centers." /></a></li>
+              <li><a href="images/crimson-thumb/sketch-smart-bin-storyboard.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/sketch-smart-bin-storyboard.jpg" loading="lazy" width="1050" height="1400" alt="Hand-drawn storyboard of a student using the smart recycling bin and getting money back on their Crimson Card." /></a></li>
+              <li><a href="images/crimson-thumb/sketch-one-iu-screens.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/sketch-one-iu-screens.jpg" loading="lazy" width="1267" height="1400" alt="Hand-drawn sketches of the One.IU and IU Mobile screens showing CrimsonCash balance and recycling history." /></a></li>
             </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> before-and-after screens</p>
-          </aside>
+            <figcaption>Early sketches: my original Crimson Thumb app idea, the smart bin storyboard, and the One.IU screens. Select one to enlarge it.</figcaption>
+          </figure>
+          <ol class="rounds">
+            <li><strong>Sketches</strong> We brainwrote nine ideas, from a smart bin and a rewards card
+            to my Crimson Thumb map-and-game app inside One.IU, then sketched the strongest three.</li>
+            <li><strong>Low-fidelity prototype</strong> In Figma we mocked up the phone flow and the bin.
+            A heuristic evaluation found unlabeled cards, no way back and no running total.</li>
+            <li><strong>High-fidelity prototype</strong> We fixed those issues, then our critique
+            pushed back: less focus on Apple Wallet, and how would the bin stop students from cheating?
+            So we added a scanning tray where AI checks each item and rejects anything that isn't recyclable.</li>
+            <li><strong>User testing and final prototype</strong> Four student testers used the
+            prototype, and their feedback shaped the final version below.</li>
+          </ol>
+          <div class="duo">
+            <figure class="step__figure">
+              <img class="step__shot" src="images/crimson-thumb/lofi-iu-mobile.png" loading="lazy" width="1120" height="632" alt="Low-fidelity wireframes of the IU Mobile flow: lock screen, home screen, IU Mobile home and the CrimsonCard balance." />
+              <figcaption><strong>Low fidelity:</strong> the IU Mobile flow, from lock screen to CrimsonCash balance.</figcaption>
+            </figure>
+            <figure class="step__figure">
+              <img class="step__shot" src="images/crimson-thumb/storyboard.jpg" loading="lazy" width="1400" height="947" alt="Six-panel storyboard of a student carrying a cup to the Crimson Thumb bin, scanning it and getting money back." />
+              <figcaption><strong>User journey:</strong> the storyboard we drew after critique, to show how one visit works.</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="step" id="built">
+          <h2>What we built</h2>
+          <p class="step__lede">A smart bin on every dorm floor that checks each item and pays you back.</p>
+          <figure class="step__figure carousel carousel--wide" data-carousel aria-roledescription="carousel" aria-label="The smart bin's screens">
+            <div class="carousel__track" tabindex="0" aria-label="Smart bin screens. Use the left and right arrow keys to move between screens.">
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 9: Welcome" data-title="Welcome" data-caption="Tap your Crimson Card, or sign in with your IU credentials.">
+                <img src="images/crimson-thumb/bin-01-welcome.png" loading="lazy" width="1145" height="700" alt="Bin screen: Welcome to CrimsonThumb! Please swipe your card or enter your IU credentials to begin." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 9: Sign in" data-title="Sign in" data-caption="A backup for students without their card.">
+                <img src="images/crimson-thumb/bin-02-sign-in.png" loading="lazy" width="1122" height="685" alt="Bin screen: Please enter your IU username and password." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 9: Place your item" data-title="Place your item" data-caption="The student sets one item on the scanning tray.">
+                <img src="images/crimson-thumb/bin-03-place-item.png" loading="lazy" width="1126" height="681" alt="Bin screen: Hello, student name! Please place your first item on to the scanning tray!" />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 9: AI check" data-title="AI check" data-caption="AI identifies the item and makes sure it's actually recyclable.">
+                <img src="images/crimson-thumb/bin-04-identifying.png" loading="lazy" width="736" height="454" alt="Bin screen: Identifying item using AI, with a loading spinner." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 9: Not recyclable" data-title="Not recyclable" data-caption="Anything that isn't recyclable is rejected, so there's no gaming the system.">
+                <img src="images/crimson-thumb/bin-05-not-recyclable.png" loading="lazy" width="1116" height="691" alt="Bin screen: I'm sorry, this item is not recyclable, please throw it away in the trash can!" />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="6 of 9: Your items" data-title="Your items" data-caption="Each item and what it earned, with a link to the pricing breakdown.">
+                <img src="images/crimson-thumb/bin-06-items.png" loading="lazy" width="1121" height="698" alt="Bin screen: Total items 2. Plastic cup, 2 ounces, plus 50 cents. Paper plate, 3 ounces, plus 30 cents. Transaction breakdown button." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="7 of 9: Pricing breakdown" data-title="Pricing breakdown" data-caption="Added after testing, so students know why each item pays what it does.">
+                <img src="images/crimson-thumb/bin-07-breakdown.png" loading="lazy" width="1143" height="713" alt="Bin screen: a table of item types, weights and cash returns, from 10 cents for paper to 1 dollar for colored glass." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="8 of 9: Money added" data-title="Money added" data-caption="The total goes straight onto the student's CrimsonCash.">
+                <img src="images/crimson-thumb/bin-08-added.png" loading="lazy" width="658" height="424" alt="Bin screen: plus 80 cents has been added to your CrimsonCash, with Back and Log out buttons." />
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="9 of 9: Thank you" data-title="Thank you" data-caption="A quick thank-you closes the visit.">
+                <img src="images/crimson-thumb/bin-09-thank-you.png" loading="lazy" width="985" height="615" alt="Bin screen: Thank you for recycling with CrimsonThumb!" />
+              </div>
+            </div>
+            <div class="carousel__controls">
+              <button class="carousel__button" type="button" data-prev aria-label="Previous screen">&larr;</button>
+              <div class="carousel__dots" role="group" aria-label="Choose a screen"></div>
+              <button class="carousel__button" type="button" data-next aria-label="Next screen">&rarr;</button>
+            </div>
+            <figcaption class="carousel__status" aria-live="polite">
+              <strong>1 of 9 · Welcome:</strong> Tap your Crimson Card, or sign in with your IU credentials.
+            </figcaption>
+            <p class="carousel__credit">The bin's screens in our final prototype.</p>
+          </figure>
+          <figure class="step__figure">
+            <img class="step__shot" src="images/crimson-thumb/hifi-mobile.png" loading="lazy" width="1518" height="616" alt="High-fidelity phone screens: lock screen, home screen, IU Mobile, and the Crimson Card with recycling transactions." />
+            <figcaption><strong>On your phone:</strong> earnings show up as transactions on your Crimson Card in IU Mobile.</figcaption>
+          </figure>
         </section>
         <section class="step">
+          <h2>Testing</h2>
+          <p class="step__lede">Four student testers changed the final design, and they agreed on what mattered.</p>
+          <p>Each tester played a freshman in Forest Quad with an empty Amazon box: recycle it at the
+          bin on their floor, then check their Crimson Card balance. They thought aloud as they went.</p>
+          <figure class="step__figure">
+            <ul class="gallery gallery--quad">
+              <li><img src="images/crimson-thumb/user-test-1.jpg" loading="lazy" width="930" height="1400" alt="A student testing the Crimson Thumb bin prototype on a laptop." /></li>
+              <li><img src="images/crimson-thumb/user-test-2.jpg" loading="lazy" width="1050" height="1400" alt="A second student testing the prototype at a desk." /></li>
+              <li><img src="images/crimson-thumb/user-test-3.jpg" loading="lazy" width="1050" height="1400" alt="A third student working through the prototype tasks." /></li>
+              <li><img src="images/crimson-thumb/user-test-4.jpg" loading="lazy" width="1050" height="1400" alt="A fourth student testing the prototype on a laptop." /></li>
+            </ul>
+            <figcaption>Our four user tests, each with a different student.</figcaption>
+          </figure>
+          <table class="findings">
+            <caption class="sr-only">What testing showed, and what we changed</caption>
+            <thead>
+              <tr><th scope="col">What testing showed</th><th scope="col">What we changed</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Testers didn't understand why a paper cup earned less than a plastic one.</th><td>Added a pricing breakdown, so every amount is explained.</td></tr>
+              <tr><th scope="row">A paper receipt felt wasteful in a product about recycling.</th><td>Removed the receipt; the transaction lives on your Crimson Card.</td></tr>
+              <tr><th scope="row">Testers liked the crimson and cream colors and the large, clear buttons.</th><td>Kept them: it looks like an official IU tool.</td></tr>
+            </tbody>
+          </table>
+          <div class="duo">
+            <figure class="step__figure">
+              <img class="step__shot" src="images/crimson-thumb/bin-closing-with-receipt.png" loading="lazy" width="978" height="604" alt="Earlier closing screen: plus 80 cents added to your CrimsonCash, with a Click here to print receipt button." />
+              <figcaption><strong>Before testing:</strong> a button to print a paper receipt.</figcaption>
+            </figure>
+            <figure class="step__figure">
+              <img class="step__shot" src="images/crimson-thumb/bin-08-added.png" loading="lazy" width="658" height="424" alt="Final closing screen: plus 80 cents added to your CrimsonCash, with only Back and Log out." />
+              <figcaption><strong>After testing:</strong> no receipt; the record lives on your Crimson Card.</figcaption>
+            </figure>
+          </div>
+          <p>Testers also asked for an "Add new item" button, a history of past recycling and
+          language options. Those went on the list for the next version.</p>
+        </section>
+        <section class="step" id="outcome">
           <h2>Outcome</h2>
-          <!-- TODO: Outcome -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Outcome</p>
-            <ul>
-              <li>What happened in the end? Final presentation, grade, demo or launch</li>
-              <li>Any numbers: tasks completed, time saved, users, test results</li>
-              <li>Feedback from users, classmates, instructors or stakeholders</li>
-            </ul>
-          </aside>
+          <p class="step__lede">Four rounds of design and testing, from sketches to a tested prototype.</p>
+          <ul class="step__list">
+            <li><strong>A full visit, end to end:</strong> sign in with your Crimson Card or IU
+            credentials, have each item checked by AI, see what you earned and why, and find it on
+            your Crimson Card.</li>
+            <li><strong>Built for the real context:</strong> a bin in the recycling room on every
+            dorm floor, using the card and app students already carry.</li>
+            <li><strong>Shared publicly:</strong> presented on Luddy's Zion showcase for INFO-I300,
+            Fall 2024.</li>
+          </ul>
         </section>
         <section class="step">
           <h2>Reflection</h2>
-          <!-- TODO: Reflection -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Reflection</p>
-            <ul>
-              <li>The biggest thing you learned (about users, design or yourself)</li>
-              <li>What you'd do differently with more time</li>
-              <li>What you'd build or test next</li>
-            </ul>
-          </aside>
+          <p class="step__lede">Listen first, then design for the people who won't go out of their way.</p>
+          <ul class="step__list">
+            <li><strong>Don't pitch the solution in an interview.</strong> Our first interview
+            guide asked about our app. Our associate instructor pointed out it would bias the answers, so we
+            asked about habits instead, and learned far more.</li>
+            <li><strong>Critique keeps you honest.</strong> We spent a round perfecting Apple Wallet
+            screens before feedback refocused us on the bin itself, where the real problem was.</li>
+            <li><strong>Small details carry your values.</strong> A paper receipt seemed harmless
+            until testers pointed out it contradicted the whole idea.</li>
+          </ul>
+          <p><strong>Next:</strong> an "Add new item" button, a recycling history, language options,
+          and a pilot bin in one dorm to test the cost and the AI check in real life.</p>
         </section>
       </div>
 

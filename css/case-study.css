@@ -19,6 +19,8 @@
    (checked against the green for colorblind-safe contrast). */
 .case { --tone-2: var(--tone); }
 .case--green { --tone-2: #2B5DA8; }
+.case--red { --tone-2: #2B5DA8; }    /* Crimson Thumb: the same deep blue, checked against the red */
+.case--blue { --tone-2: #08794B; }   /* PathForward: green for sustainability, checked against the blue */
 .case--red, .tone--red { --tone: var(--red); }
 .case--blue, .tone--blue { --tone: var(--blue); }
 .case--plum, .tone--plum { --tone: #8A2B5C; }      /* Roose & Vine: the wine */
@@ -1149,13 +1151,13 @@
 
 .compare-figure {
     justify-self: center;
-    width: min(100%, 17rem);
+    width: min(100%, var(--compare-width, 17rem));
     margin: 0;
 }
 
 .compare {
     position: relative;
-    aspect-ratio: 548 / 1186;
+    aspect-ratio: var(--ratio, 548 / 1186);
     overflow: hidden;
     background: var(--paper);
     border: 6px solid var(--ink);
@@ -1176,55 +1178,71 @@
     clip-path: inset(0 calc(100% - var(--pos)) 0 0);
 }
 
+/* the divider is a thin line in the project's color, with a soft light edge so it shows on dark screens */
 .compare__handle {
     position: absolute;
     top: 0;
     bottom: 0;
     left: var(--pos);
-    width: 3px;
-    margin-left: -1.5px;
-    background: var(--paper);
-    box-shadow: 0 0 0 1px rgba(14, 27, 51, 0.35);
+    width: 2px;
+    margin-left: -1px;
+    background: var(--tone);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
     pointer-events: none;
 }
 
+/* the grip is a slim vertical handle tab: project color, white ring, two thin grip lines */
 .compare__handle::after {
-    content: "↔";
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
-    display: grid;
-    place-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: var(--ink);
+    width: 1.5rem;
+    height: 3.4rem;
+    background: var(--tone)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 20' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M2 4v12M6 4v12'/%3E%3C/svg%3E")
+        center / 0.6rem 1.4rem no-repeat;
     border: 2px solid var(--paper);
-    border-radius: 50%;
-    color: var(--paper);
-    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(14, 27, 51, 0.25);
     transform: translate(-50%, -50%);
 }
 
-.compare__label {
-    position: absolute;
-    top: 0.6rem;
-    padding: 0.15rem 0.55rem;
-    background: rgba(14, 27, 51, 0.82);
-    border-radius: 999px;
-    color: var(--paper);
-    font-size: 0.7rem;
+/* labels sit above the frame, out of the way of the screens */
+.compare__labels {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.55rem;
+    padding-inline: 0.15rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
     text-transform: uppercase;
-    pointer-events: none;
 }
 
-.compare__label--before {
-    left: 0.6rem;
+.compare__labels span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
 }
 
-.compare__label--after {
-    right: 0.6rem;
+.compare__labels span::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    background: var(--line);
+    border-radius: 50%;
+}
+
+.compare__labels span:last-child {
+    color: var(--tone);
+}
+
+.compare__labels span:last-child::before {
+    background: var(--tone);
 }
 
 /* an invisible slider covers the image, so dragging anywhere works,
@@ -1360,4 +1378,253 @@
     .step::before {
         transition: none;
     }
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    WIDE VARIANTS (landscape screens, like Crimson Thumb's kiosk)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.carousel--wide .carousel__track {
+    --slide: clamp(15rem, 62vw, 30rem);
+}
+
+.carousel--wide .carousel__slide img {
+    border-width: 8px;
+    border-radius: 14px;
+}
+
+.compare-figure--wide {
+    --compare-width: 34rem;
+    margin-top: 2rem;
+}
+
+.compare-figure--wide .compare {
+    border-width: 8px;
+    border-radius: 14px;
+}
+
+.compare-figure--wide .compare__img {
+    object-fit: cover;
+}
+
+/* three images in a row on wide screens */
+.gallery--trio {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    align-items: start;
+}
+
+/* four photos: two by two on phones, one row on wide screens */
+.gallery--quad {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+}
+
+@media (width >= 760px) {
+    .gallery--quad {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.gallery--quad img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border: 3px solid var(--ink);
+}
+
+/* a single screenshot or storyboard shown on its own */
+.step__shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+}
+
+/* numbered rounds of design */
+.rounds {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 52rem;
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style: none;
+    counter-reset: round;
+}
+
+.rounds li {
+    position: relative;
+    padding: 0.9rem 1rem 0.9rem 3.4rem;
+    background: color-mix(in srgb, var(--tone) 6%, var(--paper));
+    border: 1px solid var(--line);
+    line-height: 1.5;
+    counter-increment: round;
+}
+
+.rounds li::before {
+    content: counter(round);
+    position: absolute;
+    top: 0.85rem;
+    left: 1rem;
+    display: grid;
+    place-items: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    background: var(--tone);
+    border-radius: 50%;
+    color: var(--paper);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.rounds strong {
+    display: block;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    PEOPLE TABLE (who took part in research, described by role and place)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.people {
+    width: 100%;
+    max-width: 52rem;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    font-size: var(--step--1);
+}
+
+.people th,
+.people td {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    line-height: 1.45;
+    text-align: left;
+    vertical-align: top;
+}
+
+.people thead th {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: color-mix(in srgb, var(--tone) 8%, var(--paper));
+    border-bottom: 3px solid var(--tone);
+}
+
+.people tbody th {
+    font-weight: 700;
+}
+
+/* on phones, each person becomes a small card */
+@media (width < 640px) {
+    .people thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
+
+    .people tr,
+    .people th,
+    .people td {
+        display: block;
+    }
+
+    .people tr {
+        padding: 0.4rem 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .people th,
+    .people td {
+        padding: 0.15rem 0.9rem;
+        border-bottom: 0;
+    }
+
+    .people td::before {
+        content: attr(data-label) ": ";
+        color: var(--muted);
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    NAME PATH (how a project's name changed)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.name-path {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    max-width: 52rem;
+    margin-top: 1.25rem;
+    padding: 0;
+    list-style: none;
+}
+
+.name-path li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.name-path li + li::before {
+    content: "→";
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.name-path span {
+    padding: 0.35rem 0.85rem;
+    background: var(--paper);
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.name-path li:last-child span {
+    background: var(--tone);
+    border-color: var(--tone);
+    color: var(--paper);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    A ROW OF COMPARE SLIDERS
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.compares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+    gap: 2rem 1.5rem;
+    max-width: 52rem;
+    margin-top: 2rem;
+}
+
+.compares .compare-figure {
+    --compare-width: 100%;
+    width: 100%;
+    max-width: 17rem;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    CALLOUT (a short note about what's coming next)
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.callout {
+    max-width: 44rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: color-mix(in srgb, var(--tone-2) 8%, var(--paper));
+    border-left: 4px solid var(--tone-2);
+    line-height: 1.55;
+}
+
+.callout strong {
+    color: var(--tone-2);
 }
