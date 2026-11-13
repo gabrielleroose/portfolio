@@ -49,11 +49,19 @@
     padding-top: 2rem;
 }
 
+/* a small, quiet back link; the project color shows on hover */
 .case__back {
     display: inline-block;
     margin-bottom: 1.5rem;
+    color: var(--muted);
+    font-size: var(--step--1);
     font-weight: 600;
     text-decoration: none;
+}
+
+.case__back:hover,
+.case__back:focus-visible {
+    color: var(--tone);
 }
 
 .case__back:hover {
@@ -2064,4 +2072,38 @@
 /* the link under a full-width figure lines up with its right edge */
 .step__more--full {
     max-width: 52rem;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    PHONE: A TIGHTER CASE STUDY HEADER
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+@media (width < 700px) {
+    /* less empty space above the back link */
+    .case {
+        padding-top: 5.25rem;
+    }
+
+    .case__hero {
+        padding-top: 0.5rem;
+    }
+
+    .case__back {
+        margin-bottom: 1rem;
+    }
+
+    /* role, team, timeline and course two by two; tools across the bottom */
+    .facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem 1.25rem;
+    }
+
+    .facts > div:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    /* the main button sits centered under the facts */
+    .case__links {
+        justify-content: center;
+    }
 }
