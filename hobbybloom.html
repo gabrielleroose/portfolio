@@ -86,9 +86,9 @@
           something new comes with a fear of being bad at it. We designed for people aged 18 to 25
           who want to start a hobby but:</p>
           <ul class="step__list">
-            <li><strong>don't know where to begin,</strong></li>
-            <li><strong>don't have anyone around them who does it,</strong> and</li>
-            <li><strong>can't picture where the hobby could take them.</strong></li>
+            <li><strong>Don't know where to begin,</strong></li>
+            <li><strong>Don't have anyone around them who does it,</strong> and</li>
+            <li><strong>Can't picture where the hobby could take them.</strong></li>
           </ul>
           <p>YouTube can teach you to knit, but it can't introduce you to someone who knits.
           HobbyBloom pairs guided learning with Circles: groups of people who share your hobby.</p>
@@ -97,7 +97,7 @@
           <h2>My role and the team</h2>
           <p class="step__lede">I led design for the whole product and spearheaded two features: the Dashboard and Circles.</p>
           <ul class="team" aria-label="The team">
-            <li><strong>Gabrielle Roose (me)</strong><span>Design lead · Dashboard and Circles</span></li>
+            <li class="team__me"><strong>Gabrielle Roose<span class="sr-only"> (me)</span></strong><span>Design lead · Dashboard and Circles</span></li>
             <li><strong>Jack Bruce</strong><span>Database architect · Activity feed and messaging</span></li>
             <li><strong>Chris Martin</strong><span>Lead PHP developer · onboarding and recommendations</span></li>
             <li><strong>Drew Bauman</strong><span>Modules, calendar and My Content</span></li>
@@ -179,20 +179,64 @@
           </div>
 
           <h3>Personas</h3>
-          <figure class="step__figure">
-            <ul class="gallery gallery--personas">
-              <li><a href="images/hobbybloom/persona-derrick.jpg" target="_blank" rel="noopener"><img src="images/hobbybloom/persona-derrick.jpg" loading="lazy" width="1400" height="413" alt="Persona: Derrick Shay, 20, a college student taking guitar lessons who can't find well-ordered, free content to practice with between classes." /></a></li>
-              <li><a href="images/hobbybloom/persona-isaiah.jpg" target="_blank" rel="noopener"><img src="images/hobbybloom/persona-isaiah.jpg" loading="lazy" width="1400" height="419" alt="Persona: Isaiah Carpenter, 22, works full time in a small town and wants to get better at fishing, but has few sources of advice beyond his friends." /></a></li>
-              <li><a href="images/hobbybloom/persona-adoline.jpg" target="_blank" rel="noopener"><img src="images/hobbybloom/persona-adoline.jpg" loading="lazy" width="1400" height="420" alt="Persona: Adoline Webb, 23, an experienced botanist and part-time student who wants to share her knowledge but has few chances to connect with others in her hobby." /></a></li>
-              <li><a href="images/hobbybloom/persona-leonard.jpg" target="_blank" rel="noopener"><img src="images/hobbybloom/persona-leonard.jpg" loading="lazy" width="1400" height="420" alt="Persona: Leonard O'Hare, 37, a father looking for new hobbies for his 11-year-old son, who doesn't know where to start." /></a></li>
-            </ul>
-            <figcaption>Four personas, from a college guitarist to a parent helping his son find a hobby. Select one to enlarge it.</figcaption>
-          </figure>
+          <p class="step__meta">Four people we designed for, from the survey and interviews.</p>
+          <ul class="personas">
+            <li class="persona">
+              <div class="persona__head">
+                <span class="persona__icon" aria-hidden="true">🎸</span>
+                <div><h4>Derrick Shay</h4><p>20 · music student at IU</p></div>
+                <span class="persona__hobby" style="--circle: #ac58ca">Guitar</span>
+              </div>
+              <dl>
+                <div><dt>Wants</dt><dd>Extra guitar lessons to practice with between classes.</dd></div>
+                <div><dt>Struggles</dt><dd>Free content is scattered and doesn't follow any order.</dd></div>
+              </dl>
+              <p class="persona__help"><strong>How HobbyBloom helps:</strong> one place for guitar advice at his level, for steady learning alongside school.</p>
+            </li>
+            <li class="persona">
+              <div class="persona__head">
+                <span class="persona__icon" aria-hidden="true">🎣</span>
+                <div><h4>Isaiah Carpenter</h4><p>22 · works full time in a small town</p></div>
+                <span class="persona__hobby" style="--circle: #7D6B5D">Fishing</span>
+              </div>
+              <dl>
+                <div><dt>Wants</dt><dd>New tricks to impress his friends, and maybe to fish competitively.</dd></div>
+                <div><dt>Struggles</dt><dd>Beyond his friends, he only has few places to get advice.</dd></div>
+              </dl>
+              <p class="persona__help"><strong>How HobbyBloom helps:</strong> tips from a whole community of people who fish.</p>
+            </li>
+            <li class="persona">
+              <div class="persona__head">
+                <span class="persona__icon" aria-hidden="true">🌿</span>
+                <div><h4>Adoline Webb</h4><p>23 · part-time student and botanist</p></div>
+                <span class="persona__hobby" style="--circle: #26f749">Botany</span>
+              </div>
+              <dl>
+                <div><dt>Wants</dt><dd>To share what she knows about plants and keep learning.</dd></div>
+                <div><dt>Struggles</dt><dd>Outside home, she has few chances to meet others into plants.</dd></div>
+              </dl>
+              <p class="persona__help"><strong>How HobbyBloom helps:</strong> she can join or start a Circle about botany.</p>
+            </li>
+            <li class="persona">
+              <div class="persona__head">
+                <span class="persona__icon" aria-hidden="true">🧭</span>
+                <div><h4>Leonard O'Hare</h4><p>37 · dad of 11-year-old Steven</p></div>
+                <span class="persona__hobby" style="--circle: #F2C200">Something new</span>
+              </div>
+              <dl>
+                <div><dt>Wants</dt><dd>A positive place for Steven to explore new interests.</dd></div>
+                <div><dt>Struggles</dt><dd>Steven is bored with his old hobbies, and Leonard doesn't know where to start.</dd></div>
+              </dl>
+              <p class="persona__help"><strong>How HobbyBloom helps:</strong> Leonard can review hobby modules and pick ones Steven is curious about, so Steven explores with a parent involved.</p>
+            </li>
+          </ul>
         </section>
         <section class="step">
           <h2>Ideas and iterations</h2>
           <p class="step__lede">Wireframes mapped the journey from sign-up to Circles; three decisions shaped the final look.</p>
           <figure class="step__figure carousel" data-carousel aria-roledescription="carousel" aria-label="Fall 2025 wireframes">
+            <div class="carousel__stage">
+              <button class="carousel__button carousel__button--prev" type="button" data-prev aria-label="Previous screen"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg></button>
             <div class="carousel__track" tabindex="0" aria-label="Wireframes. Use the left and right arrow keys to move between screens.">
               <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 8: Basic information" data-title="Basic information" data-caption="A few quick questions so suggestions fit you.">
                 <img src="images/hobbybloom/wireframe-01-basic-info.png" loading="lazy" width="492" height="1060" alt="Wireframe: Basic information, a short onboarding questionnaire." />
@@ -219,15 +263,14 @@
                 <img src="images/hobbybloom/wireframe-08-activity.png" loading="lazy" width="440" height="950" alt="Wireframe: My activity, with module progress, days active and completed modules." />
               </div>
             </div>
+              <button class="carousel__button carousel__button--next" type="button" data-next aria-label="Next screen"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></button>
+            </div>
             <div class="carousel__controls">
-              <button class="carousel__button" type="button" data-prev aria-label="Previous screen">&larr;</button>
               <div class="carousel__dots" role="group" aria-label="Choose a screen"></div>
-              <button class="carousel__button" type="button" data-next aria-label="Next screen">&rarr;</button>
             </div>
             <figcaption class="carousel__status" aria-live="polite">
               <strong>1 of 8 · Basic information:</strong> A few quick questions so suggestions fit you.
             </figcaption>
-            <p class="carousel__credit">Our fall 2025 Figma wireframes. I designed five of the eight.</p>
           </figure>
 
           <div class="split">
@@ -348,7 +391,7 @@
             <li><strong>Build things that connect.</strong> HobbyBloom came alive when the hobby you
             pick on day one fed your Dashboard, Circles and achievements.</li>
           </ul>
-          <p><strong>Next:</strong> Circles that connect you with people nearby, learning paths that
+          <p class="callout callout--accent"><strong>Next:</strong> Circles that connect you with people nearby, learning paths that
           adapt to your quiz results, and a version 5 redesign I'm working on now.</p>
         </section>
       </div>

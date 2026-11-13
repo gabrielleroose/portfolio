@@ -274,4 +274,60 @@
         revealables.forEach((el) => el.classList.add("reveal"));
         onceVisible(revealables, (el) => el.classList.add("is-in"), 0.12);
     }
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * *
+        LIGHTBOX
+        Any image wrapped in a link to an image file opens large on this page
+        instead of in a new tab. Close with the button, Esc or a click outside
+        the image. Without JavaScript the link still opens the image in a new tab.
+    * * * * * * * * * * * * * * * * * * * * * * * * */
+
+    const imageLinks = [...document.querySelectorAll("a[href]")].filter(
+        (a) => /\.(jpe?g|png|webp|gif)$/i.test(a.getAttribute("href")) && a.querySelector("img")
+    );
+
+    if (imageLinks.length && typeof HTMLDialogElement === "function") {
+        const box = document.createElement("dialog");
+        box.className = "lightbox";
+        box.setAttribute("aria-label", "Enlarged image");
+        box.innerHTML =
+            '<button class="lightbox__close" type="button" aria-label="Close">' +
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>' +
+            "</button>" +
+            '<img class="lightbox__img" alt="" />' +
+            '<p class="lightbox__caption"></p>';
+        // inside the case study, so the frame picks up the project color
+        (document.querySelector(".case") || document.body).append(box);
+
+        const img = box.querySelector(".lightbox__img");
+        const caption = box.querySelector(".lightbox__caption");
+
+        imageLinks.forEach((link) => {
+            link.classList.add("zoomable");
+            link.removeAttribute("target");
+            link.setAttribute("aria-haspopup", "dialog");
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                const thumb = link.querySelector("img");
+                img.src = link.getAttribute("href");
+                img.alt = thumb.alt;
+                const figcaption = link.closest("figure")?.querySelector("figcaption");
+                const text = figcaption ? figcaption.textContent.replace(/\s*Select (it|one) to enlarge( it)?\.?/i, "").trim() : "";
+                caption.textContent = text;
+                caption.hidden = !text;
+                box.showModal();
+                document.documentElement.classList.add("has-lightbox");
+            });
+        });
+
+        box.querySelector(".lightbox__close").addEventListener("click", () => box.close());
+        // a click on the dark backdrop (the dialog itself, not its contents) closes it
+        box.addEventListener("click", (event) => {
+            if (event.target === box) box.close();
+        });
+        box.addEventListener("close", () => {
+            document.documentElement.classList.remove("has-lightbox");
+            img.removeAttribute("src");
+        });
+    }
 })();

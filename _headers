@@ -1,0 +1,6 @@
+# Netlify only (GitHub Pages ignores this file).
+# The Netlify site is a preview of the redesign branch for user testing,
+# so tell search engines not to index it. The real site on GitHub Pages stays searchable.
+# If Netlify ever becomes the main host, delete this file.
+/*
+  X-Robots-Tag: noindex

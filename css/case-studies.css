@@ -68,7 +68,13 @@
 }
 
 /* the device sits on a soft wash of the project's color */
+/* every card's picture area is the same shape (10:7), whether it holds a laptop
+   or phones, so the colored backgrounds line up across a row */
 .study-card__media {
+    display: grid;
+    align-content: center;
+    aspect-ratio: 10 / 7;
+    container-type: inline-size;
     overflow: hidden;
     padding: 2rem 1.5rem 1.75rem;
     background: var(--platform);
@@ -81,12 +87,19 @@
 }
 
 .study-card .phones {
-    padding-block: 0.5rem 0.75rem;
+    padding-block: 0;
 }
 
+/* phones need less breathing room than a laptop, so they can fill more of the box */
+.study-card__media:has(.phones) {
+    padding-block: 1rem;
+}
+
+/* the phones are sized from the box's height: (box height − padding) ÷ the
+   screenshot's 2.17 height-to-width ratio, plus the 6px bezel on each side */
 .study-card .phone {
     --pad: 6px;
-    width: 38%;
+    width: calc(((100cqw + 3rem) * 0.7 - 2.5rem - 12px) / 2.17 + 12px);
     min-width: 0;
     border-radius: 22px;
 }

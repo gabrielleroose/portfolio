@@ -446,6 +446,24 @@ a {
     box-shadow: 12px 12px 0 var(--red);
 }
 
+/* phones and tablets: the photo sits under the text, so tighten the spacing and size
+   the photo to the visible screen (svh leaves room for Safari's bottom address bar),
+   so the whole headshot shows on the first screen */
+@media (width < 1000px) {
+    .place--hero {
+        gap: 1.75rem;
+        padding-top: 6.5rem;   /* clears the two-row menu bar on phones */
+    }
+
+    .hero__lede {
+        margin-bottom: 0;
+    }
+
+    .hero__photo {
+        width: clamp(170px, calc((100svh - 27rem) * 0.8), 320px);
+    }
+}
+
 @media (width >= 1000px) {
     .place--hero {
         grid-template-columns: 1.5fr 0.8fr;
@@ -600,6 +618,7 @@ a {
 [data-tool="postgresql"] { --tool: #336791; }
 [data-tool="figma"] { --tool: #A259FF; }
 [data-tool="ux"] { --tool: #8C959F; }
+[data-tool="miro"] { --tool: #050038; }   /* Miro's navy, so it doesn't match JavaScript's yellow */
 [data-tool="google"] { --tool: #4285F4; }
 [data-tool="railway"] { --tool: #853BCE; }
 [data-tool="api"] { --tool: #0F9D8A; }
@@ -1467,4 +1486,46 @@ a {
 
 .place--more .card__title {
     margin-top: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    PHONE FIXES
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* short phones only (like the iPhone SE): a smaller title so the headshot fits on
+   the first screen. 640px catches the SE either way Safari reports its height,
+   and never a regular iPhone 15/16 */
+@media (width < 1000px) and (height < 640px) {
+    .hero__title {
+        margin-bottom: 1rem;
+        font-size: 2.1rem;
+    }
+}
+
+@media (width < 700px) {
+    /* short courses two per row, so all 12 make six rows */
+    .courses {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.6rem;
+    }
+
+    .course {
+        padding: 0.7rem 0.75rem;
+        border-left-width: 4px;
+    }
+
+    .course__name {
+        font-size: 0.92rem;
+    }
+
+    .course__meta {
+        font-size: 0.78rem;
+        white-space: nowrap;
+    }
+
+    /* the route doesn't run through New York's dark block, so drop its left margin
+       there and the copy and form sit centered on the screen */
+    .place--ny .city {
+        margin-left: calc(-1 * var(--rail));
+    }
 }

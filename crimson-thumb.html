@@ -46,7 +46,7 @@
           <div><dt>Team</dt><dd>4 students (Group 9)</dd></div>
           <div><dt>Timeline</dt><dd>September – December 2024</dd></div>
           <div><dt>Course</dt><dd>INFO-I300: Human-Computer Interaction Design</dd></div>
-          <div><dt>Tools</dt><dd><ul class="chips" aria-label="Tools"><li data-tool="figma">Figma</li><li data-tool="ux"> UX research</li></ul></dd></div>
+          <div><dt>Tools</dt><dd><ul class="chips" aria-label="Tools"><li data-tool="figma">Figma</li><li data-tool="miro">Miro</li><li data-tool="ux">UX research</li></ul></dd></div>
           </dl>
           <div class="case__links">
           <a class="button" href="https://zion.luddy.indiana.edu/info-i300-fa24/sustainability-crimson-thumb#project" target="_blank" rel="noopener">View the project page</a>
@@ -95,7 +95,7 @@
           <h2>My role and the team</h2>
           <p class="step__lede">I led the team: setting the direction, running our meetings and organizing the work from first idea to final prototype.</p>
           <ul class="team" aria-label="The team">
-            <li><strong>Gabrielle Roose (me)</strong><span>Team lead · direction, meetings and planning</span></li>
+            <li class="team__me"><strong>Gabrielle Roose<span class="sr-only"> (me)</span></strong><span>Team lead · direction, meetings and planning</span></li>
             <li><strong>Kiersten Reed</strong><span>User interviews and research</span></li>
             <li><strong>Mathilde van Dyk</strong><span>Research and the smart bin concept</span></li>
             <li><strong>Janel Solie</strong><span>Local recycling research and the rewards concept</span></li>
@@ -112,7 +112,7 @@
         </section>
         <section class="step">
           <h2>Research</h2>
-          <p class="step__lede">A survey of 18 students and three interviews showed a knowledge gap, and a clear motivator: money.</p>
+          <p class="step__lede">A survey of 18 students and 12 interviews showed a knowledge gap, and a clear motivator: money.</p>
           <dl class="stats">
             <div><dt>students surveyed, most aged 19 to 22</dt><dd>18</dd></div>
             <div><dt>said they recycle regularly</dt><dd>7</dd></div>
@@ -172,25 +172,51 @@
             </blockquote>
           </div>
 
-          <h3>Personas</h3>
-          <figure class="step__figure">
-            <ul class="gallery gallery--personas">
-              <li><a href="images/crimson-thumb/persona-beth.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/persona-beth.jpg" loading="lazy" width="1028" height="1102" alt="Persona: Beth Harris, 19, a marketing major in Forest dorm. She grew up recycling and composting, and struggles because people on her floor put trash in the recycling bin. Quote: Back home we have compost and recycling bins everywhere, but not in Bloomington." /></a></li>
-              <li><a href="images/crimson-thumb/persona-josie.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/persona-josie.jpg" loading="lazy" width="1098" height="1198" alt="Persona: Josie Smith, 18, a psychology major in Union Street apartments. She has access to recycling but doesn't care, and believes everything ends up in a landfill anyway. Quote: Unfortunately, I just throw stuff away." /></a></li>
-            </ul>
-            <figcaption>Two personas: a student who wants to recycle but is held back, and one who has stopped trying. Select one to enlarge it.</figcaption>
+          <h3>Synthesis</h3>
+          <figure class="step__figure step__figure--framed">
+            <a href="images/crimson-thumb/research-board.jpg" target="_blank" rel="noopener"><img class="step__shot" src="images/crimson-thumb/research-board.jpg" loading="lazy" width="2720" height="1064" alt="Our affinity map in Miro in three steps: every interview quote on a sticky note, color-coded by interview; the notes grouped into emerging categories such as education, knowledge, recycling opportunities and money incentives; and links drawn between the categories and the quotes behind them." /></a>
           </figure>
+          <p class="step__more step__more--right step__more--full"><a href="https://miro.com/app/board/uXjVLYWRcDg=/?share_link_id=580756744820" target="_blank" rel="noopener">View our research board in Miro<span class="sr-only"> (opens in a new tab)</span> <span aria-hidden="true">↗</span></a></p>
+
+          <h3>Personas</h3>
+          <p class="step__meta">Two personas: a student who wants to recycle but is held back, and one who has stopped trying.</p>
+          <ul class="personas">
+            <li class="persona">
+              <div class="persona__head">
+                <span class="persona__icon" aria-hidden="true">♻️</span>
+                <div><h4>Beth Harris</h4><p>19 · IU marketing major · lives in Forest dorm</p></div>
+                <span class="persona__hobby">Dorm</span>
+              </div>
+              <dl>
+                <div><dt>Recycling access</dt><dd>A recycling bin in her dorm room and a recycling room on each floor.</dd></div>
+                <div><dt>Recycling habits</dt><dd>Raised with strong composting and recycling habits; carefully considers her carbon footprint. Struggles because some people on her floor are putting trash in the recycling bin.</dd></div>
+              </dl>
+              <div class="persona__help"><strong>Core need:</strong> “Back home we have compost and recycling bins everywhere, but not in Bloomington.”</div>
+            </li>
+            <li class="persona">
+              <div class="persona__head">
+                <span class="persona__icon" aria-hidden="true">🗑️</span>
+                <div><h4>Josie Smith</h4><p>18 · IU psychology major · lives in Union Street Apartments</p></div>
+                <span class="persona__hobby">Apartment</span>
+              </div>
+              <dl>
+                <div><dt>Recycling access</dt><dd>Has access to recycling, but simply does not care; discards waste in the recycling bin when the trash can overflows.</dd></div>
+                <div><dt>Recycling habits</dt><dd>Throws everything away; believes everything goes to a landfill anyway.</dd></div>
+              </dl>
+              <div class="persona__help"><strong>Core need:</strong> “Unfortunately, I just throw stuff away.”</div>
+            </li>
+          </ul>
         </section>
         <section class="step">
           <h2>Ideas and iterations</h2>
           <p class="step__lede">Four rounds took us from a recycling map to an AI smart bin that pays you back.</p>
           <figure class="step__figure">
-            <ul class="gallery gallery--trio">
+            <ul class="gallery gallery--trio gallery--framed">
               <li><a href="images/crimson-thumb/sketch-crimson-thumb-app.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/sketch-crimson-thumb-app.jpg" loading="lazy" width="1236" height="1400" alt="Hand-drawn sketch of the first Crimson Thumb app idea: a game that sorts trash from recycling and an interactive map leading to local recycling centers." /></a></li>
               <li><a href="images/crimson-thumb/sketch-smart-bin-storyboard.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/sketch-smart-bin-storyboard.jpg" loading="lazy" width="1050" height="1400" alt="Hand-drawn storyboard of a student using the smart recycling bin and getting money back on their Crimson Card." /></a></li>
               <li><a href="images/crimson-thumb/sketch-one-iu-screens.jpg" target="_blank" rel="noopener"><img src="images/crimson-thumb/sketch-one-iu-screens.jpg" loading="lazy" width="1267" height="1400" alt="Hand-drawn sketches of the One.IU and IU Mobile screens showing CrimsonCash balance and recycling history." /></a></li>
             </ul>
-            <figcaption>Early sketches: my original Crimson Thumb app idea, the smart bin storyboard, and the One.IU screens. Select one to enlarge it.</figcaption>
+            <figcaption>Early sketches: my original Crimson Thumb app idea, the smart bin storyboard, and the One.IU screens.</figcaption>
           </figure>
           <ol class="rounds">
             <li><strong>Sketches</strong> We brainwrote nine ideas, from a smart bin and a rewards card
@@ -203,7 +229,7 @@
             <li><strong>User testing and final prototype</strong> Four student testers used the
             prototype, and their feedback shaped the final version below.</li>
           </ol>
-          <div class="duo">
+          <div class="duo duo--even">
             <figure class="step__figure">
               <img class="step__shot" src="images/crimson-thumb/lofi-iu-mobile.png" loading="lazy" width="1120" height="632" alt="Low-fidelity wireframes of the IU Mobile flow: lock screen, home screen, IU Mobile home and the CrimsonCard balance." />
               <figcaption><strong>Low fidelity:</strong> the IU Mobile flow, from lock screen to CrimsonCash balance.</figcaption>
@@ -218,6 +244,8 @@
           <h2>What we built</h2>
           <p class="step__lede">A smart bin on every dorm floor that checks each item and pays you back.</p>
           <figure class="step__figure carousel carousel--wide" data-carousel aria-roledescription="carousel" aria-label="The smart bin's screens">
+            <div class="carousel__stage">
+              <button class="carousel__button carousel__button--prev" type="button" data-prev aria-label="Previous screen"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg></button>
             <div class="carousel__track" tabindex="0" aria-label="Smart bin screens. Use the left and right arrow keys to move between screens.">
               <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 9: Welcome" data-title="Welcome" data-caption="Tap your Crimson Card, or sign in with your IU credentials.">
                 <img src="images/crimson-thumb/bin-01-welcome.png" loading="lazy" width="1145" height="700" alt="Bin screen: Welcome to CrimsonThumb! Please swipe your card or enter your IU credentials to begin." />
@@ -247,10 +275,10 @@
                 <img src="images/crimson-thumb/bin-09-thank-you.png" loading="lazy" width="985" height="615" alt="Bin screen: Thank you for recycling with CrimsonThumb!" />
               </div>
             </div>
+              <button class="carousel__button carousel__button--next" type="button" data-next aria-label="Next screen"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></button>
+            </div>
             <div class="carousel__controls">
-              <button class="carousel__button" type="button" data-prev aria-label="Previous screen">&larr;</button>
               <div class="carousel__dots" role="group" aria-label="Choose a screen"></div>
-              <button class="carousel__button" type="button" data-next aria-label="Next screen">&rarr;</button>
             </div>
             <figcaption class="carousel__status" aria-live="polite">
               <strong>1 of 9 · Welcome:</strong> Tap your Crimson Card, or sign in with your IU credentials.
