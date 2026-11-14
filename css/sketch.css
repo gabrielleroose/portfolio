@@ -460,7 +460,7 @@ a {
     }
 
     .hero__photo {
-        width: clamp(170px, calc((100svh - 27rem) * 0.8), 320px);
+        width: clamp(170px, calc((100svh - 23.5rem) * 0.8), 320px);
     }
 }
 
@@ -1527,5 +1527,49 @@ a {
        there and the copy and form sit centered on the screen */
     .place--ny .city {
         margin-left: calc(-1 * var(--rail));
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    PHONE: HOMEPAGE SPACING AND ORDER
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+@media (width < 1000px) {
+    /* each project shows its picture first, then its name and words.
+       Projects no longer fill a whole screen each; fixed spacing keeps them apart */
+    .chapter {
+        min-height: 0;
+        align-content: start;
+        gap: 2rem;
+        padding-block: 5rem;
+    }
+
+    .chapter .laptop,
+    .chapter .phones {
+        order: -1;
+    }
+
+    /* about half the old gap between Education and HobbyBloom */
+    .chapter[data-intro] {
+        padding-top: 1rem;
+    }
+}
+
+@media (width < 700px) {
+    /* the title spans the screen in three lines instead of four, so the tagline
+       and photo below show sooner (short phones keep their own smaller size) */
+    .hero__title {
+        max-width: none;
+    }
+
+    /* the about paragraph one size smaller */
+    .about__text {
+        font-size: var(--step-0);
+    }
+}
+
+@media (width < 700px) and (height >= 640px) {
+    .hero__title {
+        font-size: 2.5rem;
     }
 }
