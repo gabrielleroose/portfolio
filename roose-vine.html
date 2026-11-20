@@ -34,13 +34,10 @@
     </header>
 
     <main class="case case--plum">
-      <!-- DRAFT: delete this note once every "To add" box below is filled in -->
-      <p class="draft-note">Draft case study. Sections marked "To add" still need content.</p>
-
       <div class="case__hero">
         <div>
           <a class="case__back" href="case-studies.html">&larr; All case studies</a>
-          <p class="case__eyebrow">Case study 04 · Capstone, first semester</p>
+          <p class="case__eyebrow">Case study 04 · Full stack, web app</p>
           <h1 class="case__title">Roose &amp; Vine</h1>
           <p class="case__lede">Restaurant and menu information, organized and easy to read.</p>
           <p class="case__summary">Roose &amp; Vine is a database-driven restaurant application that organizes and displays restaurant and menu information in a clear, user-friendly way.</p>
@@ -69,7 +66,7 @@
       <div class="glance" aria-label="At a glance">
         <div class="glance__card">
           <h2>Problem</h2>
-          <p class="facts__todo">Add the problem in one sentence</p>
+          <p>Before capstone, I needed to build a full database-driven app on my own, from the database to a live site.</p>
         </div>
         <div class="glance__card">
           <h2>Solution</h2>
@@ -77,92 +74,60 @@
         </div>
         <div class="glance__card">
           <h2>Outcome</h2>
-          <p>A live app, deployed on Railway.</p>
+          <p>A live app on Railway, and the same PHP and MySQL setup I used on HobbyBloom.</p>
         </div>
       </div>
 
       <div class="steps" id="story">
         <section class="step">
-          <h2>The problem</h2>
-          <!-- TODO: Why you built it -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Why you built it</p>
-            <ul>
-              <li>What was hard about finding or organizing restaurant and menu information?</li>
-              <li>Who is the app for: diners, restaurant owners, or both?</li>
-            </ul>
-          </aside>
+          <h2>Why I built it</h2>
+          <p class="step__lede">A warm-up for capstone: one app that uses every tool together.</p>
+          <p>Before capstone teams started their big projects, every student built the same back
+          end on their own: a MySQL database of restaurants and dishes, and the PHP pages that
+          read and change it. The front end was ours to design.</p>
+          <p>The point was to get comfortable using all of the tools together: the database, the
+          code, GitHub branches and a live deployment.</p>
         </section>
         <section class="step">
           <h2>My role</h2>
           <p>Roose &amp; Vine was my individual project for INFO-I494, the first semester of my capstone. I designed and built it myself, from the database to the interface.</p>
         </section>
         <section class="step">
-          <h2>Research</h2>
-          <!-- TODO: Research -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Research</p>
-            <ul>
-              <li>What did you look at before building? (similar apps, people you asked, your own needs)</li>
-              <li>Two or three things you learned that shaped the app</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> a competitor comparison, sketches or notes</p>
-          </aside>
-        </section>
-        <section class="step">
           <h2>What I built</h2>
           <ul class="step__list">
-            <li>Public pages for browsing restaurants and their menus</li>
-            <li>A private area for adding, editing and deleting entries</li>
-            <li>A MySQL database behind it all</li>
+            <li><strong>Restaurant pages</strong> for each location, Bloomington and Indianapolis</li>
+            <li><strong>A menu page</strong> that lists every dish from the database, with its price, category and restaurant</li>
+            <li><strong>A private page</strong> for adding new dishes, plus editing and deleting the ones already there</li>
           </ul>
-          <figure class="step__figure">
-            <div class="laptop">
-              <div class="chapter__media">
-                <img src="images/capstone.jpg" alt="Roose &amp; Vine home page" />
-              </div>
-              <div class="laptop__base" aria-hidden="true"></div>
-            </div>
-            <figcaption>Roose &amp; Vine.</figcaption>
-          </figure>
-          <!-- TODO: Walk through the key screens -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Walk through the key screens</p>
-            <ul>
-              <li>For two or three screens: what the user does there and the design choice behind it</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> screenshots of the browsing pages and the private editing area</p>
-          </aside>
+          <p>Because everyone shared the same back end, the design was where I could make it my
+          own. I gave it the feel of a warm Italian restaurant: a cream background, serif
+          headings and a gallery of the food.</p>
+          <div class="duo duo--even">
+            <figure class="step__figure">
+              <a href="images/roose-vine/menu.jpg"><img class="step__shot" src="images/roose-vine/menu.jpg" loading="lazy" width="1440" height="900" alt="The Roose &amp; Vine menu page: a table of dishes with price, category, description and restaurant, Edit and Delete buttons, and a food gallery below." /></a>
+              <figcaption><strong>The menu:</strong> every dish comes straight from the database.</figcaption>
+            </figure>
+            <figure class="step__figure">
+              <a href="images/roose-vine/add-dish.jpg"><img class="step__shot" src="images/roose-vine/add-dish.jpg" loading="lazy" width="1440" height="900" alt="The Add a New Dish form, with fields for name, price and description, and checkboxes for spicy, dairy free, vegan, vegetarian and gluten free." /></a>
+              <figcaption><strong>The private page:</strong> adding a dish and its dietary tags.</figcaption>
+            </figure>
+          </div>
         </section>
         <section class="step">
           <h2>Building it</h2>
-          <p>Roose &amp; Vine is a PHP and MySQL web app, deployed on Railway.</p>
-          <!-- TODO: A technical challenge -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">A technical challenge</p>
-            <ul>
-              <li>How you designed the database: tables, relationships, and why</li>
-              <li>One hard problem you solved in the code, and how</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> your database diagram</p>
-          </aside>
+          <p class="step__lede">PHP only, no Python.</p>
+          <p>Roose &amp; Vine is a PHP and MySQL web app, deployed on Railway. The rule was PHP
+          only, with no Python, so I learned how PHP connects to the database, handles a form
+          and builds a page from the results.</p>
+          <p>I also worked the way a team would: in branches on GitHub, merging each feature
+          into main when it was done.</p>
         </section>
         <section class="step">
           <h2>Reflection</h2>
-          <!-- TODO: Reflection -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Reflection</p>
-            <ul>
-              <li>The biggest thing you learned</li>
-              <li>What you carried into HobbyBloom the next semester</li>
-              <li>What you'd do differently with more time</li>
-            </ul>
-          </aside>
+          <p>The biggest thing I took from Roose &amp; Vine was the workflow: a database, the code
+          that talks to it, GitHub branches and a live deployment, all working together.
+          HobbyBloom, our team's capstone app, runs on the same PHP and MySQL setup, so I
+          started that project already knowing how the pieces fit.</p>
         </section>
       </div>
 

@@ -34,22 +34,19 @@
     </header>
 
     <main class="case case--teal">
-      <!-- DRAFT: delete this note once every "To add" box below is filled in -->
-      <p class="draft-note">Draft case study. Sections marked "To add" still need content.</p>
-
       <div class="case__hero">
         <div>
           <a class="case__back" href="case-studies.html">&larr; All case studies</a>
-          <p class="case__eyebrow">Case study 06 · Barcelona Code School</p>
+          <p class="case__eyebrow">Case study 06 · Front end, web app</p>
           <h1 class="case__title">Restaurant Rover</h1>
           <p class="case__lede">Find somewhere to eat, anywhere in the world.</p>
-          <p class="case__summary">Restaurant Rover is a React app that pulls real-time restaurant data from external APIs, so people can browse restaurants worldwide by cuisine and location. It has an editorial, food-magazine look and works on any screen size.</p>
+          <p class="case__summary">Restaurant Rover is a React app for finding restaurants by city and cuisine. It asks an AI model for ten picks and shows them with an editorial, food-magazine look that works on any screen size.</p>
           <dl class="facts">
-          <div><dt>Role</dt><dd>Design and development</dd></div>
-          <div><dt>Team</dt><dd class="facts__todo">Add team</dd></div>
+          <div><dt>Role</dt><dd>Solo: design and development</dd></div>
+          <div><dt>Team</dt><dd>Solo</dd></div>
           <div><dt>Timeline</dt><dd>May 2025</dd></div>
           <div><dt>Program</dt><dd>Barcelona Code School, Web &amp; Mobile Development</dd></div>
-          <div><dt>Tools</dt><dd><ul class="chips" aria-label="Tools"><li data-tool="react">React</li><li data-tool="vite"> Vite</li><li data-tool="javascript"> JavaScript</li><li data-tool="html"> HTML</li><li data-tool="css"> CSS</li><li data-tool="api"> external APIs</li></ul></dd></div>
+          <div><dt>Tools</dt><dd><ul class="chips" aria-label="Tools"><li data-tool="react">React</li><li data-tool="vite"> Vite</li><li data-tool="javascript"> JavaScript</li><li data-tool="html"> HTML</li><li data-tool="css"> CSS</li><li data-tool="api"> ChatGPT API</li></ul></dd></div>
           </dl>
           <div class="case__links">
           <a class="button" href="http://restaurant-rover.surge.sh/" target="_blank" rel="noopener">Visit the live site</a>
@@ -69,11 +66,11 @@
       <div class="glance" aria-label="At a glance">
         <div class="glance__card">
           <h2>Problem</h2>
-          <p class="facts__todo">Add the problem in one sentence</p>
+          <p>Living in Barcelona, I wanted an easy way to find new restaurants by cuisine, without digging through Google Maps.</p>
         </div>
         <div class="glance__card">
           <h2>Solution</h2>
-          <p>A React app that browses real-time restaurant data by cuisine and location.</p>
+          <p>Type a city, pick a cuisine, and get ten restaurant picks with prices, ratings and a dish to try.</p>
         </div>
         <div class="glance__card">
           <h2>Outcome</h2>
@@ -83,77 +80,50 @@
 
       <div class="steps" id="story">
         <section class="step">
-          <h2>The problem</h2>
-          <!-- TODO: Why you built it -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Why you built it</p>
-            <ul>
-              <li>What's hard about finding a place to eat, especially somewhere new?</li>
-              <li>Was this a set assignment or your own idea?</li>
-            </ul>
-          </aside>
+          <h2>Why I built it</h2>
+          <p class="step__lede">I was living in Barcelona and wanted to find fun new places to eat.</p>
+          <p>I was studying abroad in Barcelona and wanted one place to discover new restaurants
+          and sort them by cuisine, without scrolling through Google Maps. So I built it.</p>
         </section>
         <section class="step">
           <h2>My role</h2>
-          <p>I built Restaurant Rover at Barcelona Code School, as part of the Web &amp; Mobile Development program.</p>
-          <!-- TODO: What you personally did -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">What you personally did</p>
-            <ul>
-              <li>Was it solo or a team project? What did you own?</li>
-            </ul>
-          </aside>
+          <p>Restaurant Rover was my own idea, built during the Web &amp; Mobile Development
+          program at Barcelona Code School. I designed and built it myself.</p>
         </section>
         <section class="step">
           <h2>The design</h2>
-          <p>I gave Restaurant Rover an editorial, food-magazine look and made it responsive, so it works on phones as well as laptops.</p>
-          <figure class="step__figure">
-            <div class="laptop">
-              <div class="chapter__media">
-                <img src="images/restaurantrover.png" alt="Restaurant Rover home page" />
-              </div>
-              <div class="laptop__base" aria-hidden="true"></div>
-            </div>
-            <figcaption>Restaurant Rover.</figcaption>
-          </figure>
-          <!-- TODO: How the design came together -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">How the design came together</p>
-            <ul>
-              <li>What "food magazine" means here: type, imagery, layout</li>
-              <li>How searching and browsing by cuisine and location works</li>
-            </ul>
-            <p class="todo__media"><strong>Add visuals:</strong> the search, a results page and a phone-size screenshot</p>
-          </aside>
+          <p>I gave Restaurant Rover an editorial, food-magazine look: a dark, warm palette, a
+          serif headline and a big restaurant photo. It's responsive, so it works on phones as
+          well as laptops.</p>
+          <p>Searching takes two steps: type a city (or use your location) and pick a cuisine.
+          Each result shows the price per person, rating, top dish, atmosphere and dress code,
+          so you can decide without opening another app.</p>
+          <div class="duo duo--even">
+            <figure class="step__figure">
+              <a href="images/restaurant-rover/search.jpg"><img class="step__shot" src="images/restaurant-rover/search.jpg" loading="lazy" width="1440" height="900" alt="Restaurant Rover on a laptop: the headline Find your next perfect meal, a city field, a cuisine menu and a Search button beside a restaurant photo." /></a>
+              <figcaption><strong>On a laptop:</strong> a city, a cuisine and one button.</figcaption>
+            </figure>
+            <figure class="step__figure">
+              <a href="images/restaurant-rover/phone.jpg"><img class="step__shot" src="images/restaurant-rover/phone.jpg" loading="lazy" width="553" height="1200" alt="Restaurant Rover on a phone, with the search fields stacked under the headline." /></a>
+              <figcaption><strong>On a phone:</strong> the same search, stacked.</figcaption>
+            </figure>
+          </div>
         </section>
         <section class="step">
           <h2>Building it</h2>
-          <p>Restaurant Rover is a React app built with Vite. It calls external APIs to show real-time restaurant data.</p>
-          <!-- TODO: A technical challenge -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">A technical challenge</p>
-            <ul>
-              <li>Which API you used, and how you handled loading and errors</li>
-              <li>One hard problem you solved in the code, and how</li>
-            </ul>
-          </aside>
+          <p class="step__lede">Getting an AI model to answer in a format the app can use.</p>
+          <p>Restaurant Rover is a React app built with Vite. Instead of a restaurant database,
+          it asks an AI model (ChatGPT, through RapidAPI) for ten restaurants, and uses
+          OpenStreetMap to turn your location into a city name.</p>
+          <p>The tricky part was getting answers the app could actually read. I wrote the prompt
+          to return only a JSON list, with an example restaurant showing every field, so each
+          answer turns straight into a results card.</p>
         </section>
         <section class="step">
           <h2>Reflection</h2>
-          <!-- TODO: Reflection -->
-          <aside class="todo">
-            <span class="todo__label">To add</span>
-            <p class="todo__title">Reflection</p>
-            <ul>
-              <li>The biggest thing you learned</li>
-              <li>What you'd do differently with more time</li>
-              <li>What you'd build next</li>
-            </ul>
-          </aside>
+          <p>This was the first app I built just because I wanted it. I was its first user, so I
+          could judge every design choice by one question: does this help me pick where to
+          eat tonight?</p>
         </section>
       </div>
 
