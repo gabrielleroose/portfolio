@@ -183,3 +183,8 @@
 .case-studies__group .place__sub::after {
     content: none;
 }
+
+.case-studies__group .place__sub {
+    justify-content: center;
+    text-align: center;
+}
