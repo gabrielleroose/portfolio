@@ -166,3 +166,20 @@
         transform: none;
     }
 }
+
+/* Group headings: bigger, with a taxi-yellow highlighter swipe behind the words */
+.case-studies__group .place__sub {
+    font-size: var(--step-2);
+    margin-bottom: 2rem;
+}
+
+.case-studies__group .highlight {
+    padding: 0 0.15em;
+    background: linear-gradient(transparent 55%, var(--taxi) 55%, var(--taxi) 92%, transparent 92%);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.case-studies__group .place__sub::after {
+    content: none;
+}
